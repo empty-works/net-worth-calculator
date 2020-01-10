@@ -16,29 +16,35 @@ import javafx.stage.Stage;
  */
 public class NetWorthCalculator extends Application {
     
-    Scene scene;
+    private Scene scene;
+    private StackPane root;
     
     @Override
     public void start(Stage primaryStage) {
+        
+        setRoot();
+        setMainScene();
+        setPrimaryStage(primaryStage);
+        
+    }
+    
+    private void setRoot() {
+        
         Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.setText("Say 'Your net worth is: '");
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("Your net worth is: ");
             }
         });
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);
-        
-        setMainScene(root);
-        setPrimaryStage(primaryStage);
-        
     }
     
-    private void setMainScene(StackPane root) {
+    private void setMainScene() {
         
         scene = new Scene(root, 300, 250);
     }
