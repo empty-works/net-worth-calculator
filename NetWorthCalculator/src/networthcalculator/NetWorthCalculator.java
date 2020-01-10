@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -24,8 +25,7 @@ public class NetWorthCalculator extends Application {
         
         setRoot();
         setMainScene();
-        setPrimaryStage(primaryStage);
-        
+        setPrimaryStage(primaryStage); 
     }
     
     private void setRoot() {
@@ -46,12 +46,15 @@ public class NetWorthCalculator extends Application {
     
     private void setMainScene() {
         
-        scene = new Scene(root, 300, 250);
+        scene = new Scene(root, 400, 250);
     }
     
     private void setPrimaryStage(Stage primaryStage) {
         
         primaryStage.setTitle("Net Worth Calculator");
+        primaryStage.initStyle(StageStyle.UNIFIED);
+        primaryStage.setWidth(1000);
+        primaryStage.setHeight(600);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
