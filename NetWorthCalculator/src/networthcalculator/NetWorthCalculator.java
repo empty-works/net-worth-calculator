@@ -6,11 +6,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -23,7 +20,6 @@ import javafx.stage.StageStyle;
 public class NetWorthCalculator extends Application {
     
     private Scene scene;
-    private StackPane root;
     
     @Override
     public void start(Stage primaryStage) {
@@ -40,27 +36,6 @@ public class NetWorthCalculator extends Application {
         
         scene = new Scene(vboxRoot);
         setPrimaryStage(primaryStage);
-    }
-    
-    private void setRoot() {
-        
-        Button btn = new Button();
-        btn.setText("Say 'Your net worth is: '");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Your net worth is: ");
-            }
-        });
-        
-        root = new StackPane();
-        root.getChildren().add(btn);
-    }
-    
-    private void setMainScene() {
-        
-        scene = new Scene(root, 400, 250);
     }
     
     private void setPrimaryStage(Stage primaryStage) {
