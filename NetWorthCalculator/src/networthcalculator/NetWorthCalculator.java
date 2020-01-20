@@ -2,6 +2,9 @@
  */
 package networthcalculator;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -26,6 +30,14 @@ public class NetWorthCalculator extends Application {
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
         System.out.println("FXMLLoader: " + loader);
+        // Set root.
+        try {
+            VBox vboxRoot = loader.<VBox>load();
+        } catch (IOException ex) {
+            Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         
     }
     
