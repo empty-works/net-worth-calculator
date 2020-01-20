@@ -5,6 +5,7 @@ package networthcalculator;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -23,9 +24,9 @@ public class NetWorthCalculator extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        setRoot();
-        setMainScene();
-        setPrimaryStage(primaryStage); 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
+        System.out.println("FXMLLoader: " + loader);
+        
     }
     
     private void setRoot() {
@@ -40,7 +41,7 @@ public class NetWorthCalculator extends Application {
             }
         });
         
-        StackPane root = new StackPane();
+        root = new StackPane();
         root.getChildren().add(btn);
     }
     
