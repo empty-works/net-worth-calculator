@@ -3,4 +3,23 @@
 
 .mainFxmlClass {
 
+    
+}
+
+.vbox {
+    
+    
+    -fx-fill-width: true;
+}
+
+.label {
+    
+    
+    
+    -fx-font-family: "arial";
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: bolder;
+    
+    -fx-text-alignment: center;
 }

@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -33,8 +32,9 @@ public class NetWorthCalculator extends Application {
         } catch (IOException ex) {
             Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        // Set scene.
         scene = new Scene(vboxRoot);
+        // Set stage.
         setPrimaryStage(primaryStage);
     }
     
@@ -43,7 +43,7 @@ public class NetWorthCalculator extends Application {
         primaryStage.setTitle("Net Worth Calculator");
         primaryStage.initStyle(StageStyle.UNIFIED);
         primaryStage.setWidth(1000);
-        primaryStage.setHeight(600);
+        primaryStage.setHeight(800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
