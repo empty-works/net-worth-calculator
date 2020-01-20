@@ -39,8 +39,7 @@ public class NetWorthCalculator extends Application {
         }
         
         scene = new Scene(vboxRoot);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        setPrimaryStage(primaryStage);
     }
     
     private void setRoot() {
