@@ -31,13 +31,16 @@ public class NetWorthCalculator extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
         System.out.println("FXMLLoader: " + loader);
         // Set root.
+        VBox vboxRoot = null;
         try {
-            VBox vboxRoot = loader.<VBox>load();
+            vboxRoot = loader.<VBox>load();
         } catch (IOException ex) {
             Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        scene = new Scene(vboxRoot);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
     
     private void setRoot() {
