@@ -38,7 +38,6 @@ public class NetWorthCalculator extends Application {
         }
         
         
-        
     }
     
     private void setRoot() {
