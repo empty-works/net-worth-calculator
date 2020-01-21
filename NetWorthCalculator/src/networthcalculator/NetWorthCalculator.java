@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -26,9 +27,9 @@ public class NetWorthCalculator extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
         System.out.println("FXMLLoader: " + loader);
         // Set root.
-        GridPane gridRoot = null;
+        AnchorPane gridRoot = null;
         try {
-            gridRoot = loader.<GridPane>load();
+            gridRoot = loader.<AnchorPane>load();
         } catch (IOException ex) {
             Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -6,10 +6,15 @@
     
 }
 
+.root {
+    
+    -fx-border-color: red;
+    -fx-border-radius: 1;
+}
+
 .vbox {
     
     
-    -fx-fill-width: true;
 }
 
 .label {
