@@ -27,14 +27,14 @@ public class NetWorthCalculator extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
         System.out.println("FXMLLoader: " + loader);
         // Set root.
-        AnchorPane gridRoot = null;
+        AnchorPane anchorRoot = null;
         try {
-            gridRoot = loader.<AnchorPane>load();
+            anchorRoot = loader.<AnchorPane>load();
         } catch (IOException ex) {
             Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
         }
         // Set scene.
-        scene = new Scene(gridRoot);
+        scene = new Scene(anchorRoot);
         // Set stage.
         setPrimaryStage(primaryStage);
     }

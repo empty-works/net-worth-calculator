@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="gridRoot" prefHeight="400.0" prefWidth="600.0" 
+<AnchorPane id="anchorRoot" prefHeight="400.0" prefWidth="600.0" 
           styleClass="mainFxmlClass" 
           xmlns:fx="http://javafx.com/fxml/1" 
           fx:controller="networthcalculator.fxml_files.MainLayoutController">
@@ -19,10 +19,22 @@
     
     <GridPane AnchorPane.topAnchor="0.0" 
           AnchorPane.leftAnchor="0.0" 
-          AnchorPane.rightAnchor="0.0">
+          AnchorPane.rightAnchor="0.0"
+          gridLinesVisible="true">
         
-        <Label text="Assets" />
+        <columnConstraints>
+            <ColumnConstraints percentWidth="100" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="50" prefHeight="100" />
+        </rowConstraints>
         
+            <Label text="Assets" 
+                    GridPane.rowIndex="0"
+                    GridPane.columnIndex="0"
+                    GridPane.hgrow="ALWAYS"/>
+            
+           
     </GridPane>
     
 </AnchorPane>
