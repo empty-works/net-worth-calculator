@@ -14,7 +14,8 @@
 
 .label {
     
-    
+    -fx-border-color: green;
+    -fx-border-radius: 1;
     
     -fx-font-family: "arial";
     -fx-font-size: 16px;

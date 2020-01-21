@@ -4,6 +4,7 @@
 <?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,5 +13,10 @@
         <URL value="@mainlayout.css"/>
     </stylesheets>
     
-    <Label text="Net Worth Calculator"/>
+    <Label text="Assets"
+        GridPane.columnIndex="0" GridPane.rowIndex="0"
+        GridPane.columnSpan="2"/>
+    
+    
+    
 </GridPane>

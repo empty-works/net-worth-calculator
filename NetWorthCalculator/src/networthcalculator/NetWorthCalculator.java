@@ -9,7 +9,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -43,8 +42,6 @@ public class NetWorthCalculator extends Application {
         
         primaryStage.setTitle("Net Worth Calculator");
         primaryStage.initStyle(StageStyle.UNIFIED);
-        primaryStage.setWidth(1000);
-        primaryStage.setHeight(800);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
