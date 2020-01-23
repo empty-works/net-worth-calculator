@@ -17,7 +17,7 @@
     
 }
 
-.label {
+#category_label {
     
     -fx-border-color: green;
     -fx-border-radius: 1;

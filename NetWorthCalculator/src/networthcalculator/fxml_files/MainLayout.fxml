@@ -29,11 +29,12 @@
             <RowConstraints minHeight="50" prefHeight="100" />
         </rowConstraints>
         
-            <Label text="Assets" 
+            <Label fx:id="category_label" text="Assets" 
                     GridPane.rowIndex="0"
                     GridPane.columnIndex="0"
                     GridPane.hgrow="ALWAYS"/>
-            
+        
+                
            
     </GridPane>
     
