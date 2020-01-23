@@ -33,8 +33,6 @@
                     GridPane.rowIndex="0"
                     GridPane.columnIndex="0"
                     GridPane.hgrow="ALWAYS"/>
-        
-                
            
     </GridPane>
     
