@@ -15,8 +15,9 @@ import javafx.scene.paint.Paint;
  */
 public class CategoryLabel extends javafx.scene.control.Label {
     
-    public CategoryLabel() {
+    public CategoryLabel(String text) {
         
+        setText(text);
         setBackground();
     }
     
