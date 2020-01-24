@@ -19,6 +19,7 @@ public class CategoryLabel extends javafx.scene.control.Label {
         
         setText(text);
         setBackground();
+        this.setPrefHeight(100);
     }
     
     private void setBackground() {
