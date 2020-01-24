@@ -34,7 +34,8 @@ public class NetWorthCalculator extends Application {
         //    Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
         //}
         
-        GridPane pane = new GridPane();
+        // Set root.
+        GridPane pane = new MainUi();
         
         // Set scene.
         scene = new Scene(pane);
