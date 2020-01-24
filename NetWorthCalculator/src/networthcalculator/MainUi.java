@@ -3,6 +3,7 @@
 package networthcalculator;
 
 import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.Priority;
 
 /**
  *
@@ -20,6 +21,7 @@ public class MainUi extends javafx.scene.layout.GridPane {
         
         ColumnConstraints column1 = new ColumnConstraints();
         column1.setPercentWidth(100);
+        column1.setHgrow(Priority.ALWAYS);
         this.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
     }

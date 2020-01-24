@@ -8,18 +8,27 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.control.Label;
 
 /**
  *
  * @author MP
  */
-public class CategoryLabel extends javafx.scene.control.Label {
+public class CategoryLabel extends javafx.scene.layout.AnchorPane {
+    
+    private Label label;
     
     public CategoryLabel(String text) {
         
-        setText(text);
+        label.setText(text);
         setBackground();
+        setSetSize();
+    }
+                
+    private void setSetSize() {
+        
         this.setPrefHeight(100);
+        
     }
     
     private void setBackground() {
