@@ -2,13 +2,8 @@
  */
 package networthcalculator;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -26,7 +21,6 @@ public class NetWorthCalculator extends Application {
         
         // Set root.
         GridPane pane = new MainUi();
-        
         // Set scene.
         scene = new Scene(pane);
         // Set stage.
