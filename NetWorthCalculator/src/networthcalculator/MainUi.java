@@ -3,7 +3,6 @@
 package networthcalculator;
 
 import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.RowConstraints;
 
 /**
  *
