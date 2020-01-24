@@ -24,16 +24,6 @@ public class NetWorthCalculator extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml_files/MainLayout.fxml"));
-        //System.out.println("FXMLLoader: " + loader);
-        // Set root.
-        //AnchorPane anchorRoot = null;
-        //try {
-        //    anchorRoot = loader.<AnchorPane>load();
-        //} catch (IOException ex) {
-        //    Logger.getLogger(NetWorthCalculator.class.getName()).log(Level.SEVERE, null, ex);
-        //}
-        
         // Set root.
         GridPane pane = new MainUi();
         
