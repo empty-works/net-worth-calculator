@@ -2,9 +2,12 @@
  */
 package networthcalculator;
 
+import java.awt.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 
 /**
  *
@@ -13,11 +16,13 @@ import javafx.scene.layout.GridPane;
 public class MainUi extends javafx.scene.control.ScrollPane {
     
     private GridPane grid = new GridPane();
+    private AnchorPane anchor = new AnchorPane();
     
     public MainUi() {
         
         setColumnConstraints();
         addLabels();
+        setScrollPaneProperties();
     }
     
     private void setColumnConstraints() {
@@ -32,5 +37,12 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     private void addLabels() {
         
         grid.add(new CategoryLabel("Assets"), 0, 0);
+    }
+    
+    private void setScrollPaneProperties() {
+        
+        this.fitToWidthProperty().set(true);
+        this.setPannable(true);
+        this.setContent(grid);
     }
 }
