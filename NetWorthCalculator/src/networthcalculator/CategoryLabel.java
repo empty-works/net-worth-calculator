@@ -6,7 +6,6 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
 
@@ -16,7 +15,7 @@ import javafx.scene.control.Label;
  */
 public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
-    private Label label;
+    private Label label = new Label();
     
     public CategoryLabel(String text) {
         
