@@ -4,6 +4,7 @@ package networthcalculator;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -20,7 +21,7 @@ public class NetWorthCalculator extends Application {
     public void start(Stage primaryStage) {
         
         // Set root.
-        GridPane pane = new MainUi();
+        ScrollPane pane = new MainUi();
         // Set scene.
         scene = new Scene(pane);
         // Set stage.

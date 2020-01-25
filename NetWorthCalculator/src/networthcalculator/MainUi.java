@@ -4,12 +4,15 @@ package networthcalculator;
 
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.GridPane;
 
 /**
  *
  * @author MP
  */
-public class MainUi extends javafx.scene.layout.GridPane {
+public class MainUi extends javafx.scene.control.ScrollPane {
+    
+    
     
     public MainUi() {
         
