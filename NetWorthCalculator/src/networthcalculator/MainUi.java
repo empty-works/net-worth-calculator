@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
  */
 public class MainUi extends javafx.scene.control.ScrollPane {
     
-    
+    private GridPane grid = new GridPane();
     
     public MainUi() {
         
@@ -25,12 +25,12 @@ public class MainUi extends javafx.scene.control.ScrollPane {
         ColumnConstraints column1 = new ColumnConstraints();
         column1.setPercentWidth(100);
         column1.setHgrow(Priority.ALWAYS);
-        this.getColumnConstraints().addAll(column1);
+        grid.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
     }
     
     private void addLabels() {
         
-        add(new CategoryLabel("Assets"), 0, 0);
+        grid.add(new CategoryLabel("Assets"), 0, 0);
     }
 }
