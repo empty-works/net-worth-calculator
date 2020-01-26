@@ -6,7 +6,7 @@ package networthcalculator;
  *
  * @author MP
  */
-public class SubCategoryLabel extends javafx.scene.control.Label {
+public class AmountLabel extends javafx.scene.control.Label {
     
     
 }
