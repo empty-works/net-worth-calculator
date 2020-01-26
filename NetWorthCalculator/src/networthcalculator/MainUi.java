@@ -2,6 +2,7 @@
  */
 package networthcalculator;
 
+import networthcalculator.labels.CategoryLabel;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.GridPane;

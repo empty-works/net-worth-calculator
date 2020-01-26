@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator;
+package networthcalculator.labels;
 
 /**
  *

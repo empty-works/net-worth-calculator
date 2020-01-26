@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator;
+package networthcalculator.labels;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
