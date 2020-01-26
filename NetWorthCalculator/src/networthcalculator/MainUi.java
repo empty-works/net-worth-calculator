@@ -34,6 +34,7 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     private void addLabels() {
         
         grid.add(new CategoryLabel("Assets"), 0, 0);
+        
     }
     
     private void setScrollPaneProperties() {
