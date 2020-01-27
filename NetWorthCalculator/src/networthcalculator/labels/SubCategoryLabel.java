@@ -16,12 +16,12 @@ import javafx.scene.paint.Paint;
  */
 public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     
-    private Label label = new Label();
+    private Label subcategoryLabel = new Label();
     
     public SubCategoryLabel(String text) {
         
         System.out.println("Label text: " + text);
-        label.setText(text);
+        subcategoryLabel.setText(text);
         setLabelProperties();
         setSetSize();
     }
@@ -29,14 +29,14 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     private void setLabelProperties() {
         
         setBackground();
-        this.getChildren().add(label);
+        this.getChildren().add(subcategoryLabel);
     }
                 
     private void setSetSize() {
         
-        label.setPrefHeight(75);
-        AnchorPane.setRightAnchor(label, 0.0);
-        AnchorPane.setLeftAnchor(label, 0.0);
+        subcategoryLabel.setPrefHeight(75);
+        AnchorPane.setRightAnchor(subcategoryLabel, 0.0);
+        AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
     }
     
     private void setBackground() {
@@ -45,6 +45,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
                 Paint.valueOf("gray"), 
                 new CornerRadii(0.5), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
-        label.setBackground(new Background(bgf));
+        subcategoryLabel.setBackground(new Background(bgf));
     }
 }

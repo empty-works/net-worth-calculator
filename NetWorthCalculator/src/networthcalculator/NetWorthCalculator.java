@@ -2,6 +2,7 @@
  */
 package networthcalculator;
 
+import java.net.URL;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -23,6 +24,8 @@ public class NetWorthCalculator extends Application {
         ScrollPane pane = new MainUi();
         // Set scene.
         scene = new Scene(pane);
+        URL stylesheetURL = getClass().getResource("stylesheet.css");
+        scene.getStylesheets().add(stylesheetURL.toExternalForm());
         // Set stage.
         setPrimaryStage(primaryStage);
     }

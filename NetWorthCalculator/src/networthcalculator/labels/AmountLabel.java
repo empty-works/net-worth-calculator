@@ -16,12 +16,12 @@ import javafx.scene.paint.Paint;
  */
 public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
-    private Label label = new Label();
+    private Label amountLabel = new Label();
     
     public AmountLabel(String text) {
         
         System.out.println("Label text: " + text);
-        label.setText(text);
+        amountLabel.setText(text);
         setLabelProperties();
         setSetSize();
     }
@@ -29,14 +29,14 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private void setLabelProperties() {
         
         setBackground();
-        this.getChildren().add(label);
+        this.getChildren().add(amountLabel);
     }
                 
     private void setSetSize() {
         
-        label.setPrefHeight(65);
-        AnchorPane.setRightAnchor(label, 0.0);
-        AnchorPane.setLeftAnchor(label, 0.0);
+        amountLabel.setPrefHeight(65);
+        AnchorPane.setRightAnchor(amountLabel, 0.0);
+        AnchorPane.setLeftAnchor(amountLabel, 0.0);
     }
     
     private void setBackground() {
@@ -45,6 +45,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 Paint.valueOf("red"), 
                 new CornerRadii(0.5), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
-        label.setBackground(new Background(bgf));
+        amountLabel.setBackground(new Background(bgf));
     }
 }
