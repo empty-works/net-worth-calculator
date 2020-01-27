@@ -6,6 +6,8 @@ import networthcalculator.labels.CategoryLabel;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.GridPane;
+import networthcalculator.labels.AmountLabel;
+import networthcalculator.labels.SubCategoryLabel;
 
 /**
  *
@@ -34,7 +36,8 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     private void addLabels() {
         
         grid.add(new CategoryLabel("Assets"), 0, 0);
-        
+        grid.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
+        grid.add(new AmountLabel("Checking Accounts"), 0, 2);
     }
     
     private void setScrollPaneProperties() {

@@ -31,8 +31,8 @@ public class NetWorthCalculator extends Application {
         
         primaryStage.setTitle("Net Worth Calculator");
         primaryStage.initStyle(StageStyle.UNIFIED);
-        primaryStage.setWidth(700);
-        primaryStage.setHeight(500);
+        primaryStage.setWidth(850);
+        primaryStage.setHeight(600);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
