@@ -21,6 +21,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         System.out.println("Label text: " + text);
         label.setText(text);
+        this.getChildren().add(label);
         setBackground();
         setSetSize();
     }
@@ -37,6 +38,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 Paint.valueOf("red"), 
                 new CornerRadii(0.5), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
-        this.setBackground(new Background(bgf));
+        label.setBackground(new Background(bgf));
     }
 }
