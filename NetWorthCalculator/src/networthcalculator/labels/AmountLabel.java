@@ -4,6 +4,7 @@ package networthcalculator.labels;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -21,21 +22,27 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         System.out.println("Label text: " + text);
         label.setText(text);
-        this.getChildren().add(label);
-        setBackground();
+        setLabelProperties();
         setSetSize();
     }
     
+    private void setLabelProperties() {
+        
+        setBackground();
+        this.getChildren().add(label);
+    }
+                
     private void setSetSize() {
         
-        this.setPrefHeight(65);
-        
+        label.setPrefHeight(100);
+        AnchorPane.setRightAnchor(label, 0.0);
+        AnchorPane.setLeftAnchor(label, 0.0);
     }
     
     private void setBackground() {
         
         BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf("red"), 
+                Paint.valueOf("orange"), 
                 new CornerRadii(0.5), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
         label.setBackground(new Background(bgf));
