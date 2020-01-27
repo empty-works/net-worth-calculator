@@ -8,6 +8,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 
 /**
  *
@@ -21,15 +22,21 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         
         System.out.println("Label text: " + text);
         label.setText(text);
-        this.getChildren().add(label);
-        setBackground();
+        setLabelProperties();
         setSetSize();
+    }
+    
+    private void setLabelProperties() {
+        
+        setBackground();
+        this.getChildren().add(label);
     }
                 
     private void setSetSize() {
         
-        this.setPrefHeight(100);
-        
+        label.setPrefHeight(100);
+        AnchorPane.setRightAnchor(label, 0.0);
+        AnchorPane.setLeftAnchor(label, 0.0);
     }
     
     private void setBackground() {
