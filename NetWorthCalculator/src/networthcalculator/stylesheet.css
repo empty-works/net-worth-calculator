@@ -4,13 +4,8 @@
     Author     : MP
 */
 
-
-#CategoryLabelLeft {
+#CategoryLabel .label {
     
-    -fx-font-size: 30
+    -fx-font-size: 30;
 }
 
-#CategoryLabelRight {
-    
-    -fx-font-size: 30
-}

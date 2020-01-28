@@ -26,9 +26,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     public CategoryLabel(String text) {
         
-        System.out.println("Label text: " + text);
+        this.setId("CategoryLabel");
         this.text = text;
-        //setGrid();
         setHBox();
         setLabelProperties();
         this.getChildren().add(hbox);
