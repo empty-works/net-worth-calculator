@@ -31,7 +31,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setGrid();
         setLabelProperties();
         setSetSize();
-        this.getChildren().addAll(categoryLabelLeft, categoryLabelRight);
+        this.getChildren().addAll(grid);
     }
     
     private void setGrid() {
@@ -40,7 +40,10 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         ColumnConstraints columnCon = new ColumnConstraints();
         columnCon.setPercentWidth(50);
         columnCon.setHgrow(Priority.ALWAYS);
-        
+        grid.getColumnConstraints().add(columnCon);
+        grid.addColumn(0, categoryLabelLeft);
+        grid.setGridLinesVisible(true);
+        grid.addColumn(1, categoryLabelRight);
     }
     
     private void setLabelProperties() {
@@ -49,6 +52,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelLeft.setId("CategoryLabelLeft");
         categoryLabelRight.setText("RARA");
         categoryLabelRight.setId("CategoryLabelRight");
+        
         setBackground();
     }
                 
@@ -56,10 +60,11 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         
         categoryLabelLeft.setPrefHeight(100);
         categoryLabelRight.setPrefHeight(100);
-        AnchorPane.setRightAnchor(categoryLabelLeft, 50.0);
-        AnchorPane.setLeftAnchor(categoryLabelLeft, 0.0);
-        AnchorPane.setRightAnchor(categoryLabelRight, 0.0);
-        AnchorPane.setLeftAnchor(categoryLabelRight, 50.0);
+        
+        AnchorPane.setLeftAnchor(grid, 0.0);
+        AnchorPane.setRightAnchor(grid, 0.0);
+        categoryLabelLeft.prefWidthProperty().bind(grid.widthProperty());
+        categoryLabelRight.prefWidthProperty().bind(grid.widthProperty());
     }
     
     private void setBackground() {
@@ -69,5 +74,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
                 new CornerRadii(0.5), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
         categoryLabelLeft.setBackground(new Background(bgf));
+        categoryLabelRight.setBackground(new Background(bgf));
     }
 }
