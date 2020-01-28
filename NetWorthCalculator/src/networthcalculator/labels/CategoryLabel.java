@@ -2,6 +2,7 @@
  */
 package networthcalculator.labels;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
 /**
@@ -23,14 +25,24 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
     private GridPane grid = new GridPane();
+    private HBox hbox = new HBox();
     
     public CategoryLabel(String text) {
         
         System.out.println("Label text: " + text);
         this.text = text;
-        setGrid();
+        //setGrid();
+        setHBox();
         setLabelProperties();
-        this.getChildren().addAll(grid);
+        this.getChildren().add(hbox);
+    }
+    
+    private void setHBox() {
+        
+        ObservableList list = hbox.getChildren();
+        list.addAll(categoryLabelLeft, categoryLabelRight);
+        AnchorPane.setLeftAnchor(hbox, 0.0);
+        AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
     private void setGrid() {
@@ -43,7 +55,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         AnchorPane.setRightAnchor(grid, 0.0);
         grid.getColumnConstraints().add(columnCon);
         grid.addColumn(0, categoryLabelLeft);
-        grid.setGridLinesVisible(true);
         grid.addColumn(1, categoryLabelRight);
     }
     
@@ -55,8 +66,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.setId("CategoryLabelRight");
         categoryLabelLeft.setPrefHeight(100);
         categoryLabelRight.setPrefHeight(100);
-        categoryLabelLeft.prefWidthProperty().bind(grid.widthProperty());
-        categoryLabelRight.prefWidthProperty().bind(grid.widthProperty());
+        categoryLabelLeft.prefWidthProperty().bind(hbox.widthProperty());
+        categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
         setBackground();
     }
     
