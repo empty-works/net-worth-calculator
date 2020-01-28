@@ -10,10 +10,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 
 /**
  *
@@ -24,8 +21,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private String text;
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
-    private GridPane grid = new GridPane();
     private HBox hbox = new HBox();
+    final private int PREF_HEIGHT = 100;
     
     public CategoryLabel(String text) {
         
@@ -45,27 +42,14 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
-    private void setGrid() {
-        
-        // Set up column constraints
-        ColumnConstraints columnCon = new ColumnConstraints();
-        columnCon.setPercentWidth(50);
-        columnCon.setHgrow(Priority.ALWAYS);
-        AnchorPane.setLeftAnchor(grid, 0.0);
-        AnchorPane.setRightAnchor(grid, 0.0);
-        grid.getColumnConstraints().add(columnCon);
-        grid.addColumn(0, categoryLabelLeft);
-        grid.addColumn(1, categoryLabelRight);
-    }
-    
     private void setLabelProperties() {
         
         categoryLabelLeft.setText(text);
         categoryLabelLeft.setId("CategoryLabelLeft");
         categoryLabelRight.setText("RARA");
         categoryLabelRight.setId("CategoryLabelRight");
-        categoryLabelLeft.setPrefHeight(100);
-        categoryLabelRight.setPrefHeight(100);
+        categoryLabelLeft.setPrefHeight(PREF_HEIGHT);
+        categoryLabelRight.setPrefHeight(PREF_HEIGHT);
         categoryLabelLeft.prefWidthProperty().bind(hbox.widthProperty());
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
         setBackground();
