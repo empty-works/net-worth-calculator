@@ -9,6 +9,9 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 
 /**
  *
@@ -16,25 +19,37 @@ import javafx.scene.layout.AnchorPane;
  */
 public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
+    private String text;
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
-    
+    private GridPane grid = new GridPane();
     
     public CategoryLabel(String text) {
         
         System.out.println("Label text: " + text);
-        categoryLabelLeft.setText(text);
-        categoryLabelLeft.setId("CategoryLabelLeft");
-        categoryLabelRight.setText("RARA");
-        categoryLabelRight.setId("CategoryLabelRight");
+        this.text = text;
+        setGrid();
         setLabelProperties();
         setSetSize();
+        this.getChildren().addAll(categoryLabelLeft, categoryLabelRight);
+    }
+    
+    private void setGrid() {
+        
+        // Set up column constraints
+        ColumnConstraints columnCon = new ColumnConstraints();
+        columnCon.setPercentWidth(50);
+        columnCon.setHgrow(Priority.ALWAYS);
+        
     }
     
     private void setLabelProperties() {
         
+        categoryLabelLeft.setText(text);
+        categoryLabelLeft.setId("CategoryLabelLeft");
+        categoryLabelRight.setText("RARA");
+        categoryLabelRight.setId("CategoryLabelRight");
         setBackground();
-        this.getChildren().addAll(categoryLabelLeft, categoryLabelRight);
     }
                 
     private void setSetSize() {
