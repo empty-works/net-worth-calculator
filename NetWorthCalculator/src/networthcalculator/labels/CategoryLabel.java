@@ -30,7 +30,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         this.text = text;
         setGrid();
         setLabelProperties();
-        setSetSize();
         this.getChildren().addAll(grid);
     }
     
@@ -40,6 +39,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         ColumnConstraints columnCon = new ColumnConstraints();
         columnCon.setPercentWidth(50);
         columnCon.setHgrow(Priority.ALWAYS);
+        AnchorPane.setLeftAnchor(grid, 0.0);
+        AnchorPane.setRightAnchor(grid, 0.0);
         grid.getColumnConstraints().add(columnCon);
         grid.addColumn(0, categoryLabelLeft);
         grid.setGridLinesVisible(true);
@@ -52,19 +53,11 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelLeft.setId("CategoryLabelLeft");
         categoryLabelRight.setText("RARA");
         categoryLabelRight.setId("CategoryLabelRight");
-        
-        setBackground();
-    }
-                
-    private void setSetSize() {
-        
         categoryLabelLeft.setPrefHeight(100);
         categoryLabelRight.setPrefHeight(100);
-        
-        AnchorPane.setLeftAnchor(grid, 0.0);
-        AnchorPane.setRightAnchor(grid, 0.0);
         categoryLabelLeft.prefWidthProperty().bind(grid.widthProperty());
         categoryLabelRight.prefWidthProperty().bind(grid.widthProperty());
+        setBackground();
     }
     
     private void setBackground() {
