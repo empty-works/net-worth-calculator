@@ -20,7 +20,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     
     public SubCategoryLabel(String text) {
         
-        System.out.println("Label text: " + text);
         subcategoryLabel.setText(text);
         setLabelProperties();
         setSetSize();

@@ -23,10 +23,13 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
     private HBox hbox = new HBox();
+    private String text1, text2;
     final private int PREF_HEIGHT = 65;
     
-    public CategoryLabel() {
+    public CategoryLabel(String text1, String text2) {
         
+        this.text1 = text1;
+        this.text2 = text2;
         this.setId("CategoryLabel");
         setHBox();
         setLabelProperties();
@@ -46,11 +49,11 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private void setLabelProperties() {
         
-        categoryLabelLeft.setText("ASSETS");
+        categoryLabelLeft.setText(text1);
         categoryLabelLeft.setPrefHeight(PREF_HEIGHT);
         categoryLabelLeft.prefWidthProperty().bind(hbox.widthProperty());
         
-        categoryLabelRight.setText("CURRENT VALUE");
+        categoryLabelRight.setText(text2);
         categoryLabelRight.setAlignment(Pos.CENTER_RIGHT);
         categoryLabelRight.setPrefHeight(PREF_HEIGHT);
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
