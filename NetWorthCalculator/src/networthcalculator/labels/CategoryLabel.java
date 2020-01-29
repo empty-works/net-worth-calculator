@@ -22,7 +22,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
     private HBox hbox = new HBox();
-    final private int PREF_HEIGHT = 90;
+    final private int PREF_HEIGHT = 65;
     
     public CategoryLabel() {
         
@@ -30,6 +30,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setBackground();
+        this.setPadding(new Insets(10, 10, 10, 10));
         this.getChildren().add(hbox);
         
     }
@@ -40,7 +41,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         list.addAll(categoryLabelLeft, categoryLabelRight);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
-        this.setPadding(new Insets(10, 10, 10, 10));
+        
     }
     
     private void setLabelProperties() {
@@ -53,14 +54,12 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.setAlignment(Pos.CENTER_RIGHT);
         categoryLabelRight.setPrefHeight(PREF_HEIGHT);
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
-
-        
     }
     
     private void setBackground() {
         
         BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf("orange"), 
+                Paint.valueOf("#999966"), 
                 new CornerRadii(5.5, 50, 5.5, 5.5, false), 
                 new Insets(0.5, 0.5, 0.5, 0.5));
         categoryLabelLeft.setBackground(new Background(bgf));

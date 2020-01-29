@@ -21,6 +21,7 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     public MainUi() {
         
         setColumnConstraints();
+        setGridProperties();
         addLabels();
         setScrollPaneProperties();
     }
@@ -32,6 +33,11 @@ public class MainUi extends javafx.scene.control.ScrollPane {
         column1.setHgrow(Priority.ALWAYS);
         grid.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
+    }
+    
+    private void setGridProperties() {
+        
+        grid.setPadding(new Insets(10, 0, 0, 0));
     }
     
     private void addLabels() {

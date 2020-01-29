@@ -6,7 +6,8 @@
 
 #CategoryLabel .label {
     
-    -fx-font-size: 20;
+    -fx-font-size: 15;
+    -fx-text-fill: white;
     -fx-font-family: 'arial';
     -fx-font-weight: bold;
     -fx-padding: 15, 15, 15, 15;
