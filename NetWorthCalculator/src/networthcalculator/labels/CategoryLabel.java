@@ -12,6 +12,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import networthcalculator.SetSizes;
 
 /**
  *
@@ -32,7 +33,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setBackground();
         this.setPadding(new Insets(10, 10, 10, 10));
         this.getChildren().add(hbox);
-        
+        this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
     private void setHBox() {
@@ -41,7 +42,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         list.addAll(categoryLabelLeft, categoryLabelRight);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
-        
     }
     
     private void setLabelProperties() {

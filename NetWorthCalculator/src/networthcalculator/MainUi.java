@@ -2,11 +2,13 @@
  */
 package networthcalculator;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import networthcalculator.labels.CategoryLabel;
 import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
 
@@ -31,12 +33,14 @@ public class MainUi extends javafx.scene.control.ScrollPane {
         ColumnConstraints column1 = new ColumnConstraints();
         column1.setPercentWidth(100);
         column1.setHgrow(Priority.ALWAYS);
+        column1.setHalignment(HPos.CENTER);
         grid.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
     }
     
     private void setGridProperties() {
         
+        grid.setAlignment(Pos.CENTER);
         grid.setPadding(new Insets(10, 0, 0, 0));
     }
     
