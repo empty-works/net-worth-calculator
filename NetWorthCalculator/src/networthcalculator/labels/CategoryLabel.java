@@ -29,7 +29,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setId("CategoryLabel");
         setHBox();
         setLabelProperties();
-        //setBackground();
+        setBackground();
         this.getChildren().add(hbox);
         
     }
