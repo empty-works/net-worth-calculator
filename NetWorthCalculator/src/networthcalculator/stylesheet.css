@@ -8,5 +8,15 @@
     
     -fx-font-size: 20;
     -fx-font-family: 'arial';
+    -fx-font-weight: bold;
+    -fx-padding: 15, 15, 15, 15;
+    
+    -fx-background-color: orange;
+}
+
+#CategoryLabel .hbox {
+    
+    
+    -fx-background-color: orange;
 }
 
