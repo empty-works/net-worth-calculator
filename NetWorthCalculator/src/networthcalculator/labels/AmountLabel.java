@@ -4,10 +4,12 @@ package networthcalculator.labels;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 
 /**
@@ -17,6 +19,10 @@ import javafx.scene.paint.Paint;
 public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
+    private Label dollarSignLabel = new Label();
+    private TextField amountField = new TextField();
+    private HBox hbox = new HBox();
+    private String text;
     
     public AmountLabel(String text) {
         
@@ -24,6 +30,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setText(text);
         setLabelProperties();
         setSetSize();
+    }
+    
+    private void setHBox() {
+        
+        
     }
     
     private void setLabelProperties() {
