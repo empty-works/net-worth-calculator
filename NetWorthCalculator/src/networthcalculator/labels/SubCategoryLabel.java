@@ -9,6 +9,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
+import networthcalculator.SetSizes;
 
 /**
  *
@@ -17,12 +18,15 @@ import javafx.scene.paint.Paint;
 public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private Label subcategoryLabel = new Label();
+    final private int PREF_HEIGHT = 55;
     
     public SubCategoryLabel(String text) {
         
         subcategoryLabel.setText(text);
+        this.setId("SubCategoryLabel");
         setLabelProperties();
         setSetSize();
+        this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
     private void setLabelProperties() {
@@ -33,7 +37,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
                 
     private void setSetSize() {
         
-        subcategoryLabel.setPrefHeight(75);
+        subcategoryLabel.setPrefHeight(PREF_HEIGHT);
         AnchorPane.setRightAnchor(subcategoryLabel, 0.0);
         AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
     }
