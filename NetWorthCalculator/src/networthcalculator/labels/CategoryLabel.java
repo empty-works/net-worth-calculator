@@ -34,7 +34,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setBackground();
-        this.setPadding(new Insets(10, 10, 10, 10));
+        this.setPadding(new Insets(10 /*Top*/, 10 /*Right*/, 0 /*Bottom*/, 10 /*Left*/));
         this.getChildren().add(hbox);
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
