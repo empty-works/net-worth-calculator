@@ -33,13 +33,13 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setId("CategoryLabel");
         setHBox();
         setLabelProperties();
-        setBackground();
         this.getChildren().add(hbox);
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
     private void setHBox() {
         
+        hbox.setId("CategoryLabelHBox");
         ObservableList list = hbox.getChildren();
         list.addAll(categoryLabelLeft, categoryLabelRight);
         AnchorPane.setLeftAnchor(hbox, 0.0);
