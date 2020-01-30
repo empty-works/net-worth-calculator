@@ -26,7 +26,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setId("SubCategoryLabel");
         setLabelProperties();
         setBackground();
-        this.setPadding(new Insets(0, 10, 10, 10));
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     

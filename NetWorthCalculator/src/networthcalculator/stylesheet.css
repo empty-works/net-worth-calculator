@@ -4,12 +4,29 @@
     Author     : MP
 */
 
+#CategoryLabel .anchorpane {
+    
+    -fx-padding: 10, 10, 0, 10;
+}
+
 #CategoryLabel .label {
     
     -fx-font-size: 15;
     -fx-text-fill: white;
     -fx-font-family: 'arial';
     -fx-font-weight: bold;
+    -fx-padding: 15, 15, 15, 15;
+}
+
+
+
+#SubCategoryLabel .anchorpane {
+    
+    -fx-padding: 10, 10, 0, 10;
+}
+
+#SubCategoryLabel .label {
+    
     -fx-padding: 15, 15, 15, 15;
 }
 
