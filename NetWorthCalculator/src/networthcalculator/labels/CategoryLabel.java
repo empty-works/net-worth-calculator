@@ -58,6 +58,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
     }
     
+    /*
     private void setBackground() {
         
         BackgroundFill bgf = new BackgroundFill(
@@ -67,5 +68,5 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelLeft.setBackground(new Background(bgf));
         categoryLabelRight.setBackground(new Background(bgf));
         hbox.setBackground(new Background(bgf));
-    }
+    }*/
 }

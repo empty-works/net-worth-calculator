@@ -12,7 +12,7 @@
 #CategoryLabelHBox {
     
     -fx-background-color: '#999966';
-    -fx-background-radius: 5.5 50 5.5 5.5
+    -fx-background-radius: 5.5 50 5.5 5.5;
 }
 
 #CategoryLabel .label {
@@ -28,11 +28,14 @@
 
 #SubCategoryLabel {
     
+    
     -fx-padding: 0 10 5 10;
 }
 
 #SubCategoryLabel .label {
     
+    -fx-background-radius: 5.5;
+    -fx-background-color: 'lightgray';
     -fx-padding: 15;
 }
 
