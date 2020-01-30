@@ -11,13 +11,13 @@
 
 #CategoryLabelHBox {
     
-    -fx-background-color: '#999966';
+    -fx-background-color: '#b37700';
     -fx-background-radius: 5.5 50 5.5 5.5;
 }
 
 #CategoryLabel .label {
     
-    -fx-font-size: 15;
+    -fx-font-size: 18;
     -fx-text-fill: white;
     -fx-font-family: 'arial';
     -fx-font-weight: bold;
@@ -28,7 +28,10 @@
 
 #SubCategoryLabel {
     
-    
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: 'arial';
     -fx-padding: 0 10 5 10;
 }
 

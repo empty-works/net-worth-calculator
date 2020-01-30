@@ -18,7 +18,7 @@ import networthcalculator.SetSizes;
 public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private Label subcategoryLabel = new Label();
-    final private int PREF_HEIGHT = 55;
+    final private int PREF_HEIGHT = 10;
     
     public SubCategoryLabel(String text) {
         
