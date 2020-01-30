@@ -4,9 +4,9 @@
     Author     : MP
 */
 
-#CategoryLabel .anchorpane {
+#CategoryLabel {
     
-    -fx-padding: 10, 10, 0, 10;
+    -fx-padding: 0 10 5 10;
 }
 
 #CategoryLabel .label {
@@ -15,18 +15,18 @@
     -fx-text-fill: white;
     -fx-font-family: 'arial';
     -fx-font-weight: bold;
-    -fx-padding: 15, 15, 15, 15;
+    -fx-padding: 15;
 }
 
 
 
-#SubCategoryLabel .anchorpane {
+#SubCategoryLabel {
     
-    -fx-padding: 10, 10, 0, 10;
+    -fx-padding: 0 10 5 10;
 }
 
 #SubCategoryLabel .label {
     
-    -fx-padding: 15, 15, 15, 15;
+    -fx-padding: 15;
 }
 
