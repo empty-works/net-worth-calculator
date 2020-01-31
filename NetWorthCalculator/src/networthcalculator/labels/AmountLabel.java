@@ -3,6 +3,7 @@
 package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +30,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.setId("AmountLabel");
         setHBox();
         setLabelProperties();
+        setTextField();
         this.getChildren().add(hbox);
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
@@ -47,7 +49,16 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
 
         amountLabel.setText(text);
         amountLabel.setPrefHeight(PREF_HEIGHT);
-        AnchorPane.setRightAnchor(amountLabel, 0.0);
-        AnchorPane.setLeftAnchor(amountLabel, 0.0);
+        amountLabel.prefWidthProperty().bind(hbox.widthProperty());
+        
+        dollarSignLabel.setPrefHeight(PREF_HEIGHT);
+        dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty());
+    }
+    
+    private void setTextField() {
+        
+        amountField.setId("AmountLabelTextField");
+        amountField.setAlignment(Pos.CENTER_RIGHT);
+        amountField.prefWidthProperty().bind(hbox.widthProperty());
     }
 }
