@@ -51,6 +51,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
+        dollarSignLabel.setId("AmountDollarSignLabel");
+        dollarSignLabel.setText("$");
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
         dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty());
     }
@@ -59,6 +61,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         amountField.setId("AmountLabelTextField");
         amountField.setAlignment(Pos.CENTER_RIGHT);
+        
         amountField.prefWidthProperty().bind(hbox.widthProperty());
     }
 }

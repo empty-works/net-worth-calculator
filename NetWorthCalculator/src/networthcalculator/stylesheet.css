@@ -63,3 +63,12 @@
     -fx-padding: 15 15 15 50;
 }
 
+#AmountLabel #AmountDollarSignLabel {
+    
+    -fx-alignment: center-right;
+}
+
+#AmountLabel #AmountLabelTextField {
+    
+    -fx-padding: 15;
+}
