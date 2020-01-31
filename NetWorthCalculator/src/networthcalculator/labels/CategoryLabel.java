@@ -41,6 +41,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
+    // Check stylesheet for stylings.
     private void setLabelProperties() {
         
         categoryLabelLeft.setText(text1);

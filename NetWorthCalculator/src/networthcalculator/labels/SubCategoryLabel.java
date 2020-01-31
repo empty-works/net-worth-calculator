@@ -23,6 +23,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
+    // Check stylesheet for stylings.
     private void setLabelProperties() {
 
         this.getChildren().add(subcategoryLabel);

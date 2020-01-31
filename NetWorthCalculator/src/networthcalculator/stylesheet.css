@@ -46,8 +46,12 @@
 
 #AmountLabel {
     
-    
+    -fx-padding: 0 10 5 10;
 }
 
-
+#AmountLabelHBox {
+    
+    -fx-background-color: 'lightgray';
+    -fx-background-radius: 5.5;
+}
 

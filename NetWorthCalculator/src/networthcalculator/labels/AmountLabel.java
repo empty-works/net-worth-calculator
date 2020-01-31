@@ -34,7 +34,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.setId("AmountLabel");
         setHBox();
         setLabelProperties();
-        this.getChildren().add(amountLabel);
+        this.getChildren().add(hbox);
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
@@ -47,6 +47,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
+    // Check stylesheet for stylings.
     private void setLabelProperties() {
 
         amountLabel.setText(text);
