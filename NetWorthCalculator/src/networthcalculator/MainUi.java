@@ -46,9 +46,15 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     
     private void addLabels() {
         
+        // ASSETS
         grid.add(new CategoryLabel("ASSETS", "CURRENT VALUE"), 0, 0);
         grid.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
-        grid.add(new AmountLabel("Checking Accounts"), 0, 2);
+        grid.add(new AmountLabel("Checking accounts"), 0, 2);
+        grid.add(new AmountLabel("Savings accounts"), 0, 3);
+        grid.add(new AmountLabel("Money market accounts"), 0, 4);
+        grid.add(new AmountLabel("Savings bonds"), 0, 5);
+        grid.add(new AmountLabel("CD's"), 0, 6);
+        grid.add(new AmountLabel("Cash value of life insurance"), 0, 7);
     }
     
     private void setScrollPaneProperties() {
