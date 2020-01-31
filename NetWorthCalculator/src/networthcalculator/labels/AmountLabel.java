@@ -2,6 +2,7 @@
  */
 package networthcalculator.labels;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -26,15 +27,20 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     public AmountLabel(String text) {
         
-        System.out.println("Label text: " + text);
+        this.text = text;
         amountLabel.setText(text);
+        setHBox();
         setLabelProperties();
         setSetSize();
     }
     
     private void setHBox() {
         
-        
+        hbox.setId("AmountLabelHBox");
+        ObservableList list = hbox.getChildren();
+        list.addAll(amountLabel, dollarSignLabel, amountField);
+        AnchorPane.setLeftAnchor(hbox, 0.0);
+        AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
     private void setLabelProperties() {
