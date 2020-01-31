@@ -12,6 +12,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
+import networthcalculator.SetSizes;
 
 /**
  *
@@ -24,6 +25,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private TextField amountField = new TextField();
     private HBox hbox = new HBox();
     private String text;
+    final private int PREF_HEIGHT = 25;
     
     public AmountLabel(String text) {
         
@@ -31,6 +33,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setText(text);
         setHBox();
         setLabelProperties();
+        this.getChildren().add(amountLabel);
+        this.setMaxWidth(SetSizes.MAX_WIDTH);
         setSetSize();
     }
     
@@ -46,14 +50,14 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private void setLabelProperties() {
         
         setBackground();
-        this.getChildren().add(amountLabel);
+        amountLabel.setPrefHeight(PREF_HEIGHT);
+        AnchorPane.setRightAnchor(amountLabel, 0.0);
+        AnchorPane.setLeftAnchor(amountLabel, 0.0);
     }
                 
     private void setSetSize() {
         
-        amountLabel.setPrefHeight(65);
-        AnchorPane.setRightAnchor(amountLabel, 0.0);
-        AnchorPane.setLeftAnchor(amountLabel, 0.0);
+        
     }
     
     private void setBackground() {
