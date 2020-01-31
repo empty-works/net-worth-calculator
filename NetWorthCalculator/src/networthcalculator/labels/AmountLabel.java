@@ -31,11 +31,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.text = text;
         amountLabel.setText(text);
+        this.setId("AmountLabel");
         setHBox();
         setLabelProperties();
         this.getChildren().add(amountLabel);
         this.setMaxWidth(SetSizes.MAX_WIDTH);
-        setSetSize();
     }
     
     private void setHBox() {
@@ -48,16 +48,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     }
     
     private void setLabelProperties() {
-        
-        setBackground();
+
+        amountLabel.setText(text);
         amountLabel.setPrefHeight(PREF_HEIGHT);
         AnchorPane.setRightAnchor(amountLabel, 0.0);
         AnchorPane.setLeftAnchor(amountLabel, 0.0);
-    }
-                
-    private void setSetSize() {
-        
-        
     }
     
     private void setBackground() {
