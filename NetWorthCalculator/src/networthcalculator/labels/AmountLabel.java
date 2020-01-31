@@ -3,15 +3,10 @@
 package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Paint;
 import networthcalculator.SetSizes;
 
 /**
@@ -54,14 +49,5 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         AnchorPane.setRightAnchor(amountLabel, 0.0);
         AnchorPane.setLeftAnchor(amountLabel, 0.0);
-    }
-    
-    private void setBackground() {
-        
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf("red"), 
-                new CornerRadii(0.5), 
-                new Insets(0.5, 0.5, 0.5, 0.5));
-        amountLabel.setBackground(new Background(bgf));
     }
 }

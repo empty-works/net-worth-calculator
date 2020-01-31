@@ -41,7 +41,7 @@ public class MainUi extends javafx.scene.control.ScrollPane {
     private void setGridProperties() {
         
         grid.setAlignment(Pos.CENTER);
-        grid.setPadding(new Insets(10, 0, 0, 0));
+        grid.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
     private void addLabels() {
