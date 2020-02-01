@@ -4,6 +4,7 @@ package networthcalculator.labels;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import networthcalculator.SetSizes;
 
 /**
@@ -12,7 +13,10 @@ import networthcalculator.SetSizes;
  */
 public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
     
+    private Label leftPlaceholder = new Label();
     private Label subTotal = new Label();
+    private Label rightPlaceholder = new Label();
+    private HBox hbox = new HBox();
     private String text;
     final private int PREF_HEIGHT = 25;
     
