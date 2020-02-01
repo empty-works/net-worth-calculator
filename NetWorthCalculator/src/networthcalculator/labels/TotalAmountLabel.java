@@ -6,7 +6,7 @@ package networthcalculator.labels;
  *
  * @author MP
  */
-public class SubTotalLabel {
+public class TotalAmountLabel {
     
     
 }
