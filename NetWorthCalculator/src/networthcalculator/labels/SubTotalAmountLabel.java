@@ -2,6 +2,7 @@
  */
 package networthcalculator.labels;
 
+import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -24,8 +25,18 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.text = text;
         this.setId("SubTotalAmountLabel");
+        setHBox();
         setLabelProperties();
         this.setMaxWidth(SetSizes.MAX_WIDTH);
+    }
+    
+    private void setHBox() {
+        
+        hbox.setId("SubTotalAmountLabelHBox");
+        ObservableList list = hbox.getChildren();
+        list.addAll(leftPlaceholder, subTotal, rightPlaceholder);
+        AnchorPane.setLeftAnchor(hbox, 0.0);
+        AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
     private void setLabelProperties() {
@@ -33,7 +44,5 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         subTotal.setText(text);
         this.getChildren().add(subTotal);
         subTotal.setPrefHeight(PREF_HEIGHT);
-        AnchorPane.setLeftAnchor(subTotal, 0.0);
-        AnchorPane.setRightAnchor(subTotal, 0.0);
     }
 }
