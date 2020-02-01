@@ -72,3 +72,10 @@
     
     -fx-padding: 15;
 }
+
+
+
+#SubTotalAmountLabel .label {
+    
+    -fx-alignment: center-right;
+}

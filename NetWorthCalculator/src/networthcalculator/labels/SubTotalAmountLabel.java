@@ -19,12 +19,14 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
     public SubTotalAmountLabel(String text) {
         
         this.text = text;
+        this.setId("SubTotalAmountLabel");
         setLabelProperties();
         this.setMaxWidth(SetSizes.MAX_WIDTH);
     }
     
     private void setLabelProperties() {
         
+        subTotal.setText(text);
         this.getChildren().add(subTotal);
         subTotal.setPrefHeight(PREF_HEIGHT);
         AnchorPane.setLeftAnchor(subTotal, 0.0);
