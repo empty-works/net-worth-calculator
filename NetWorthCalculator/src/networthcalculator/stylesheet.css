@@ -84,4 +84,8 @@
 #SubTotalAmountLabel .label {
     
     -fx-alignment: center-right;
+    -fx-padding: 15;
+    -fx-font-size: 15;
+    -fx-text-fill: black;
+    -fx-font-family: 'arial';
 }
