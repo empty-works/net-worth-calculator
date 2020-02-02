@@ -61,7 +61,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         amountField.setId("AmountLabelTextField");
         amountField.setAlignment(Pos.CENTER_RIGHT);
-        
         amountField.prefWidthProperty().bind(hbox.widthProperty());
     }
 }
