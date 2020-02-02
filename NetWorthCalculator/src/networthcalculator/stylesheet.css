@@ -4,6 +4,13 @@
     Author     : MP
 */
 
+* {
+   
+    /*CSS Variables*/
+    -fx-main-font-family: 'arial';
+    -fx-default-padding: 15;
+}
+
 #CategoryLabel {
     
     -fx-padding: 0 10 5 10;
@@ -19,9 +26,9 @@
     
     -fx-font-size: 18;
     -fx-text-fill: white;
-    -fx-font-family: 'arial';
+    -fx-font-family: -fx-main-font-family;
     -fx-font-weight: bold;
-    -fx-padding: 15;
+    -fx-padding: -fx-default-padding;
 }
 
 
@@ -39,7 +46,7 @@
     
     -fx-background-radius: 5.5;
     -fx-background-color: 'lightgray';
-    -fx-padding: 15;
+    -fx-padding: -fx-default-padding;
 }
 
 
@@ -59,7 +66,7 @@
     
     -fx-font-size: 15;
     -fx-text-fill: black;
-    -fx-font-family: 'arial';
+    -fx-font-family: -fx-main-font-family;
     -fx-padding: 15 15 15 50;
 }
 
@@ -70,7 +77,7 @@
 
 #AmountLabel #AmountLabelTextField {
     
-    -fx-padding: 15;
+    -fx-padding: -fx-default-padding;
 }
 
 
@@ -84,8 +91,13 @@
 #SubTotalAmountLabel .label {
     
     -fx-alignment: center-right;
-    -fx-padding: 15;
+    -fx-padding: -fx-default-padding;
     -fx-font-size: 15;
     -fx-text-fill: black;
     -fx-font-family: 'arial';
+}
+
+#SubTotalAmountLabel #SubTotalLabel {
+    
+    -fx-font-weight: bold;
 }
