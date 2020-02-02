@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import networthcalculator.SetSizes;
+import networthcalculator.Constants;
 
 /**
  *
@@ -32,7 +32,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setLabelProperties();
         setTextField();
         this.getChildren().add(hbox);
-        this.setMaxWidth(SetSizes.MAX_WIDTH);
+        this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
     private void setHBox() {
@@ -52,7 +52,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         dollarSignLabel.setId("AmountDollarSignLabel");
-        dollarSignLabel.setText("$");
+        dollarSignLabel.setText(Constants.CURRENCY);
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
         dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty());
     }
