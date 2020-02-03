@@ -38,7 +38,7 @@ public class MainUi extends javafx.scene.layout.GridPane {
         column1.setPercentWidth(100);
         column1.setHgrow(Priority.ALWAYS);
         column1.setHalignment(HPos.CENTER);
-        assetsGridPane.getColumnConstraints().addAll(column1);
+        this.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
     }
     
