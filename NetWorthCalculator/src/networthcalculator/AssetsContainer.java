@@ -5,7 +5,6 @@ package networthcalculator;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -19,12 +18,11 @@ import networthcalculator.labels.SubTotalAmountLabel;
  */
 public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
-    private ScrollPane assetsScrollPane = new ScrollPane();
     private GridPane assetsGridPane = new GridPane();
     
     public AssetsContainer() {
         
-        assetsScrollPane.setContent(assetsGridPane);
+        this.setContent(assetsGridPane);
         setColumnConstraints();
         setGridProperties();
         addLabels();
@@ -61,8 +59,8 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
     private void setScrollPaneProperties() {
         
-        assetsScrollPane.fitToWidthProperty().set(true);
-        assetsScrollPane.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
-        assetsScrollPane.setPannable(true);
+        this.fitToWidthProperty().set(true);
+        this.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
+        this.setPannable(true);
     }
 }
