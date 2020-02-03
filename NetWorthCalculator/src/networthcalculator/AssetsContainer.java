@@ -3,6 +3,8 @@
 package networthcalculator;
 
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -24,6 +26,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         
         assetsScrollPane.setContent(assetsGridPane);
         setColumnConstraints();
+        setGridProperties();
         addLabels();
         setScrollPaneProperties();
     }
@@ -36,6 +39,12 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         column1.setHalignment(HPos.CENTER);
         assetsGridPane.getColumnConstraints().addAll(column1);
         System.out.println("Added column constraints to grid pane...");
+    }
+    
+    private void setGridProperties() {
+        
+        assetsGridPane.setAlignment(Pos.CENTER);
+        assetsGridPane.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
     private void addLabels() {
