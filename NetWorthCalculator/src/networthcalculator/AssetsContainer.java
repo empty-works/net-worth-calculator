@@ -25,6 +25,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         assetsScrollPane.setContent(assetsGridPane);
         setColumnConstraints();
         addLabels();
+        setScrollPaneProperties();
     }
     
     private void setColumnConstraints() {
@@ -47,5 +48,12 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         assetsGridPane.add(new AmountLabel("CD's"), 0, 6);
         assetsGridPane.add(new AmountLabel("Cash value of life insurance"), 0, 7);
         assetsGridPane.add(new SubTotalAmountLabel("Total Cash"), 0, 8);
+    }
+    
+    private void setScrollPaneProperties() {
+        
+        assetsScrollPane.fitToWidthProperty().set(true);
+        assetsScrollPane.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
+        assetsScrollPane.setPannable(true);
     }
 }

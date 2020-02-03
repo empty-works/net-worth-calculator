@@ -52,7 +52,7 @@ public class MainUi extends javafx.scene.layout.GridPane {
         
         // ASSETS
         this.add(new CategoryLabel("ASSETS", "CURRENT VALUE"), 0, 0);
-        this.add(assetsScrollPane, 0, 1);
+        this.add(new AssetsContainer(), 0, 1);
         assetsScrollPane.setContent(assetsGridPane);
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 2);
