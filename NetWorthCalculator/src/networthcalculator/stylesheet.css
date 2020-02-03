@@ -8,7 +8,6 @@
    
     /*CSS Variables*/
     -fx-main-font-family: 'arial';
-    -fx-default-padding: 15;
 }
 
 #CategoryLabel {
@@ -18,7 +17,7 @@
 
 #CategoryLabelHBox {
     
-    -fx-background-color: '#b37700';
+    -fx-background-color: '#00ccff';
     -fx-background-radius: 5.5 50 5.5 5.5;
 }
 
@@ -28,7 +27,7 @@
     -fx-text-fill: white;
     -fx-font-family: -fx-main-font-family;
     -fx-font-weight: bold;
-    -fx-padding: -fx-default-padding;
+    -fx-padding: 15;
 }
 
 
@@ -46,7 +45,7 @@
     
     -fx-background-radius: 5.5;
     -fx-background-color: 'lightgray';
-    -fx-padding: -fx-default-padding;
+    -fx-padding: 15;
 }
 
 
@@ -77,7 +76,7 @@
 
 #AmountLabel #AmountLabelTextField {
     
-    -fx-padding: -fx-default-padding;
+    -fx-padding: 15;
 }
 
 
@@ -91,7 +90,7 @@
 #SubTotalAmountLabel .label {
     
     -fx-alignment: center-right;
-    -fx-padding: -fx-default-padding;
+    -fx-padding: 15;
     -fx-font-size: 15;
     -fx-text-fill: black;
     -fx-font-family: 'arial';

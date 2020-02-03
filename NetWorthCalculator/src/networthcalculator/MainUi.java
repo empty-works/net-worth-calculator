@@ -17,7 +17,7 @@ import networthcalculator.labels.SubTotalAmountLabel;
  *
  * @author MP
  */
-public class MainUi extends javafx.scene.control.ScrollPane {
+public class MainUi extends javafx.scene.layout.GridPane {
     
     private GridPane grid = new GridPane();
     
