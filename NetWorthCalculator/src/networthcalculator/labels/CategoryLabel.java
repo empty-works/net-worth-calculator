@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import networthcalculator.Constants;
 
 /**
  *
@@ -37,6 +38,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setFont();
+        setPadding();
         this.getChildren().add(hbox);
     }
     
@@ -72,7 +74,14 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.setTextFill(Paint.valueOf("#ffffff"));
     }
     
-    
+    private void setPadding() {
+        
+        hbox.setPadding(new Insets(
+                1, 
+                Constants.SIDE_PADDING_FOR_TEXT, 
+                1, 
+                Constants.SIDE_PADDING_FOR_TEXT));
+    }
 
     public void setBackground(String bgColor, 
             double topLeft, 
