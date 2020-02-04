@@ -20,16 +20,23 @@ import networthcalculator.labels.SubTotalAmountLabel;
 public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
     private GridPane assetsGridPane = new GridPane();
+    private CategoryLabel categoryTitle = new CategoryLabel("ASSETS", "CURRENT VALUE");
     
     public AssetsContainer() {
         
         this.setId("AssetsContainer");
         this.setContent(assetsGridPane);
+        setColors();
         setColumnConstraints();
         setGridProperties();
         addLabels();
         setScrollPaneProperties();
         this.setMaxWidth(Constants.MAX_WIDTH);
+    }
+    
+    private void setColors() {
+        
+        categoryTitle.setBackground("#00ccff", 50.0, 5.5, 5.5, 5.5);
     }
     
     private void setColumnConstraints() {
@@ -50,7 +57,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
     private void addLabels() {
         
-        assetsGridPane.add(new CategoryLabel("ASSETS", "CURRENT VALUE"), 0, 0);
+        assetsGridPane.add(categoryTitle, 0, 0);
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 2);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 3);
@@ -66,6 +73,5 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         this.fitToWidthProperty().set(true);
         this.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
         this.setPannable(true);
-        
     }
 }

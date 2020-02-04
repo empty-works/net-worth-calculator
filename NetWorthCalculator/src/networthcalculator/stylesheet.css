@@ -20,13 +20,9 @@
     -fx-padding: 0 10 5 10;
 }
 
-#CategoryLabelHBox {
-    
-    -fx-background-color: '#00ccff';
-    -fx-background-radius: 5.5 50 5.5 5.5;
-}
 
-#CategoryLabel .label {
+
+#CategoryLabel.label {
     
     -fx-font-size: 18;
     -fx-text-fill: white;
