@@ -75,6 +75,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private void setPadding() {
         
+        this.setPadding(new Insets(0, 10, 5, 10));
+        
         hbox.setPadding(new Insets(
                 1, 
                 Constants.SIDE_PADDING_FOR_TEXT, 
