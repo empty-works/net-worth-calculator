@@ -12,6 +12,8 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 /**
  *
@@ -21,9 +23,11 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
+    
     private HBox hbox = new HBox();
     private String text1, text2;
     final private int PREF_HEIGHT = 65;
+    final private int FONT_SIZE = 18;
     
     public CategoryLabel(String text1, String text2) {
         
@@ -32,6 +36,7 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setId("CategoryLabel");
         setHBox();
         setLabelProperties();
+        setFont();
         this.getChildren().add(hbox);
     }
     
@@ -56,6 +61,18 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.setPrefHeight(PREF_HEIGHT);
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
     }
+    
+    private void setFont() {
+        
+        Font font = Font.font("arial", FontWeight.BOLD, FONT_SIZE);
+        categoryLabelLeft.setFont(font);
+        categoryLabelLeft.setTextFill(Paint.valueOf("#ffffff"));
+        
+        categoryLabelRight.setFont(font);
+        categoryLabelRight.setTextFill(Paint.valueOf("#ffffff"));
+    }
+    
+    
 
     public void setBackground(String bgColor, 
             double topLeft, 
