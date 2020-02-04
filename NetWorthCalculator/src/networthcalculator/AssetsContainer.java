@@ -22,6 +22,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
     public AssetsContainer() {
         
+        this.setId("AssetsContainer");
         this.setContent(assetsGridPane);
         setColumnConstraints();
         setGridProperties();
@@ -36,7 +37,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         column1.setHgrow(Priority.ALWAYS);
         column1.setHalignment(HPos.CENTER);
         assetsGridPane.getColumnConstraints().addAll(column1);
-        System.out.println("Added column constraints to grid pane...");
+        System.out.println("Added column constraints to AssetsContainer grid...");
     }
     
     private void setGridProperties() {
@@ -62,5 +63,6 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         this.fitToWidthProperty().set(true);
         this.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
         this.setPannable(true);
+        
     }
 }

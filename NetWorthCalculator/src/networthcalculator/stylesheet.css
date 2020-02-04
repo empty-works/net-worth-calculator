@@ -10,6 +10,11 @@
     -fx-main-font-family: 'arial';
 }
 
+#AssetsContainer {
+    
+    -fx-background-color: transparent;
+}
+
 #CategoryLabel {
     
     -fx-padding: 0 10 5 10;
