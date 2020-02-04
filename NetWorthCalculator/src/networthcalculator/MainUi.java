@@ -32,7 +32,6 @@ public class MainUi extends javafx.scene.layout.GridPane {
     private void addLabels() {
         
         // ASSETS
-        //this.add(new CategoryLabel("ASSETS", "CURRENT VALUE"), 0, 0);
         this.add(new AssetsContainer(), 0, 1);
     }
 }

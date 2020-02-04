@@ -4,7 +4,6 @@ package networthcalculator.labels;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import networthcalculator.Constants;
 
 /**
  *
@@ -21,7 +20,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         subcategoryLabel.setText(text);
         this.setId("SubCategoryLabel");
         setLabelProperties();
-        this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
     // Check stylesheet for stylings.

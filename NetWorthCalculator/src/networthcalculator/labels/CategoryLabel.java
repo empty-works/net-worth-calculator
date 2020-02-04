@@ -7,7 +7,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import networthcalculator.Constants;
 
 /**
  *
@@ -29,7 +28,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         this.getChildren().add(hbox);
-        this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
     private void setHBox() {

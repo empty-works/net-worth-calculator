@@ -32,7 +32,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setLabelProperties();
         setTextField();
         this.getChildren().add(hbox);
-        this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
     private void setHBox() {
