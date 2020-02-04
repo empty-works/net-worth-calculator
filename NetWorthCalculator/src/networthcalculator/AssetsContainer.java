@@ -9,6 +9,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
+import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 
@@ -28,6 +29,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         setGridProperties();
         addLabels();
         setScrollPaneProperties();
+        this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
     private void setColumnConstraints() {
@@ -48,6 +50,7 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
     
     private void addLabels() {
         
+        assetsGridPane.add(new CategoryLabel("ASSETS", "CURRENT VALUE"), 0, 0);
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 2);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 3);
