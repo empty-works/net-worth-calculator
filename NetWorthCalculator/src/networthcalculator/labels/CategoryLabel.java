@@ -29,12 +29,12 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private String text1, text2;
     final private int PREF_HEIGHT = 65;
     final private int FONT_SIZE = 18;
+    final private String FONT_COLOR = "#ffffff";
     
     public CategoryLabel(String text1, String text2) {
         
         this.text1 = text1;
         this.text2 = text2;
-        this.setId("CategoryLabel");
         setHBox();
         setLabelProperties();
         setFont();
@@ -44,7 +44,6 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private void setHBox() {
         
-        hbox.setId("CategoryLabelHBox");
         ObservableList list = hbox.getChildren();
         list.addAll(categoryLabelLeft, categoryLabelRight);
         AnchorPane.setLeftAnchor(hbox, 0.0);
@@ -68,10 +67,10 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         
         Font font = Font.font("arial", FontWeight.BOLD, FONT_SIZE);
         categoryLabelLeft.setFont(font);
-        categoryLabelLeft.setTextFill(Paint.valueOf("#ffffff"));
+        categoryLabelLeft.setTextFill(Paint.valueOf(FONT_COLOR));
         
         categoryLabelRight.setFont(font);
-        categoryLabelRight.setTextFill(Paint.valueOf("#ffffff"));
+        categoryLabelRight.setTextFill(Paint.valueOf(FONT_COLOR));
     }
     
     private void setPadding() {

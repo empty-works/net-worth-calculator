@@ -15,23 +15,6 @@
     -fx-background-color: transparent;
 }
 
-#CategoryLabel {
-    
-    -fx-padding: 0 10 5 10;
-}
-
-
-
-#CategoryLabel.label {
-    
-    -fx-font-size: 18;
-    -fx-text-fill: white;
-    -fx-font-family: -fx-main-font-family;
-    -fx-font-weight: bold;
-    -fx-padding: 15;
-}
-
-
 
 #SubCategoryLabel {
     
