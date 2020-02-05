@@ -53,7 +53,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         dollarSignLabel.setId("AmountDollarSignLabel");
         dollarSignLabel.setText(Constants.CURRENCY);
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
-        dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty());
+        dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty().divide(5)); // w * 1/5
     }
     
     private void setTextField() {

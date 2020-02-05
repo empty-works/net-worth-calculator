@@ -10,7 +10,6 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.Constants;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
@@ -34,7 +33,6 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         setScrollPaneProperties();
         addLabels();
         addMainComponentsToVBox();
-        //this.maxWidth(Constants.MAX_WIDTH);
         this.setPadding(new Insets(10, 0, 0, 0));
     }
     
