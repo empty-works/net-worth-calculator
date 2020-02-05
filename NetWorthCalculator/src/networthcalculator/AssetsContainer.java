@@ -5,6 +5,8 @@ package networthcalculator;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -17,20 +19,19 @@ import networthcalculator.labels.SubTotalAmountLabel;
  *
  * @author MP
  */
-public class AssetsContainer extends javafx.scene.control.ScrollPane {
+public class AssetsContainer extends javafx.scene.layout.VBox {
     
+    private ScrollPane scrollPane = new ScrollPane();
     private GridPane assetsGridPane = new GridPane();
     private CategoryLabel categoryTitle = new CategoryLabel("ASSETS", "CURRENT VALUE");
     
     public AssetsContainer() {
         
-        this.setId("AssetsContainer");
-        this.setContent(assetsGridPane);
         setColors();
         setColumnConstraints();
         setGridProperties();
-        addLabels();
         setScrollPaneProperties();
+        addLabels();
         this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
@@ -55,6 +56,15 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         assetsGridPane.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
+    private void setScrollPaneProperties() {
+        
+        scrollPane.setId("AssetsContainer");
+        scrollPane.setContent(assetsGridPane);
+        scrollPane.fitToWidthProperty().set(true);
+        scrollPane.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
+        scrollPane.setPannable(true);
+    }
+    
     private void addLabels() {
         
         assetsGridPane.add(categoryTitle, 0, 0);
@@ -68,10 +78,5 @@ public class AssetsContainer extends javafx.scene.control.ScrollPane {
         assetsGridPane.add(new SubTotalAmountLabel("Total Cash"), 0, 8);
     }
     
-    private void setScrollPaneProperties() {
-        
-        this.fitToWidthProperty().set(true);
-        this.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
-        this.setPannable(true);
-    }
+    
 }
