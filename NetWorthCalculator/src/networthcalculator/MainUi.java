@@ -2,6 +2,8 @@
  */
 package networthcalculator;
 
+import networthcalculator.containers.LiabilitiesContainer;
+import networthcalculator.containers.AssetsContainer;
 import javafx.geometry.HPos;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Priority;
