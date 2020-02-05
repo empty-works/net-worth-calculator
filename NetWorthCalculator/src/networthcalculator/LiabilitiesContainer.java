@@ -21,6 +21,5 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         
         this.maxWidth(Constants.MAX_WIDTH);
         this.setPadding(new Insets(10, 0, 0, 0));
-        
     }
 }
