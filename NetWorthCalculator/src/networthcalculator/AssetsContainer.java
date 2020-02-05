@@ -34,6 +34,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         addLabels();
         addMainComponentsToVBox();
         this.setMaxWidth(Constants.MAX_WIDTH);
+        this.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
     private void setColors() {
@@ -54,7 +55,6 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private void setGridProperties() {
         
         assetsGridPane.setAlignment(Pos.CENTER);
-        assetsGridPane.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
     private void setScrollPaneProperties() {
