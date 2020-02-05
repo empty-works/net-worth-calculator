@@ -27,7 +27,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     public AssetsContainer() {
         
-        setColors();
+        setCategoryTitleProperties();
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();
@@ -37,7 +37,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         this.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
-    private void setColors() {
+    private void setCategoryTitleProperties() {
         
         categoryTitle.setBackground("#00ccff", 50.0, 5.5, 5.5, 5.5);
     }
@@ -67,8 +67,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     }
     
     private void addLabels() {
-        
-        
+
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 2);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 3);
