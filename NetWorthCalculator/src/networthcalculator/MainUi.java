@@ -30,16 +30,20 @@ public class MainUi extends javafx.scene.layout.GridPane {
         column2.setPercentWidth(100);
         column2.setHgrow(Priority.ALWAYS);
         column2.setHalignment(HPos.CENTER);
-        this.getColumnConstraints().addAll(column1, column2);
+        //this.getColumnConstraints().addAll(column1, column2);
         System.out.println("Added column constraints to grid pane...");
     }
     
     private void addLabels() {
         
         // ASSETS
-        this.add(new AssetsContainer(), 0, 0);
+        AssetsContainer ac = new AssetsContainer();
+        ac.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
+        this.add(ac, 0, 0);
         
         // LIABILITIES
-        this.add(new LiabilitiesContainer(), 1, 0);
+        LiabilitiesContainer lc = new LiabilitiesContainer();
+        lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
+        this.add(lc, 1, 0);
     }
 }

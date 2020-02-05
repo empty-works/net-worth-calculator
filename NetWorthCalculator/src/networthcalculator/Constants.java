@@ -8,7 +8,7 @@ package networthcalculator;
  */
 public class Constants {
     
-    final public static int MAX_WIDTH = 550;
+    final public static int MAX_WIDTH = 650;
     
     final public static int SIDE_PADDING_FOR_TEXT = 20;
     

@@ -34,7 +34,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         setScrollPaneProperties();
         addLabels();
         addMainComponentsToVBox();
-        this.setMaxWidth(Constants.MAX_WIDTH);
+        //this.setMaxWidth(Constants.MAX_WIDTH);
         this.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     

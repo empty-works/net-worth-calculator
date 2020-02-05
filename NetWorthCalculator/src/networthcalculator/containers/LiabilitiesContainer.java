@@ -6,6 +6,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -33,13 +34,13 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         setScrollPaneProperties();
         addLabels();
         addMainComponentsToVBox();
-        this.maxWidth(Constants.MAX_WIDTH);
+        //this.maxWidth(Constants.MAX_WIDTH);
         this.setPadding(new Insets(10, 0, 0, 0));
     }
     
     private void setCategoryTitleProperties() {
         
-        categoryTitle.setBackground("#990000", 5.5, 50.0, 5.5, 5.5);
+        categoryTitle.setBackground("#ff3333", 5.5, 50.0, 5.5, 5.5);
     }
     
     private void setColumnConstraints() {
@@ -62,7 +63,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         scrollPane.setId("LiabilitiesContainer");
         scrollPane.setContent(liabilitiesGridPane);
         scrollPane.fitToWidthProperty().set(true);
-        scrollPane.hbarPolicyProperty().setValue(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.hbarPolicyProperty().setValue(ScrollBarPolicy.NEVER);
         scrollPane.setPannable(true);
     }
     
