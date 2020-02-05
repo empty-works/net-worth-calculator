@@ -32,6 +32,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         setGridProperties();
         setScrollPaneProperties();
         addLabels();
+        addMainComponentsToVBox();
         this.setMaxWidth(Constants.MAX_WIDTH);
     }
     
@@ -67,7 +68,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
         
-        assetsGridPane.add(categoryTitle, 0, 0);
+        
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 1);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 2);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 3);
@@ -78,5 +79,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         assetsGridPane.add(new SubTotalAmountLabel("Total Cash"), 0, 8);
     }
     
-    
+    private void addMainComponentsToVBox() {
+        
+        this.getChildren().addAll(categoryTitle, scrollPane);
+    }
 }
