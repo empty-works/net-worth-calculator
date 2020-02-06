@@ -2,8 +2,13 @@
  */
 package networthcalculator.labels;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Paint;
 
 /**
  *
@@ -29,5 +34,18 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         subcategoryLabel.setPrefHeight(PREF_HEIGHT);
         AnchorPane.setRightAnchor(subcategoryLabel, 0.0);
         AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
+    }
+    
+    public void setBackground(String bgColor, 
+            double topLeft, 
+            double topRight, 
+            double bottomRight, 
+            double bottomLeft) {
+        
+        BackgroundFill bgf = new BackgroundFill(
+                Paint.valueOf(bgColor), 
+                new CornerRadii(topLeft, topRight, bottomRight, bottomLeft, false), 
+                new Insets(0.5));
+        subcategoryLabel.setBackground(new Background(bgf));
     }
 }

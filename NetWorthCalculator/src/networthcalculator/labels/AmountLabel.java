@@ -4,13 +4,18 @@ package networthcalculator.labels;
 
 import java.util.function.UnaryOperator;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Paint;
 import javafx.util.converter.IntegerStringConverter;
 import networthcalculator.Constants;
 
@@ -78,5 +83,18 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         };
         
         amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
+    }
+    
+    public void setBackground(String bgColor, 
+            double topLeft, 
+            double topRight, 
+            double bottomRight, 
+            double bottomLeft) {
+        
+        BackgroundFill bgf = new BackgroundFill(
+                Paint.valueOf(bgColor), 
+                new CornerRadii(topLeft, topRight, bottomRight, bottomLeft, false), 
+                new Insets(0.5));
+        hbox.setBackground(new Background(bgf));
     }
 }
