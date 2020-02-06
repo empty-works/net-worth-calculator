@@ -9,7 +9,7 @@ import networthcalculator.containers.AssetsContainer;
  *
  * @author MP
  */
-public class MainUi extends javafx.scene.layout.GridPane {
+public class MainUi extends javafx.scene.layout.BorderPane {
     
     public MainUi() {
         
@@ -21,11 +21,11 @@ public class MainUi extends javafx.scene.layout.GridPane {
         // ASSETS
         AssetsContainer ac = new AssetsContainer();
         ac.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
-        this.add(ac, 0, 0);
+        this.setLeft(ac);
         
         // LIABILITIES
         LiabilitiesContainer lc = new LiabilitiesContainer();
         lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
-        this.add(lc, 1, 0);
+        this.setRight(lc);
     }
 }
