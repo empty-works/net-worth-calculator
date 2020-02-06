@@ -25,6 +25,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         
         subcategoryLabel.setText(text);
         this.setId("SubCategoryLabel");
+        //TODO: fix color problem
         setBackground(Constants.DEFAULT_LABEL_GRAY_COLOR); // Default color
         setLabelProperties();
     }
