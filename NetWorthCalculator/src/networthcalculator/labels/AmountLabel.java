@@ -2,12 +2,16 @@
  */
 package networthcalculator.labels;
 
+import java.util.function.UnaryOperator;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
+import javafx.scene.control.TextFormatter.Change;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.util.converter.IntegerStringConverter;
 import networthcalculator.Constants;
 
 /**
@@ -61,5 +65,18 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setId("AmountLabelTextField");
         amountField.setAlignment(Pos.CENTER_RIGHT);
         amountField.prefWidthProperty().bind(hbox.widthProperty());
+        
+        //TODO: make better filter
+        UnaryOperator<Change> integerFilter = change -> {
+          
+            String input = change.getText();
+            if(input.matches("[0-9]*")) {
+                
+                return change;
+            }
+            return null;
+        };
+        
+        amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
     }
 }
