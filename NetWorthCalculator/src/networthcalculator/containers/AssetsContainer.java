@@ -68,7 +68,9 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
-        assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 0);
+        SubCategoryLabel cashEquivSubCat = new SubCategoryLabel("Cash and Cash Equivalents");
+        cashEquivSubCat.setBackground("#404040");
+        assetsGridPane.add(cashEquivSubCat, 0, 0);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 1);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 2);
         assetsGridPane.add(new AmountLabel("Money market accounts"), 0, 3);

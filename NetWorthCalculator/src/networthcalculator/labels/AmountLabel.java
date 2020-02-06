@@ -43,6 +43,18 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.getChildren().add(hbox);
     }
     
+    public AmountLabel(String text, String bgColor) {
+        
+        this.text = text;
+        amountLabel.setText(text);
+        this.setId("AmountLabel");
+        setHBox();
+        setLabelProperties();
+        setTextField();
+        setBackground(bgColor);
+        this.getChildren().add(hbox);
+    }
+    
     private void setHBox() {
         
         hbox.setId("AmountLabelHBox");
@@ -94,6 +106,15 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         BackgroundFill bgf = new BackgroundFill(
                 Paint.valueOf(bgColor), 
                 new CornerRadii(topLeft, topRight, bottomRight, bottomLeft, false), 
+                new Insets(0.5));
+        hbox.setBackground(new Background(bgf));
+    }
+    
+    public void setBackground(String bgColor) {
+        
+        BackgroundFill bgf = new BackgroundFill(
+                Paint.valueOf(bgColor), 
+                new CornerRadii(5.5, false), 
                 new Insets(0.5));
         hbox.setBackground(new Background(bgf));
     }
