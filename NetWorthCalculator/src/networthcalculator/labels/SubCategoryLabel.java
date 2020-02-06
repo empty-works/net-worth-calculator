@@ -24,6 +24,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         
         subcategoryLabel.setText(text);
         this.setId("SubCategoryLabel");
+        setBackground("lightgray"); // Default color
         setLabelProperties();
     }
     
@@ -40,6 +41,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
 
         this.getChildren().add(subcategoryLabel);
         subcategoryLabel.setPrefHeight(PREF_HEIGHT);
+        subcategoryLabel.setPadding(new Insets(15));
         AnchorPane.setRightAnchor(subcategoryLabel, 0.0);
         AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
     }

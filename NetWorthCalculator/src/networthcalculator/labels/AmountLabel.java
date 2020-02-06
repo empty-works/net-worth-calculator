@@ -40,6 +40,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setTextField();
+        setBackground("lightgray"); // Default color
         this.getChildren().add(hbox);
     }
     

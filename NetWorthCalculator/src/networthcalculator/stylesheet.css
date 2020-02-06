@@ -31,13 +31,14 @@
     -fx-padding: 0 10 5 10;
 }
 
+/*
 #SubCategoryLabel .label {
     
     -fx-background-radius: 5.5;
     -fx-background-color: 'lightgray';
     -fx-padding: 15;
 }
-
+*/
 
 
 #AmountLabel {
@@ -45,11 +46,13 @@
     -fx-padding: 0 10 5 10;
 }
 
+/*
 #AmountLabelHBox {
     
     -fx-background-color: 'lightgray';
     -fx-background-radius: 5.5;
 }
+*/
 
 #AmountLabel .label {
     
