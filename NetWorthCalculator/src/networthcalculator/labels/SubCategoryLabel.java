@@ -9,6 +9,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
+import networthcalculator.Constants;
 
 /**
  *
@@ -24,7 +25,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         
         subcategoryLabel.setText(text);
         this.setId("SubCategoryLabel");
-        setBackground("lightgray"); // Default color
+        setBackground(Constants.DEFAULT_LABEL_GRAY_COLOR); // Default color
         setLabelProperties();
     }
     

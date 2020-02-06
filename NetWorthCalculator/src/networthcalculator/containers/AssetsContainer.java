@@ -10,6 +10,7 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import networthcalculator.Constants;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
@@ -68,6 +69,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
+        // Cash and Cash Equivalents - default color
         assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 0);
         assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 1);
         assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 2);
@@ -76,6 +78,15 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         assetsGridPane.add(new AmountLabel("CD's"), 0, 5);
         assetsGridPane.add(new AmountLabel("Cash value of life insurance"), 0, 6);
         assetsGridPane.add(new SubTotalAmountLabel("Total Cash"), 0, 7);
+        
+        // Invested Assets
+        assetsGridPane.add(new SubCategoryLabel("Invested Assets", Constants.DARKER_GRAY_COLOR), 0, 8);
+        assetsGridPane.add(new AmountLabel("Taxable account - Brokerage", Constants.DARKER_GRAY_COLOR), 0, 9);
+        assetsGridPane.add(new AmountLabel("Taxable account - Other", Constants.DARKER_GRAY_COLOR), 0, 10);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - IRA", Constants.DARKER_GRAY_COLOR), 0, 11);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - Roth IRA", Constants.DARKER_GRAY_COLOR), 0, 12);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - 401(k) or 403(b)", Constants.DARKER_GRAY_COLOR), 0, 13);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - SEP-IRA", Constants.DARKER_GRAY_COLOR), 0, 14);
     }
     
     private void addMainComponentsToVBox() {

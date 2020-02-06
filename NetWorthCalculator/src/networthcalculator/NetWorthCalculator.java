@@ -5,7 +5,7 @@ package networthcalculator;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,7 +21,7 @@ public class NetWorthCalculator extends Application {
     public void start(Stage primaryStage) {
         
         // Set root.
-        GridPane pane = new MainUi();
+        BorderPane pane = new MainUi();
         // Set scene.
         scene = new Scene(pane);
         URL stylesheetURL = getClass().getResource("stylesheet.css");

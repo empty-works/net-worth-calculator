@@ -40,7 +40,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setTextField();
-        setBackground("lightgray"); // Default color
+        setBackground(Constants.DEFAULT_LABEL_GRAY_COLOR); // Default color
         this.getChildren().add(hbox);
     }
     
@@ -82,7 +82,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         amountField.setId("AmountLabelTextField");
         amountField.setAlignment(Pos.CENTER_RIGHT);
-        amountField.prefWidthProperty().bind(hbox.widthProperty());
+        amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.5));
         
         //TODO: make better filter
         UnaryOperator<Change> integerFilter = change -> {
