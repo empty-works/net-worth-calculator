@@ -32,19 +32,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private String text;
     final private int PREF_HEIGHT = 25;
     
-    public AmountLabel(String text) {
-        
-        this.text = text;
-        amountLabel.setText(text);
-        this.setId("AmountLabel");
-        setHBox();
-        setLabelProperties();
-        setTextField();
-        //TODO: fix color problem
-        setBackground(Constants.DEFAULT_LABEL_GRAY_COLOR); // Default color
-        this.getChildren().add(hbox);
-    }
-    
     public AmountLabel(String text, String bgColor) {
         
         this.text = text;

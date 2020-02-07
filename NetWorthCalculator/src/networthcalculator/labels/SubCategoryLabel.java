@@ -21,15 +21,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
             
     final private int PREF_HEIGHT = 25; // Height will not go below this due to padding.
     
-    public SubCategoryLabel(String text) {
-        
-        subcategoryLabel.setText(text);
-        this.setId("SubCategoryLabel");
-        //TODO: fix color problem
-        setBackground(Constants.DEFAULT_LABEL_GRAY_COLOR); // Default color
-        setLabelProperties();
-    }
-    
     public SubCategoryLabel(String text, String bgColor) {
         
         subcategoryLabel.setText(text);

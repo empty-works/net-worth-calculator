@@ -81,7 +81,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         
         //TODO: create another type of amount label that includes a subheader.
         // Invested Assets
-        assetsGridPane.add(new SubCategoryLabel("Invested Assets", "#ffffff"), 0, 8);
+        assetsGridPane.add(new SubCategoryLabel("Invested Assets", DARKER_GRAY_COLOR), 0, 8);
         assetsGridPane.add(new AmountLabel("Taxable account - Brokerage", DARKER_GRAY_COLOR), 0, 9);
         assetsGridPane.add(new AmountLabel("Taxable account - Other", DARKER_GRAY_COLOR), 0, 10);
         assetsGridPane.add(new AmountLabel("Retirement accounts - IRA", DARKER_GRAY_COLOR), 0, 11);

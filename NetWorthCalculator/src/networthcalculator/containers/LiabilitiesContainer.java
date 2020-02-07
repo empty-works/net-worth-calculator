@@ -24,6 +24,8 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     private ScrollPane scrollPane = new ScrollPane();
     private GridPane liabilitiesGridPane = new GridPane();
     private CategoryLabel categoryTitle = new CategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
+    final private String DEFAULT_LABEL_GRAY_COLOR = "#e6e6e6";
+    final private String DARKER_GRAY_COLOR = "#a6a6a6";
     
     public LiabilitiesContainer() {
         
@@ -67,14 +69,14 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
-        liabilitiesGridPane.add(new SubCategoryLabel("Current"), 0, 0);
-        liabilitiesGridPane.add(new AmountLabel("Credit card balances"), 0, 1);
-        liabilitiesGridPane.add(new AmountLabel("Estimated income tax owed"), 0, 2);
-        liabilitiesGridPane.add(new AmountLabel("Other outstanding bills"), 0, 3);
-        liabilitiesGridPane.add(new SubCategoryLabel("Long-Term"), 0, 4);
-        liabilitiesGridPane.add(new AmountLabel("Home mortgage"), 0, 5);
-        liabilitiesGridPane.add(new AmountLabel("Home equity loan"), 0, 6);
-        liabilitiesGridPane.add(new AmountLabel("Mortgages on rental properties"), 0, 7);
+        liabilitiesGridPane.add(new SubCategoryLabel("Current", DEFAULT_LABEL_GRAY_COLOR), 0, 0);
+        liabilitiesGridPane.add(new AmountLabel("Credit card balances", DEFAULT_LABEL_GRAY_COLOR), 0, 1);
+        liabilitiesGridPane.add(new AmountLabel("Estimated income tax owed", DEFAULT_LABEL_GRAY_COLOR), 0, 2);
+        liabilitiesGridPane.add(new AmountLabel("Other outstanding bills", DEFAULT_LABEL_GRAY_COLOR), 0, 3);
+        liabilitiesGridPane.add(new SubCategoryLabel("Long-Term", DEFAULT_LABEL_GRAY_COLOR), 0, 4);
+        liabilitiesGridPane.add(new AmountLabel("Home mortgage", DEFAULT_LABEL_GRAY_COLOR), 0, 5);
+        liabilitiesGridPane.add(new AmountLabel("Home equity loan", DEFAULT_LABEL_GRAY_COLOR), 0, 6);
+        liabilitiesGridPane.add(new AmountLabel("Mortgages on rental properties", DEFAULT_LABEL_GRAY_COLOR), 0, 7);
     }
     
     private void addMainComponentsToVBox() {
