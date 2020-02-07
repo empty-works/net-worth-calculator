@@ -18,6 +18,4 @@ public class BottomNetWorthContainer extends javafx.scene.layout.HBox {
         
         
     }
-    
-    
 }
