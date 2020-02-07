@@ -10,7 +10,6 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.Constants;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
@@ -25,10 +24,12 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private ScrollPane scrollPane = new ScrollPane();
     private GridPane assetsGridPane = new GridPane();
     private CategoryLabel categoryTitle = new CategoryLabel("ASSETS", "CURRENT VALUE");
+    final private String DEFAULT_LABEL_GRAY_COLOR = "#e6e6e6";
+    final private String DARKER_GRAY_COLOR = "#a6a6a6";
     
     public AssetsContainer() {
         
-        setColorProperties();
+        setCategoryTitleProperties();
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();
@@ -37,10 +38,9 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         this.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
     }
     
-    private void setColorProperties() {
+    private void setCategoryTitleProperties() {
         
         categoryTitle.setBackground("#00ccff", 50.0, 5.5, 5.5, 5.5);
-        
     }
     
     private void setColumnConstraints() {
@@ -70,43 +70,43 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private void addLabels() {
 
         // Cash and Cash Equivalents - default color
-        assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents"), 0, 0);
-        assetsGridPane.add(new AmountLabel("Checking accounts"), 0, 1);
-        assetsGridPane.add(new AmountLabel("Savings accounts"), 0, 2);
-        assetsGridPane.add(new AmountLabel("Money market accounts"), 0, 3);
-        assetsGridPane.add(new AmountLabel("Savings bonds"), 0, 4);
-        assetsGridPane.add(new AmountLabel("CD's"), 0, 5);
-        assetsGridPane.add(new AmountLabel("Cash value of life insurance"), 0, 6);
+        assetsGridPane.add(new SubCategoryLabel("Cash and Cash Equivalents", DEFAULT_LABEL_GRAY_COLOR), 0, 0);
+        assetsGridPane.add(new AmountLabel("Checking accounts", DEFAULT_LABEL_GRAY_COLOR), 0, 1);
+        assetsGridPane.add(new AmountLabel("Savings accounts", DEFAULT_LABEL_GRAY_COLOR), 0, 2);
+        assetsGridPane.add(new AmountLabel("Money market accounts", DEFAULT_LABEL_GRAY_COLOR), 0, 3);
+        assetsGridPane.add(new AmountLabel("Savings bonds", DEFAULT_LABEL_GRAY_COLOR), 0, 4);
+        assetsGridPane.add(new AmountLabel("CD's", DEFAULT_LABEL_GRAY_COLOR), 0, 5);
+        assetsGridPane.add(new AmountLabel("Cash value of life insurance", DEFAULT_LABEL_GRAY_COLOR), 0, 6);
         assetsGridPane.add(new SubTotalAmountLabel("Total Cash"), 0, 7);
         
         //TODO: create another type of amount label that includes a subheader.
         // Invested Assets
-        assetsGridPane.add(new SubCategoryLabel("Invested Assets", Constants.DARKER_GRAY_COLOR), 0, 8);
-        assetsGridPane.add(new AmountLabel("Taxable account - Brokerage", Constants.DARKER_GRAY_COLOR), 0, 9);
-        assetsGridPane.add(new AmountLabel("Taxable account - Other", Constants.DARKER_GRAY_COLOR), 0, 10);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - IRA", Constants.DARKER_GRAY_COLOR), 0, 11);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - Roth IRA", Constants.DARKER_GRAY_COLOR), 0, 12);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - 401(k) or 403(b)", Constants.DARKER_GRAY_COLOR), 0, 13);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - SEP-IRA", Constants.DARKER_GRAY_COLOR), 0, 14);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - Pension (vested benefit)", Constants.DARKER_GRAY_COLOR), 0, 15);
-        assetsGridPane.add(new AmountLabel("Retirement accounts - Annuity (accumulated value)", Constants.DARKER_GRAY_COLOR), 0, 16);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - Real estate", Constants.DARKER_GRAY_COLOR), 0, 17);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - Sole propietorship", Constants.DARKER_GRAY_COLOR), 0, 18);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - Partnership", Constants.DARKER_GRAY_COLOR), 0, 19);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - C Corporation", Constants.DARKER_GRAY_COLOR), 0, 20);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - S Corporation", Constants.DARKER_GRAY_COLOR), 0, 21);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - Limited liability company", Constants.DARKER_GRAY_COLOR), 0, 22);
-        assetsGridPane.add(new AmountLabel("Business ownership interests - Other", Constants.DARKER_GRAY_COLOR), 0, 23);
+        assetsGridPane.add(new SubCategoryLabel("Invested Assets", "#ffffff"), 0, 8);
+        assetsGridPane.add(new AmountLabel("Taxable account - Brokerage", DARKER_GRAY_COLOR), 0, 9);
+        assetsGridPane.add(new AmountLabel("Taxable account - Other", DARKER_GRAY_COLOR), 0, 10);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - IRA", DARKER_GRAY_COLOR), 0, 11);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - Roth IRA", DARKER_GRAY_COLOR), 0, 12);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - 401(k) or 403(b)", DARKER_GRAY_COLOR), 0, 13);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - SEP-IRA", DARKER_GRAY_COLOR), 0, 14);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - Pension (vested benefit)", DARKER_GRAY_COLOR), 0, 15);
+        assetsGridPane.add(new AmountLabel("Retirement accounts - Annuity (accumulated value)", DARKER_GRAY_COLOR), 0, 16);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - Real estate", DARKER_GRAY_COLOR), 0, 17);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - Sole propietorship", DARKER_GRAY_COLOR), 0, 18);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - Partnership", DARKER_GRAY_COLOR), 0, 19);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - C Corporation", DARKER_GRAY_COLOR), 0, 20);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - S Corporation", DARKER_GRAY_COLOR), 0, 21);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - Limited liability company", DARKER_GRAY_COLOR), 0, 22);
+        assetsGridPane.add(new AmountLabel("Business ownership interests - Other", DARKER_GRAY_COLOR), 0, 23);
         
         // Use Assets
-        assetsGridPane.add(new SubCategoryLabel("Use Assets"), 0, 24);
-        assetsGridPane.add(new AmountLabel("Principal home"), 0, 25);
-        assetsGridPane.add(new AmountLabel("Vacation home"), 0, 26);
-        assetsGridPane.add(new AmountLabel("Cars, trucks, boats"), 0, 27);
-        assetsGridPane.add(new AmountLabel("Home furnishings"), 0, 28);
-        assetsGridPane.add(new AmountLabel("Art, antiques, coins, collectibles"), 0, 29);
-        assetsGridPane.add(new AmountLabel("Jewelry, furs"), 0, 30);
-        assetsGridPane.add(new AmountLabel("Other"), 0, 31);
+        assetsGridPane.add(new SubCategoryLabel("Use Assets", DEFAULT_LABEL_GRAY_COLOR), 0, 24);
+        assetsGridPane.add(new AmountLabel("Principal home", DEFAULT_LABEL_GRAY_COLOR), 0, 25);
+        assetsGridPane.add(new AmountLabel("Vacation home", DEFAULT_LABEL_GRAY_COLOR), 0, 26);
+        assetsGridPane.add(new AmountLabel("Cars, trucks, boats", DEFAULT_LABEL_GRAY_COLOR), 0, 27);
+        assetsGridPane.add(new AmountLabel("Home furnishings", DEFAULT_LABEL_GRAY_COLOR), 0, 28);
+        assetsGridPane.add(new AmountLabel("Art, antiques, coins, collectibles", DEFAULT_LABEL_GRAY_COLOR), 0, 29);
+        assetsGridPane.add(new AmountLabel("Jewelry, furs", DEFAULT_LABEL_GRAY_COLOR), 0, 30);
+        assetsGridPane.add(new AmountLabel("Other", DEFAULT_LABEL_GRAY_COLOR), 0, 31);
     }
     
     private void addMainComponentsToVBox() {
