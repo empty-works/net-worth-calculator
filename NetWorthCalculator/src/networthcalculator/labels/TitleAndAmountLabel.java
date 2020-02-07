@@ -40,10 +40,21 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
         rightPlaceholder.setPrefHeight(PREF_HEIGHT);
         rightPlaceholder.prefWidthProperty().bind(hbox.widthProperty());
         
-        hbox.setId("AmountLabelHBox");
         ObservableList list = hbox.getChildren();
         list.addAll(titleLabel, middlePlaceholder, rightPlaceholder);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
+        
+        this.getChildren().add(hbox);
+    }
+    
+    public void addAmountLabel(AmountLabel label) {
+        
+        this.getChildren().add(label);
+    }
+    
+    public void addAllAmountLabels(AmountLabel...labels) {
+        
+        this.getChildren().addAll(labels);
     }
 }
