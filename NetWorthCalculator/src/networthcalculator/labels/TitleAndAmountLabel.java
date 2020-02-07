@@ -30,6 +30,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
         
         this.title = title;
         this.bgColor = bgColor;
+        setBackground(bgColor);
         setTitle();
     }
     
@@ -37,7 +38,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
 
         titleLabel.setText(title);
         titleLabel.setPrefHeight(PREF_HEIGHT);
-        setBackground(bgColor, titleLabel);
+        
         titleLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         middlePlaceholder.setPrefHeight(PREF_HEIGHT);
@@ -56,6 +57,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
     
     public void addAmountLabel(AmountLabel label) {
         
+        
         this.getChildren().add(label);
     }
     
@@ -63,13 +65,13 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
         
         this.getChildren().addAll(labels);
     }
-    
-    public void setBackground(String bgColor, Label label) {
+
+    public void setBackground(String bgColor) {
         
         BackgroundFill bgf = new BackgroundFill(
                 Paint.valueOf(bgColor), 
                 new CornerRadii(5.5, false), 
                 new Insets(0.5));
-        label.setBackground(new Background(bgf));
+        this.setBackground(new Background(bgf));
     }
 }
