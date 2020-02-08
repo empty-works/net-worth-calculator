@@ -80,4 +80,7 @@
 #TitleAndAmountLabel {
     
     -fx-padding: 0 10 5 10;
+    -fx-font-size: 15;
+    -fx-text-fill: black;
+    -fx-font-family: -fx-main-font-family;
 }
