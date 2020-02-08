@@ -2,9 +2,12 @@
  */
 package networthcalculator.containers;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
@@ -69,6 +72,29 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
+        List<Node> labelList = new ArrayList<>();
+        
+        labelList.add(new SubCategoryLabel("Current", DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Credit card balances", DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Estimated income tax owed", DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Other outstanding bills", DEFAULT_LABEL_GRAY_COLOR));
+        
+        labelList.add(new SubCategoryLabel("Long-Term", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Home mortgage", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Home equity loan", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Mortgages on rental properties", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Car loans", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Student loans", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Life insurance policy loans", DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Other long-term debt", DARKER_GRAY_COLOR));
+        
+        int xPos = 0;
+        for(int i = 0; i < labelList.size(); i++) {
+            
+            liabilitiesGridPane.add(labelList.get(i), xPos, i);
+        }
+        
+        /*
         liabilitiesGridPane.add(new SubCategoryLabel("Current", DEFAULT_LABEL_GRAY_COLOR), 0, 0);
         liabilitiesGridPane.add(new AmountLabel("Credit card balances", DEFAULT_LABEL_GRAY_COLOR), 0, 1);
         liabilitiesGridPane.add(new AmountLabel("Estimated income tax owed", DEFAULT_LABEL_GRAY_COLOR), 0, 2);
@@ -77,6 +103,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         liabilitiesGridPane.add(new AmountLabel("Home mortgage", DEFAULT_LABEL_GRAY_COLOR), 0, 5);
         liabilitiesGridPane.add(new AmountLabel("Home equity loan", DEFAULT_LABEL_GRAY_COLOR), 0, 6);
         liabilitiesGridPane.add(new AmountLabel("Mortgages on rental properties", DEFAULT_LABEL_GRAY_COLOR), 0, 7);
+*/
     }
     
     private void addMainComponentsToVBox() {
