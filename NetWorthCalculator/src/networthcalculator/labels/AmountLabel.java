@@ -37,6 +37,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.text = text;
         amountLabel.setText(text);
         this.setId("AmountLabel");
+        setCustomPadding(0, 10, 5, 10); // Default padding.
         setHBox();
         setLabelProperties();
         setTextField();
@@ -84,6 +85,16 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         };
         
         amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
+    }
+    
+    public void setCustomPadding(double padding) {
+        
+        this.setPadding(new Insets(padding));
+    }
+    
+    public void setCustomPadding(double top, double right, double bottom, double left) {
+        
+        this.setPadding(new Insets(top, right, bottom, left));
     }
     
     public void setBackground(String bgColor, 

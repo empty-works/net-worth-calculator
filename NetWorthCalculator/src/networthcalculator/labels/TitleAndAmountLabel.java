@@ -4,19 +4,21 @@ package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 
 /**
  *
  * @author MP
  */
-public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
+public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
     
     private String title;
     private String bgColor;
@@ -24,14 +26,17 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
     private Label middlePlaceholder = new Label();
     private Label rightPlaceholder = new Label();
     private HBox hbox = new HBox();
+    private VBox vboxLabelCon = new VBox();
     final private int PREF_HEIGHT = 25;
     
     public TitleAndAmountLabel(String title, String bgColor) {
         
+        this.setId("TitleAndAmountLabel");
         this.title = title;
         this.bgColor = bgColor;
         setBackground(bgColor);
         setTitle();
+        this.getChildren().add(vboxLabelCon);
     }
     
     private void setTitle() {
@@ -49,21 +54,29 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
         
         ObservableList list = hbox.getChildren();
         list.addAll(titleLabel, middlePlaceholder, rightPlaceholder);
-        AnchorPane.setLeftAnchor(hbox, 0.0);
-        AnchorPane.setRightAnchor(hbox, 0.0);
+        hbox.setPrefHeight(PREF_HEIGHT);
+        AnchorPane.setLeftAnchor(vboxLabelCon, 0.0);
+        AnchorPane.setRightAnchor(vboxLabelCon, 0.0);
         
-        this.getChildren().add(hbox);
+        hbox.prefWidthProperty().bind(vboxLabelCon.widthProperty());
+        vboxLabelCon.getChildren().add(hbox);
     }
     
     public void addAmountLabel(AmountLabel label) {
         
-        
-        this.getChildren().add(label);
+        label.setCustomPadding(0);
+        label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
+        vboxLabelCon.getChildren().add(label);
     }
     
     public void addAllAmountLabels(AmountLabel...labels) {
         
-        this.getChildren().addAll(labels);
+        for(AmountLabel label : labels) {
+            
+            label.setCustomPadding(0);
+            label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
+            vboxLabelCon.getChildren().add(label);
+        }
     }
 
     public void setBackground(String bgColor) {
@@ -72,6 +85,6 @@ public class TitleAndAmountLabel extends javafx.scene.layout.VBox {
                 Paint.valueOf(bgColor), 
                 new CornerRadii(5.5, false), 
                 new Insets(0.5));
-        this.setBackground(new Background(bgf));
+        vboxLabelCon.setBackground(new Background(bgf));
     }
 }

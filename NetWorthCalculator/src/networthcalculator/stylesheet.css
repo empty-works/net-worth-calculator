@@ -31,11 +31,12 @@
     -fx-padding: 0 10 5 10;
 }
 
-
+/*
 #AmountLabel {
     
     -fx-padding: 0 10 5 10;
 }
+*/
 
 #AmountLabel .label {
     
@@ -74,4 +75,9 @@
 #SubTotalAmountLabel #SubTotalLabel {
     
     -fx-font-weight: bold;
+}
+
+#TitleAndAmountLabel {
+    
+    -fx-padding: 0 10 5 10;
 }
