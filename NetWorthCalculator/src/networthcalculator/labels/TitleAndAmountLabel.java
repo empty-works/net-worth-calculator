@@ -4,7 +4,6 @@ package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -27,7 +26,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
     private Label rightPlaceholder = new Label();
     private HBox hbox = new HBox();
     private VBox vboxLabelCon = new VBox();
-    final private int PREF_HEIGHT = 25;
+    final private int PREF_HEIGHT = 45;
     
     public TitleAndAmountLabel(String title, String bgColor) {
         
@@ -43,7 +42,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
 
         titleLabel.setText(title);
         titleLabel.setPrefHeight(PREF_HEIGHT);
-        
+        titleLabel.setPadding(new Insets(0, 0, 0, 15)); // Text left indentation
         titleLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         middlePlaceholder.setPrefHeight(PREF_HEIGHT);
