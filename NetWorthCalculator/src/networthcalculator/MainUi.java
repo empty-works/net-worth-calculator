@@ -4,6 +4,7 @@ package networthcalculator;
 
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
+import networthcalculator.containers.BottomNetWorthContainer;
 
 /**
  *
@@ -27,5 +28,9 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         LiabilitiesContainer lc = new LiabilitiesContainer();
         lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setRight(lc);
+        
+        // Bottom container amounts
+        BottomNetWorthContainer netCon = new BottomNetWorthContainer();
+        this.setBottom(netCon);
     }
 }

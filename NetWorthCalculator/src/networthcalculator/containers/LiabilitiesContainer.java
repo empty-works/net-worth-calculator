@@ -93,17 +93,6 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
             
             liabilitiesGridPane.add(labelList.get(i), xPos, i);
         }
-        
-        /*
-        liabilitiesGridPane.add(new SubCategoryLabel("Current", DEFAULT_LABEL_GRAY_COLOR), 0, 0);
-        liabilitiesGridPane.add(new AmountLabel("Credit card balances", DEFAULT_LABEL_GRAY_COLOR), 0, 1);
-        liabilitiesGridPane.add(new AmountLabel("Estimated income tax owed", DEFAULT_LABEL_GRAY_COLOR), 0, 2);
-        liabilitiesGridPane.add(new AmountLabel("Other outstanding bills", DEFAULT_LABEL_GRAY_COLOR), 0, 3);
-        liabilitiesGridPane.add(new SubCategoryLabel("Long-Term", DEFAULT_LABEL_GRAY_COLOR), 0, 4);
-        liabilitiesGridPane.add(new AmountLabel("Home mortgage", DEFAULT_LABEL_GRAY_COLOR), 0, 5);
-        liabilitiesGridPane.add(new AmountLabel("Home equity loan", DEFAULT_LABEL_GRAY_COLOR), 0, 6);
-        liabilitiesGridPane.add(new AmountLabel("Mortgages on rental properties", DEFAULT_LABEL_GRAY_COLOR), 0, 7);
-*/
     }
     
     private void addMainComponentsToVBox() {
