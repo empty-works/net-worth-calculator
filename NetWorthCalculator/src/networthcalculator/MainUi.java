@@ -31,6 +31,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         
         // Bottom container amounts
         BottomNetWorthContainer netCon = new BottomNetWorthContainer();
+        netCon.prefWidthProperty().bind(this.widthProperty());
         this.setBottom(netCon);
     }
 }
