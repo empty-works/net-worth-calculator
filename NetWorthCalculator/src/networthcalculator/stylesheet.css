@@ -57,6 +57,11 @@
 }
 
 
+#BottomNetWorthContainer .label {
+    
+    -fx-background-color: black;
+}
+
 
 #SubTotalAmountLabel {
     

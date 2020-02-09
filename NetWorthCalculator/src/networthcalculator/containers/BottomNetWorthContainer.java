@@ -17,7 +17,8 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
     
     public BottomNetWorthContainer() {
         
-        this.setPadding(new Insets(15)); // Allows for height change. Setting height directly does not work.
+        this.setId("BottomNetWorthContainer");
+        //this.setPadding(new Insets(0, 10, 0, 10)); // Allows for height change. Setting height directly does not work.
         
         setLabels();
     }
@@ -26,14 +27,17 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
         
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalAssets.setText("Total Assets:");
+        totalAssets.setPadding(new Insets(10, 0, 10, 0));
         this.add(totalAssets, 0, 0);
         
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalLiabilities.setText("Total Liabilities:");
+        totalLiabilities.setPadding(new Insets(10, 0, 10, 0));
         this.add(totalLiabilities, 1, 0);
         
         netWorth.prefWidthProperty().bind(this.widthProperty().divide(3));
         netWorth.setText("Net Worth:");
+        netWorth.setPadding(new Insets(10, 0, 10, 0));
         this.add(netWorth, 2, 0);
     }
 }
