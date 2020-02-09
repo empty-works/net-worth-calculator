@@ -7,9 +7,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
@@ -83,19 +80,14 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
                 1, 
                 Utility.SIDE_PADDING_FOR_TEXT));
     }
-
+    
     public void setBackground(String bgColor, 
             double topLeft, 
             double topRight, 
             double bottomRight, 
             double bottomLeft) {
         
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf(bgColor), 
-                new CornerRadii(topLeft, topRight, bottomRight, bottomLeft, false), 
-                new Insets(0.5));
-        categoryLabelLeft.setBackground(new Background(bgf));
-        categoryLabelRight.setBackground(new Background(bgf));
-        hbox.setBackground(new Background(bgf));
+        hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
+                "-fx-background-radius:" + String.valueOf(topLeft) + " " + String.valueOf(topRight) + " " + String.valueOf(bottomRight) + " " + String.valueOf(bottomLeft));
     }
 }
