@@ -5,6 +5,7 @@ package networthcalculator.labels;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import networthcalculator.Utility;
 
 /**
  *
@@ -37,6 +38,6 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     private void setProperties(String bgColor) {
         
         subcategoryLabel.setStyle("-fx-background-color:" + bgColor + "; " + 
-                "-fx-background-radius:5.5");
+                "-fx-background-radius:" + Utility.DEFAULT_CORNER_RADIUS);
     }
 }

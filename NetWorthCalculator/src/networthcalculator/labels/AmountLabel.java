@@ -16,7 +16,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
-import javafx.util.converter.IntegerStringConverter;
 import networthcalculator.Utility;
 
 /**
@@ -97,6 +96,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.setPadding(new Insets(top, right, bottom, left));
     }
     
+    private void setBackground(String bgColor) {
+        
+        hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
+                "-fx-background-radius:" + Utility.DEFAULT_CORNER_RADIUS);
+    }
+    
+    /*
     public void setBackground(String bgColor, 
             double topLeft, 
             double topRight, 
@@ -118,4 +124,5 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 new Insets(0.5));
         hbox.setBackground(new Background(bgf));
     }
+*/
 }
