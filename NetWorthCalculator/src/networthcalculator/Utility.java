@@ -6,7 +6,7 @@ package networthcalculator;
  *
  * @author MP
  */
-public class Constants {
+public class Utility {
     
     final public static int MAX_WIDTH = 650;
     

@@ -31,13 +31,6 @@
     -fx-padding: 0 10 5 10;
 }
 
-/*
-#AmountLabel {
-    
-    -fx-padding: 0 10 5 10;
-}
-*/
-
 #AmountLabel .label {
     
     -fx-font-size: 14;
@@ -60,6 +53,11 @@
 #BottomNetWorthContainer .label {
     
     -fx-background-color: black;
+}
+
+#BottomNetWorthContainer #TotalAssets {
+    
+    -fx-background-color: #00ccff;
 }
 
 

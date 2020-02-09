@@ -17,7 +17,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.util.converter.IntegerStringConverter;
-import networthcalculator.Constants;
+import networthcalculator.Utility;
 
 /**
  *
@@ -62,7 +62,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         dollarSignLabel.setId("AmountDollarSignLabel");
-        dollarSignLabel.setText(Constants.CURRENCY);
+        dollarSignLabel.setText(Utility.CURRENCY);
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
         dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty().divide(5)); // w * 1/5
     }
