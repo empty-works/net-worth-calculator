@@ -5,11 +5,6 @@ package networthcalculator.labels;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Paint;
-import networthcalculator.Utility;
 
 /**
  *
@@ -25,7 +20,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         
         subcategoryLabel.setText(text);
         this.setId("SubCategoryLabel");
-        setBackground(bgColor);
+        setProperties(bgColor);
         setLabelProperties();
         this.getChildren().add(subcategoryLabel);
     }
@@ -39,25 +34,9 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
     }
     
-    public void setBackground(String bgColor, 
-            double topLeft, 
-            double topRight, 
-            double bottomRight, 
-            double bottomLeft) {
+    private void setProperties(String bgColor) {
         
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf(bgColor), 
-                new CornerRadii(topLeft, topRight, bottomRight, bottomLeft, false), 
-                new Insets(0.5));
-        subcategoryLabel.setBackground(new Background(bgf));
-    }
-    
-    public void setBackground(String bgColor) {
-        
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf(bgColor), 
-                new CornerRadii(5.5, false), 
-                new Insets(0.5));
-        subcategoryLabel.setBackground(new Background(bgf));
+        subcategoryLabel.setStyle("-fx-background-color:" + bgColor + "; " + 
+                "-fx-background-radius:5.5");
     }
 }

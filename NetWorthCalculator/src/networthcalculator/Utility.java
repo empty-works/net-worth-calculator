@@ -16,6 +16,7 @@ public class Utility {
     final public static String DARKER_GRAY_COLOR = "#a6a6a6";
     final public static String COOL_BLUE = "#00ccff";
     final public static String ORANGE_RED = "#ff3333";
+    final public static String MONEY_GREEN = "#008000";
     
     final public static double DEFAULT_CORNER_RADIUS = 5.5;
     

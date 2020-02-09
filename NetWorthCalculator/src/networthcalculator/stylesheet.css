@@ -50,16 +50,6 @@
 }
 
 
-#BottomNetWorthContainer .label {
-    
-    -fx-background-color: black;
-}
-
-#BottomNetWorthContainer #TotalAssets {
-    
-    -fx-background-color: #00ccff;
-}
-
 
 #SubTotalAmountLabel {
     
