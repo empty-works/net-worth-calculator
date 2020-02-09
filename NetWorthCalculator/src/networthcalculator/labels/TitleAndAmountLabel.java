@@ -6,13 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Paint;
-import networthcalculator.Utility;
 
 /**
  *
@@ -34,8 +29,6 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         this.setId("TitleAndAmountLabel");
         this.title = title;
         this.bgColor = bgColor;
-        
-        //setBackground(bgColor);
         setTitle();
         this.getChildren().add(vboxLabelCon);
     }
@@ -57,7 +50,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         list.addAll(titleLabel, middlePlaceholder, rightPlaceholder);
         hbox.setPrefHeight(PREF_HEIGHT);
         
-        vboxLabelCon.setStyle("-fx-background-color:" + Utility.DARKER_GRAY_COLOR + "; " + 
+        vboxLabelCon.setStyle("-fx-background-color:" + bgColor + "; " + 
                 "-fx-background-radius:5.5");
         AnchorPane.setLeftAnchor(vboxLabelCon, 0.0);
         AnchorPane.setRightAnchor(vboxLabelCon, 0.0);
@@ -81,14 +74,5 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
             label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
             vboxLabelCon.getChildren().add(label);
         }
-    }
-
-    public void setBackground(String bgColor) {
-        
-        BackgroundFill bgf = new BackgroundFill(
-                Paint.valueOf(bgColor), 
-                new CornerRadii(5.5, false), 
-                new Insets(0.5));
-        vboxLabelCon.setBackground(new Background(bgf));
     }
 }
