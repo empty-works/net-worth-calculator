@@ -2,6 +2,7 @@
  */
 package networthcalculator.containers;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 
 /**
@@ -19,6 +20,7 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
         
         this.prefHeight(PREF_HEIGHT);
         this.minHeight(PREF_HEIGHT);
+        this.setPadding(new Insets(15));
         
         setLabels();
     }
@@ -28,15 +30,15 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
         //TODO Fix height of labels
         
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalAssets.prefHeight(PREF_HEIGHT);
+        totalAssets.setText("YOOOOOOOOOOOOOOOOOOOOO");
         this.add(totalAssets, 0, 0);
         
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalLiabilities.prefHeight(PREF_HEIGHT);
+        totalLiabilities.setText("HEEEEEEEEYYYYYYYYYYYYYYYYYYYYY");
         this.add(totalLiabilities, 1, 0);
         
         netWorth.prefWidthProperty().bind(this.widthProperty().divide(3));
-        netWorth.prefHeight(PREF_HEIGHT);
+        netWorth.setText("WHAT UP");
         this.add(netWorth, 2, 0);
     }
 }
