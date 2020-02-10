@@ -24,6 +24,7 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
         this.setId("SubCategoryLabel");
         setProperties(bgColor);
         setLabelProperties();
+        this.setPadding(new Insets(0, 10, 5, 10));
         this.getChildren().add(subcategoryLabel);
     }
     
@@ -39,6 +40,10 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
     private void setProperties(String bgColor) {
         
         subcategoryLabel.setStyle("-fx-background-color:" + bgColor + "; " + 
-                "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS);
+                    "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS + "; " + 
+                    "-fx-font-size: " + 17 + "; " + 
+                    "-fx-font-weight: bold" + "; " + 
+                    "-fx-text-fill: black" + "; " + 
+                    "-fx-font-family: 'arial'");
     }
 }
