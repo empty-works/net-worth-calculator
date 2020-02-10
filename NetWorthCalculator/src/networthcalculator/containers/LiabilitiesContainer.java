@@ -13,7 +13,6 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
@@ -29,6 +28,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     private LiabilitiesCategoryLabel categoryTitle = 
             new LiabilitiesCategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
     private String darkGray = "darkgray";
+    private String lightGray = "lightgray";
     
     public LiabilitiesContainer() {
         
@@ -68,10 +68,10 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
 
         List<Node> labelList = new ArrayList<>();
         
-        labelList.add(new SubCategoryLabel("Current", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Credit card balances", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Estimated income tax owed", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other outstanding bills", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Current", lightGray));
+        labelList.add(new AmountLabel("Credit card balances", lightGray));
+        labelList.add(new AmountLabel("Estimated income tax owed", lightGray));
+        labelList.add(new AmountLabel("Other outstanding bills", lightGray));
         
         labelList.add(new SubCategoryLabel("Long-Term", darkGray));
         labelList.add(new AmountLabel("Home mortgage", darkGray));

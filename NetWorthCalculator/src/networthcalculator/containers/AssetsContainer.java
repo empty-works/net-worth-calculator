@@ -13,7 +13,6 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
@@ -30,6 +29,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private GridPane assetsGridPane = new GridPane();
     private AssetsCategoryLabel categoryTitle = new AssetsCategoryLabel("ASSETS", "CURRENT VALUE");
     private String darkGray = "darkgray";
+    private String lightGray = "lightgray";
     
     public AssetsContainer() {
         
@@ -70,13 +70,13 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         List<Node> labelList = new ArrayList<>();
         
         // Cash and Cash Equivalents - default color
-        labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Checking accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Savings accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Money market accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Savings bonds", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("CD's", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Cash value of life insurance", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
+        labelList.add(new AmountLabel("Checking accounts", lightGray));
+        labelList.add(new AmountLabel("Savings accounts", lightGray));
+        labelList.add(new AmountLabel("Money market accounts", lightGray));
+        labelList.add(new AmountLabel("Savings bonds", lightGray));
+        labelList.add(new AmountLabel("CD's", lightGray));
+        labelList.add(new AmountLabel("Cash value of life insurance", lightGray));
         labelList.add(new SubTotalAmountLabel("Total Cash"));
         
         // Invested Assets
@@ -109,14 +109,14 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(new SubTotalAmountLabel("Total Invested Assets"));
         
         // Use Assets
-        labelList.add(new SubCategoryLabel("Use Assets", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Principal home", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Vacation home", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Cars, trucks, boats", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home furnishings", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Art, antiques, coins, collectibles", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Jewelry, furs", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Use Assets", lightGray));
+        labelList.add(new AmountLabel("Principal home", lightGray));
+        labelList.add(new AmountLabel("Vacation home", lightGray));
+        labelList.add(new AmountLabel("Cars, trucks, boats", lightGray));
+        labelList.add(new AmountLabel("Home furnishings", lightGray));
+        labelList.add(new AmountLabel("Art, antiques, coins, collectibles", lightGray));
+        labelList.add(new AmountLabel("Jewelry, furs", lightGray));
+        labelList.add(new AmountLabel("Other", lightGray));
         labelList.add(new SubTotalAmountLabel("Total Use Assets"));
         
         int xPos = 0;
