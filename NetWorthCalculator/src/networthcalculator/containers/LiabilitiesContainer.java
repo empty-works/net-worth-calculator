@@ -15,8 +15,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
-import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
+import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
 
 /**
  *
@@ -26,7 +26,8 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     
     private ScrollPane scrollPane = new ScrollPane();
     private GridPane liabilitiesGridPane = new GridPane();
-    private CategoryLabel categoryTitle = new CategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
+    private LiabilitiesCategoryLabel categoryTitle = 
+            new LiabilitiesCategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
     
     public LiabilitiesContainer() {
         
