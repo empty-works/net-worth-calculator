@@ -112,6 +112,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
                                           new AmountLabel("Limited liability company", DARKER_GRAY_COLOR), 
                                           new AmountLabel("Other", DARKER_GRAY_COLOR));
         labelList.add(businessOwnership);
+        labelList.add(new SubTotalAmountLabel("Total Invested Assets"));
         
         // Use Assets
         labelList.add(new SubCategoryLabel("Use Assets", DEFAULT_LABEL_GRAY_COLOR));
@@ -122,6 +123,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(new AmountLabel("Art, antiques, coins, collectibles", DEFAULT_LABEL_GRAY_COLOR));
         labelList.add(new AmountLabel("Jewelry, furs", DEFAULT_LABEL_GRAY_COLOR));
         labelList.add(new AmountLabel("Other", DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubTotalAmountLabel("Total Use Assets"));
         
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {
