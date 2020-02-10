@@ -7,7 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 
 /**
  *
@@ -47,7 +47,7 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         leftPlaceholder.prefWidthProperty().bind(hbox.widthProperty());
 
         subTotal.setId("SubTotalLabel");
-        subTotal.setText(text + " " + Utility.CURRENCY);
+        subTotal.setText(text + " " + MyUtility.CURRENCY);
         subTotal.setPrefHeight(PREF_HEIGHT);
         subTotal.prefWidthProperty().bind(hbox.widthProperty());
         

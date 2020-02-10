@@ -4,7 +4,7 @@ package networthcalculator.containers;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 
 /**
  *
@@ -24,19 +24,19 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
     
     private void setLabels() {
         
-        totalAssets.setStyle("-fx-background-color:" + Utility.DEFAULT_LABEL_GRAY_COLOR);
+        totalAssets.setStyle("-fx-background-color:" + MyUtility.DEFAULT_LABEL_GRAY_COLOR);
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalAssets.setText("Total Assets:");
         totalAssets.setPadding(new Insets(10, 0, 10, 0)); // Allows for height change. Setting height directly does not work.
         this.add(totalAssets, 0, 0);
         
-        totalLiabilities.setStyle("-fx-background-color:" + Utility.DARKER_GRAY_COLOR);
+        totalLiabilities.setStyle("-fx-background-color:" + MyUtility.DARKER_GRAY_COLOR);
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalLiabilities.setText("Total Liabilities:");
         totalLiabilities.setPadding(new Insets(10, 0, 10, 0)); // Allows for height change. Setting height directly does not work.
         this.add(totalLiabilities, 1, 0);
         
-        netWorth.setStyle("-fx-background-color:" + Utility.MONEY_GREEN);
+        netWorth.setStyle("-fx-background-color:" + MyUtility.MONEY_GREEN);
         netWorth.prefWidthProperty().bind(this.widthProperty().divide(3));
         netWorth.setText("Net Worth:");
         netWorth.setPadding(new Insets(10, 0, 10, 0)); // Allows for height change. Setting height directly does not work.

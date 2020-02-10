@@ -13,7 +13,7 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
@@ -43,7 +43,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private void setCategoryTitleProperties() {
         
-        categoryTitle.setBackground("#00ccff", 50.0, 5.5, 5.5, 5.5);
+        //categoryTitle.setBackground(MyUtility.COOL_BLUE, 50.0, 5.5, 5.5, 5.5);
     }
     
     private void setColumnConstraints() {
@@ -75,53 +75,53 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         List<Node> labelList = new ArrayList<>();
         
         // Cash and Cash Equivalents - default color
-        labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Checking accounts", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Savings accounts", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Money market accounts", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Savings bonds", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("CD's", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Cash value of life insurance", Utility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Checking accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Savings accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Money market accounts", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Savings bonds", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("CD's", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Cash value of life insurance", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
         labelList.add(new SubTotalAmountLabel("Total Cash"));
         
         // Invested Assets
-        labelList.add(new SubCategoryLabel("Invested Assets", Utility.DARKER_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Invested Assets", MyUtility.DARKER_GRAY_COLOR));
         
-        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", Utility.DARKER_GRAY_COLOR);
-        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Other", Utility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", MyUtility.DARKER_GRAY_COLOR);
+        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Other", MyUtility.DARKER_GRAY_COLOR));
         labelList.add(taxableAccount);
         
-        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", Utility.DARKER_GRAY_COLOR);
-        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Roth IRA", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("401(k) or 403(b)", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("SEP-IRA", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Pension (vested benefit)", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Annuity (accumulated value)", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Annuity (accumulated value)", Utility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", MyUtility.DARKER_GRAY_COLOR);
+        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Roth IRA", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("401(k) or 403(b)", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("SEP-IRA", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Pension (vested benefit)", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Annuity (accumulated value)", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Annuity (accumulated value)", MyUtility.DARKER_GRAY_COLOR));
         labelList.add(retirementAccounts);
         
-        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", Utility.DARKER_GRAY_COLOR);
-        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Sole propietorship", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Partnership", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("C Corporation", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("S Corporation", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Limited liability company", Utility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Other", Utility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", MyUtility.DARKER_GRAY_COLOR);
+        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Sole propietorship", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Partnership", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("C Corporation", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("S Corporation", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Limited liability company", MyUtility.DARKER_GRAY_COLOR), 
+                                          new AmountLabel("Other", MyUtility.DARKER_GRAY_COLOR));
         labelList.add(businessOwnership);
         labelList.add(new SubTotalAmountLabel("Total Invested Assets"));
         
         // Use Assets
-        labelList.add(new SubCategoryLabel("Use Assets", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Principal home", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Vacation home", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Cars, trucks, boats", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home furnishings", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Art, antiques, coins, collectibles", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Jewelry, furs", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other", Utility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Use Assets", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Principal home", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Vacation home", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Cars, trucks, boats", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Home furnishings", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Art, antiques, coins, collectibles", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Jewelry, furs", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Other", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
         labelList.add(new SubTotalAmountLabel("Total Use Assets"));
         
         int xPos = 0;

@@ -13,7 +13,7 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
@@ -30,18 +30,12 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     
     public LiabilitiesContainer() {
         
-        setCategoryTitleProperties();
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();
         addLabels();
         addMainComponentsToVBox();
         this.setPadding(new Insets(10, 0, 0, 0));
-    }
-    
-    private void setCategoryTitleProperties() {
-        
-        categoryTitle.setBackground("#ff3333", 5.5, 50.0, 5.5, 5.5);
     }
     
     private void setColumnConstraints() {
@@ -72,19 +66,19 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
 
         List<Node> labelList = new ArrayList<>();
         
-        labelList.add(new SubCategoryLabel("Current", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Credit card balances", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Estimated income tax owed", Utility.DEFAULT_LABEL_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other outstanding bills", Utility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Current", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Credit card balances", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Estimated income tax owed", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
+        labelList.add(new AmountLabel("Other outstanding bills", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
         
-        labelList.add(new SubCategoryLabel("Long-Term", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home mortgage", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home equity loan", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Mortgages on rental properties", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Car loans", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Student loans", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Life insurance policy loans", Utility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other long-term debt", Utility.DARKER_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Long-Term", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Home mortgage", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Home equity loan", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Mortgages on rental properties", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Car loans", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Student loans", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Life insurance policy loans", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new AmountLabel("Other long-term debt", MyUtility.DARKER_GRAY_COLOR));
         
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {

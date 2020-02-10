@@ -12,7 +12,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 
 /**
  *
@@ -57,7 +57,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         dollarSignLabel.setId("AmountDollarSignLabel");
-        dollarSignLabel.setText(Utility.CURRENCY);
+        dollarSignLabel.setText(MyUtility.CURRENCY);
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
         dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty().divide(5)); // w * 1/5
     }
@@ -94,7 +94,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private void setBackground(String bgColor) {
         
+        System.out.println("Background color: " + bgColor);
         hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
-                "-fx-background-radius:" + Utility.DEFAULT_CORNER_RADIUS);
+                "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS);
     }
 }

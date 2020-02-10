@@ -11,7 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import networthcalculator.Utility;
+import networthcalculator.MyUtility;
 
 /**
  *
@@ -25,22 +25,20 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private HBox hbox = new HBox();
     private String text1, text2;
     final private int PREF_HEIGHT = 65;
-    final private int FONT_SIZE = 18;
-    final private String FONT_COLOR = "#ffffff";
     
     public CategoryLabel(String text1, String text2) {
         
+        this.setId("CategoryLabel");
         this.text1 = text1;
         this.text2 = text2;
         setHBox();
         setLabelProperties();
-        setFont();
-        setPadding();
         this.getChildren().add(hbox);
     }
     
     private void setHBox() {
         
+        hbox.setId("CategoryLabelHbox");
         ObservableList list = hbox.getChildren();
         list.addAll(categoryLabelLeft, categoryLabelRight);
         AnchorPane.setLeftAnchor(hbox, 0.0);
@@ -58,36 +56,5 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         categoryLabelRight.setAlignment(Pos.CENTER_RIGHT);
         categoryLabelRight.setPrefHeight(PREF_HEIGHT);
         categoryLabelRight.prefWidthProperty().bind(hbox.widthProperty());
-    }
-    
-    private void setFont() {
-        
-        Font font = Font.font("arial", FontWeight.BOLD, FONT_SIZE);
-        categoryLabelLeft.setFont(font);
-        categoryLabelLeft.setTextFill(Paint.valueOf(FONT_COLOR));
-        
-        categoryLabelRight.setFont(font);
-        categoryLabelRight.setTextFill(Paint.valueOf(FONT_COLOR));
-    }
-    
-    private void setPadding() {
-        
-        this.setPadding(new Insets(0, 10, 5, 10));
-        
-        hbox.setPadding(new Insets(
-                1, 
-                Utility.SIDE_PADDING_FOR_TEXT, 
-                1, 
-                Utility.SIDE_PADDING_FOR_TEXT));
-    }
-    
-    public void setBackground(String bgColor, 
-            double topLeft, 
-            double topRight, 
-            double bottomRight, 
-            double bottomLeft) {
-        
-        hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
-                "-fx-background-radius:" + String.valueOf(topLeft) + " " + String.valueOf(topRight) + " " + String.valueOf(bottomRight) + " " + String.valueOf(bottomLeft));
     }
 }

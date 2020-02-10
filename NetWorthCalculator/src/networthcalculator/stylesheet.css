@@ -37,7 +37,6 @@
     -fx-text-fill: black;
     -fx-font-family: -fx-main-font-family;
     -fx-padding: 15 15 15 50;
-    -fx-background-color: #333333
 }
 
 #AmountLabel #AmountDollarSignLabel {
@@ -50,6 +49,33 @@
     -fx-padding: 15;
 }
 
+#AmountLabel .vbox {
+    
+    -fx-background-color: #bfbfbf;
+}
+
+
+
+#CategoryLabel {
+    
+    
+    -fx-padding: 1 10 1 10;
+}
+
+#CategoryLabel .label {
+    
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: -fx-main-font-family;
+}
+
+#CategoryLabel #CategoryLabelHbox {
+    
+    -fx-background-color: #00ccff;
+    -fx-background-radius: 50 5.5 5.5 5.5;
+    -fx-padding: 10 15 5 15;
+}
 
 
 #SubTotalAmountLabel {
