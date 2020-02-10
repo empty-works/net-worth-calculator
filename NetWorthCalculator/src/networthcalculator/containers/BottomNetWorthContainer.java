@@ -24,13 +24,13 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
     
     private void setLabels() {
         
-        totalAssets.setStyle("-fx-background-color:" + Utility.COOL_BLUE);
+        totalAssets.setStyle("-fx-background-color:" + Utility.DEFAULT_LABEL_GRAY_COLOR);
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalAssets.setText("Total Assets:");
         totalAssets.setPadding(new Insets(10, 0, 10, 0)); // Allows for height change. Setting height directly does not work.
         this.add(totalAssets, 0, 0);
         
-        totalLiabilities.setStyle("-fx-background-color:" + Utility.ORANGE_RED);
+        totalLiabilities.setStyle("-fx-background-color:" + Utility.DARKER_GRAY_COLOR);
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
         totalLiabilities.setText("Total Liabilities:");
         totalLiabilities.setPadding(new Insets(10, 0, 10, 0)); // Allows for height change. Setting height directly does not work.
