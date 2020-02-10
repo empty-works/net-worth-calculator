@@ -10,26 +10,6 @@
     -fx-main-font-family: 'arial';
 }
 
-#AssetsContainer {
-    
-    -fx-background-color: transparent;
-}
-
-#LiabilitiesContainer {
-    
-    -fx-background-color: transparent;
-}
-
-
-
-#SubCategoryLabel {
-    
-    -fx-font-size: 17;
-    -fx-font-weight: bold;
-    -fx-text-fill: black;
-    -fx-font-family: 'arial';
-    -fx-padding: 0 10 5 10;
-}
 
 #AmountLabel .label {
     
@@ -55,10 +35,37 @@
 }
 
 
+#AssetsCategoryLabel {
+    
+    -fx-padding: 1 10 1 10;
+}
+
+#AssetsCategoryLabel .label {
+    
+    -fx-font-size: 18;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: -fx-main-font-family;
+}
+
+#AssetsCategoryLabel #CategoryLabelHbox {
+    
+    -fx-background-color: #00ccff;
+    -fx-background-radius: 50 5.5 5.5 5.5;
+    -fx-padding: 10 15 5 15;
+}
+
+
+#AssetsContainer {
+    
+    -fx-background-color: transparent;
+}
+
+
+
 
 #CategoryLabel {
-    
-    
+
     -fx-padding: 1 10 1 10;
 }
 
@@ -75,6 +82,22 @@
     -fx-background-color: #00ccff;
     -fx-background-radius: 50 5.5 5.5 5.5;
     -fx-padding: 10 15 5 15;
+}
+
+
+#LiabilitiesContainer {
+    
+    -fx-background-color: transparent;
+}
+
+
+#SubCategoryLabel {
+    
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-font-family: 'arial';
+    -fx-padding: 0 10 5 10;
 }
 
 

@@ -15,10 +15,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.MyUtility;
 import networthcalculator.labels.AmountLabel;
-import networthcalculator.labels.CategoryLabel;
 import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
+import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
 
 /**
  *
@@ -28,22 +28,16 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private ScrollPane scrollPane = new ScrollPane();
     private GridPane assetsGridPane = new GridPane();
-    private CategoryLabel categoryTitle = new CategoryLabel("ASSETS", "CURRENT VALUE");
+    private AssetsCategoryLabel categoryTitle = new AssetsCategoryLabel("ASSETS", "CURRENT VALUE");
     
     public AssetsContainer() {
         
-        setCategoryTitleProperties();
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();
         addLabels();
         addMainComponentsToVBox();
         this.setPadding(new Insets(10, 0, 0, 0)); // Adds space to the top.
-    }
-    
-    private void setCategoryTitleProperties() {
-        
-        //categoryTitle.setBackground(MyUtility.COOL_BLUE, 50.0, 5.5, 5.5, 5.5);
     }
     
     private void setColumnConstraints() {

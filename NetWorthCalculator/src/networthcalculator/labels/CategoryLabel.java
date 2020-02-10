@@ -3,15 +3,10 @@
 package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import networthcalculator.MyUtility;
 
 /**
  *
@@ -22,8 +17,8 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
     
-    private HBox hbox = new HBox();
-    private String text1, text2;
+    protected HBox hbox = new HBox();
+    protected String text1, text2;
     final private int PREF_HEIGHT = 65;
     
     public CategoryLabel(String text1, String text2) {
