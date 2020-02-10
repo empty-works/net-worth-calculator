@@ -28,6 +28,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     private GridPane liabilitiesGridPane = new GridPane();
     private LiabilitiesCategoryLabel categoryTitle = 
             new LiabilitiesCategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
+    private String darkGray = "darkgray";
     
     public LiabilitiesContainer() {
         
@@ -72,14 +73,14 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         labelList.add(new AmountLabel("Estimated income tax owed", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
         labelList.add(new AmountLabel("Other outstanding bills", MyUtility.DEFAULT_LABEL_GRAY_COLOR));
         
-        labelList.add(new SubCategoryLabel("Long-Term", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home mortgage", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Home equity loan", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Mortgages on rental properties", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Car loans", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Student loans", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Life insurance policy loans", MyUtility.DARKER_GRAY_COLOR));
-        labelList.add(new AmountLabel("Other long-term debt", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Long-Term", darkGray));
+        labelList.add(new AmountLabel("Home mortgage", darkGray));
+        labelList.add(new AmountLabel("Home equity loan", darkGray));
+        labelList.add(new AmountLabel("Mortgages on rental properties", darkGray));
+        labelList.add(new AmountLabel("Car loans", darkGray));
+        labelList.add(new AmountLabel("Student loans", darkGray));
+        labelList.add(new AmountLabel("Life insurance policy loans", darkGray));
+        labelList.add(new AmountLabel("Other long-term debt", darkGray));
         
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {

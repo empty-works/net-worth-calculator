@@ -29,6 +29,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private ScrollPane scrollPane = new ScrollPane();
     private GridPane assetsGridPane = new GridPane();
     private AssetsCategoryLabel categoryTitle = new AssetsCategoryLabel("ASSETS", "CURRENT VALUE");
+    private String darkGray = "darkgray";
     
     public AssetsContainer() {
         
@@ -79,31 +80,31 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(new SubTotalAmountLabel("Total Cash"));
         
         // Invested Assets
-        labelList.add(new SubCategoryLabel("Invested Assets", MyUtility.DARKER_GRAY_COLOR));
+        labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
         
-        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", MyUtility.DARKER_GRAY_COLOR);
-        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Other", MyUtility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", darkGray);
+        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", darkGray), 
+                                          new AmountLabel("Other", darkGray));
         labelList.add(taxableAccount);
         
-        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", MyUtility.DARKER_GRAY_COLOR);
-        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Roth IRA", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("401(k) or 403(b)", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("SEP-IRA", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Pension (vested benefit)", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Annuity (accumulated value)", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Annuity (accumulated value)", MyUtility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", darkGray);
+        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", darkGray), 
+                                          new AmountLabel("Roth IRA", darkGray), 
+                                          new AmountLabel("401(k) or 403(b)", darkGray), 
+                                          new AmountLabel("SEP-IRA", darkGray), 
+                                          new AmountLabel("Pension (vested benefit)", darkGray), 
+                                          new AmountLabel("Annuity (accumulated value)", darkGray), 
+                                          new AmountLabel("Annuity (accumulated value)", darkGray));
         labelList.add(retirementAccounts);
         
-        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", MyUtility.DARKER_GRAY_COLOR);
-        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Sole propietorship", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Partnership", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("C Corporation", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("S Corporation", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Limited liability company", MyUtility.DARKER_GRAY_COLOR), 
-                                          new AmountLabel("Other", MyUtility.DARKER_GRAY_COLOR));
+        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", darkGray);
+        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", darkGray), 
+                                          new AmountLabel("Sole propietorship", darkGray), 
+                                          new AmountLabel("Partnership", darkGray), 
+                                          new AmountLabel("C Corporation", darkGray), 
+                                          new AmountLabel("S Corporation", darkGray), 
+                                          new AmountLabel("Limited liability company", darkGray), 
+                                          new AmountLabel("Other", darkGray));
         labelList.add(businessOwnership);
         labelList.add(new SubTotalAmountLabel("Total Invested Assets"));
         
