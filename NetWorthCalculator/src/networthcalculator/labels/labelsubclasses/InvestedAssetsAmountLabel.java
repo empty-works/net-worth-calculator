@@ -8,10 +8,16 @@ package networthcalculator.labels.labelsubclasses;
  */
 public class InvestedAssetsAmountLabel extends networthcalculator.labels.AmountLabel {
     
-    public InvestedAssetsAmountLabel(String text, String bgColor) {
+    private InvestedAssetsSubTotalAmountLabel subTotalLabel;
+    
+    public InvestedAssetsAmountLabel(String text, String bgColor, InvestedAssetsSubTotalAmountLabel subTotalLabel) {
         
         super(text, bgColor);
+        this.subTotalLabel = subTotalLabel;
     }
     
-    
+    private void addTextFieldListener() {
+        
+        
+    }
 }

@@ -51,9 +51,14 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         subTotal.setPrefHeight(PREF_HEIGHT);
         subTotal.prefWidthProperty().bind(hbox.widthProperty());
         
-        subAmountNumLabel.setText("10000000.00");
+        
         subAmountNumLabel.setPrefHeight(PREF_HEIGHT);
         subAmountNumLabel.setAlignment(Pos.CENTER_RIGHT);
         subAmountNumLabel.prefWidthProperty().bind(hbox.widthProperty());
+    }
+    
+    protected void setSubTotal(double subTotal) {
+        
+        subAmountNumLabel.setText(String.valueOf(subTotal));
     }
 }

@@ -3,6 +3,8 @@
 package networthcalculator.labels;
 
 import java.util.function.UnaryOperator;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -22,7 +24,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
     private Label dollarSignLabel = new Label();
-    private TextField amountField = new TextField();
+    protected TextField amountField = new TextField();
     private HBox hbox = new HBox();
     private String text;
     final private int PREF_HEIGHT = 25;
@@ -70,6 +72,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setId("AmountLabelTextField");
         amountField.setAlignment(Pos.CENTER_RIGHT);
         amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.5));
+        
+        
         
         //TODO: make better filter
         UnaryOperator<Change> integerFilter = change -> {
