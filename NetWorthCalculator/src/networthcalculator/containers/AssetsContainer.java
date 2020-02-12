@@ -72,6 +72,10 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         List<Node> labelList = new ArrayList<>();
         
         // Cash and Cash Equivalents - default color
+        SubCategoryContainer subCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
+        subCatCon.addLabel(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
+        subCatCon.addLabel(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
+                
         InvestedAssetsSubTotalAmountLabel investAssetsSubTotal = new InvestedAssetsSubTotalAmountLabel("Total Cash");
         labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
         labelList.add(new InvestedAssetsAmountLabel("Checking accounts", lightGray, investAssetsSubTotal));

@@ -67,7 +67,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     private void addLabels() {
 
         List<Node> labelList = new ArrayList<>();
-        
+        /*
         labelList.add(new SubCategoryLabel("Current", lightGray));
         labelList.add(new AmountLabel("Credit card balances", lightGray));
         labelList.add(new AmountLabel("Estimated income tax owed", lightGray));
@@ -87,10 +87,11 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
             
             liabilitiesGridPane.add(labelList.get(i), xPos, i);
         }
+*/
     }
     
     private void addMainComponentsToVBox() {
         
-        this.getChildren().addAll(categoryTitle, scrollPane);
+        //this.getChildren().addAll(categoryTitle, scrollPane);
     }
 }

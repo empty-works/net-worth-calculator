@@ -5,6 +5,7 @@ package networthcalculator.containers;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.Node;
+import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
 
 /**
@@ -15,6 +16,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane {
     
     private List<Node> amountLabelList = new ArrayList<>();
     private SubCategoryLabel subCategoryLabel;
+    private Node subTotalLabel = null;
     
     public SubCategoryContainer(String subCategoryTitle, String titleColor) {
         
@@ -22,18 +24,29 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane {
         amountLabelList.add(subCategoryLabel);
     }
     
-    public void addLabel(Node label) {
+    public void addAmountLabel(AmountLabel label) {
         
         amountLabelList.add(label);
+    }
+    
+    // There can only be one.
+    public void setSubTotalLabel(Node label) {
+        
+        subTotalLabel = label;
     }
     
     public void showLabels() {
         
         int xPos = 0;
-        
-        for(int i = 0; i < amountLabelList.size(); i++) {
+        int i = 0;
+        for(; i < amountLabelList.size(); i++) {
             
             this.add(amountLabelList.get(i), xPos, i);
+        }
+        // Lastly add subtotal label.
+        if(subTotalLabel != null) {
+            
+            this.add(subTotalLabel, xPos, i);
         }
     }
 }
