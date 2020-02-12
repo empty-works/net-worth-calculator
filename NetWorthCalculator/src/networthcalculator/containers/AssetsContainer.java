@@ -18,6 +18,8 @@ import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
+import networthcalculator.labels.labelsubclasses.InvestedAssetsAmountLabel;
+import networthcalculator.labels.labelsubclasses.InvestedAssetsSubTotalAmountLabel;
 
 /**
  *
@@ -70,14 +72,15 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         List<Node> labelList = new ArrayList<>();
         
         // Cash and Cash Equivalents - default color
+        InvestedAssetsSubTotalAmountLabel investAssetsSubTotal = new InvestedAssetsSubTotalAmountLabel("Total Cash");
         labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
-        labelList.add(new AmountLabel("Checking accounts", lightGray));
-        labelList.add(new AmountLabel("Savings accounts", lightGray));
-        labelList.add(new AmountLabel("Money market accounts", lightGray));
-        labelList.add(new AmountLabel("Savings bonds", lightGray));
-        labelList.add(new AmountLabel("CD's", lightGray));
-        labelList.add(new AmountLabel("Cash value of life insurance", lightGray));
-        labelList.add(new SubTotalAmountLabel("Total Cash"));
+        labelList.add(new InvestedAssetsAmountLabel("Checking accounts", lightGray, investAssetsSubTotal));
+        labelList.add(new InvestedAssetsAmountLabel("Savings accounts", lightGray, investAssetsSubTotal));
+        labelList.add(new InvestedAssetsAmountLabel("Money market accounts", lightGray, investAssetsSubTotal));
+        labelList.add(new InvestedAssetsAmountLabel("Savings bonds", lightGray, investAssetsSubTotal));
+        labelList.add(new InvestedAssetsAmountLabel("CD's", lightGray, investAssetsSubTotal));
+        labelList.add(new InvestedAssetsAmountLabel("Cash value of life insurance", lightGray, investAssetsSubTotal));
+        labelList.add(investAssetsSubTotal);
         
         // Invested Assets
         labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
