@@ -14,12 +14,8 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
-import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
-import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
-import networthcalculator.labels.labelsubclasses.InvestedAssetsAmountLabel;
-import networthcalculator.labels.labelsubclasses.InvestedAssetsSubTotalAmountLabel;
 
 /**
  *
@@ -71,21 +67,23 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
 
         List<Node> labelList = new ArrayList<>();
         
+        // Category Title
+        this.getChildren().add(categoryTitle);
+        
         // Cash and Cash Equivalents - default color
         SubCategoryContainer subCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
-        subCatCon.addLabel(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
-        subCatCon.addLabel(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("Savings bonds", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("CD's", lightGray));
+        subCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
+        subCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash"));
+        subCatCon.showLabels();
+        subCatCon.prefWidthProperty().bind(scrollPane.widthProperty());
+        this.getChildren().add(subCatCon);
                 
-        InvestedAssetsSubTotalAmountLabel investAssetsSubTotal = new InvestedAssetsSubTotalAmountLabel("Total Cash");
-        labelList.add(new SubCategoryLabel("Cash and Cash Equivalents", lightGray));
-        labelList.add(new InvestedAssetsAmountLabel("Checking accounts", lightGray, investAssetsSubTotal));
-        labelList.add(new InvestedAssetsAmountLabel("Savings accounts", lightGray, investAssetsSubTotal));
-        labelList.add(new InvestedAssetsAmountLabel("Money market accounts", lightGray, investAssetsSubTotal));
-        labelList.add(new InvestedAssetsAmountLabel("Savings bonds", lightGray, investAssetsSubTotal));
-        labelList.add(new InvestedAssetsAmountLabel("CD's", lightGray, investAssetsSubTotal));
-        labelList.add(new InvestedAssetsAmountLabel("Cash value of life insurance", lightGray, investAssetsSubTotal));
-        labelList.add(investAssetsSubTotal);
-        
+        /*
         // Invested Assets
         labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
         
@@ -131,10 +129,12 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
             
             assetsGridPane.add(labelList.get(i), xPos, i);
         }
+        */
     }
     
     private void addMainComponentsToVBox() {
         
-        this.getChildren().addAll(categoryTitle, scrollPane);
+        
+        //this.getChildren().addAll(categoryTitle, scrollPane);
     }
 }

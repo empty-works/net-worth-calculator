@@ -17,7 +17,7 @@ import networthcalculator.MyUtility;
  *
  * @author MP
  */
-public abstract class AmountLabel extends javafx.scene.layout.AnchorPane {
+public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
     private Label dollarSignLabel = new Label();
@@ -75,7 +75,7 @@ public abstract class AmountLabel extends javafx.scene.layout.AnchorPane {
             public void changed(ObservableValue<? extends String> observable, 
                     String oldValue, String newValue) {
                 
-                addListenerInstructions(oldValue, newValue);
+                
             }
         });
         
@@ -94,8 +94,6 @@ public abstract class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
         */
     }
-    
-    abstract protected void addListenerInstructions(String oldValue, String newValue);
     
     public void setCustomPadding(double padding) {
         

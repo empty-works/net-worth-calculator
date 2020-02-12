@@ -17,9 +17,4 @@ public class InvestedAssetsAmountLabel extends networthcalculator.labels.AmountL
         this.subTotalLabel = subTotalLabel;
     }
 
-    @Override
-    protected void addListenerInstructions(String oldValue, String newValue) {
-        
-        
-    }
 }
