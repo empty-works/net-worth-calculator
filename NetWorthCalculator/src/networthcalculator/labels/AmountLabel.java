@@ -2,7 +2,6 @@
  */
 package networthcalculator.labels;
 
-import java.util.function.UnaryOperator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -10,8 +9,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
-import javafx.scene.control.TextFormatter.Change;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import networthcalculator.MyUtility;
@@ -20,7 +17,7 @@ import networthcalculator.MyUtility;
  *
  * @author MP
  */
-public class AmountLabel extends javafx.scene.layout.AnchorPane {
+public abstract class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
     private Label dollarSignLabel = new Label();
@@ -73,8 +70,16 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setAlignment(Pos.CENTER_RIGHT);
         amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.5));
         
+        amountField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, 
+                    String oldValue, String newValue) {
+                
+                addListenerInstructions(oldValue, newValue);
+            }
+        });
         
-        
+        /*
         //TODO: make better filter
         UnaryOperator<Change> integerFilter = change -> {
           
@@ -87,7 +92,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         };
         
         amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
+        */
     }
+    
+    abstract protected void addListenerInstructions(String oldValue, String newValue);
     
     public void setCustomPadding(double padding) {
         
