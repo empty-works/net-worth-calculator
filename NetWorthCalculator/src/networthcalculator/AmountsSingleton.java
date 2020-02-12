@@ -8,12 +8,12 @@ package networthcalculator;
  */
 public class AmountsSingleton {
   
-    private double totalCash;
-    private double totalInvestedAssets;
-    private double totalUseAssets;
-    private double totalAssets;
-    private double totalLiabilities;
-    private double netWorth;
+    private double totalCash = 0.0;
+    private double totalInvestedAssets = 0.0;
+    private double totalUseAssets = 0.0;
+    private double totalAssets = 0.0;
+    private double totalLiabilities = 0.0;
+    private double netWorth = 0.0;
     
     private volatile static AmountsSingleton obj;
     
