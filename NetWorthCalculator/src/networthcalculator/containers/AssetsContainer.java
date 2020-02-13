@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
+import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
 
 /**
@@ -66,26 +67,50 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
-        List<Node> labelList = new ArrayList<>();
-        
         // Category Title
         this.getChildren().add(categoryTitle);
         
-        // TODO Make SubCategoryContainer fill width properly.
         // Cash and Cash Equivalents - default color
-        SubCategoryContainer subCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
-        subCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
-        subCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
-        subCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
-        subCatCon.addAmountLabel(new AmountLabel("Savings bonds", lightGray));
-        subCatCon.addAmountLabel(new AmountLabel("CD's", lightGray));
-        subCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
-        subCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash"));
-        subCatCon.showLabels();
-        AnchorPane.setLeftAnchor(subCatCon, 0.0);
-        AnchorPane.setRightAnchor(subCatCon, 0.0);
-        this.getChildren().add(subCatCon);
+        SubCategoryContainer cashSubCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
+        cashSubCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
+        cashSubCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
+        cashSubCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
+        cashSubCatCon.addAmountLabel(new AmountLabel("Savings bonds", lightGray));
+        cashSubCatCon.addAmountLabel(new AmountLabel("CD's", lightGray));
+        cashSubCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
+        cashSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash"));
+        cashSubCatCon.showLabels();
+        this.getChildren().add(cashSubCatCon);
                 
+        // Invested Assets
+        SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer("Invested Assets", lightGray);
+        
+        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", darkGray);
+        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", darkGray), 
+                                          new AmountLabel("Other", darkGray));
+        investedAssetsSubCatCon.addTitleAmountLabel(taxableAccount);
+        
+        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", darkGray);
+        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", darkGray), 
+                                          new AmountLabel("Roth IRA", darkGray), 
+                                          new AmountLabel("401(k) or 403(b)", darkGray), 
+                                          new AmountLabel("SEP-IRA", darkGray), 
+                                          new AmountLabel("Pension (vested benefit)", darkGray), 
+                                          new AmountLabel("Annuity (accumulated value)", darkGray), 
+                                          new AmountLabel("Annuity (accumulated value)", darkGray));
+        investedAssetsSubCatCon.addTitleAmountLabel(retirementAccounts);
+        
+        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", darkGray);
+        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", darkGray), 
+                                          new AmountLabel("Sole propietorship", darkGray), 
+                                          new AmountLabel("Partnership", darkGray), 
+                                          new AmountLabel("C Corporation", darkGray), 
+                                          new AmountLabel("S Corporation", darkGray), 
+                                          new AmountLabel("Limited liability company", darkGray), 
+                                          new AmountLabel("Other", darkGray));
+        investedAssetsSubCatCon.addTitleAmountLabel(businessOwnership);
+        
+        investedAssetsSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Invested Assets"));
         
         /*
         // Invested Assets

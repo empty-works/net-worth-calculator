@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
+import networthcalculator.labels.TitleAndAmountLabel;
 
 /**
  *
@@ -26,6 +27,12 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane {
     }
     
     public void addAmountLabel(AmountLabel label) {
+        
+        label.prefWidthProperty().bind(this.widthProperty());
+        amountLabelList.add(label);
+    }
+    
+    public void addTitleAmountLabel(TitleAndAmountLabel label) {
         
         label.prefWidthProperty().bind(this.widthProperty());
         amountLabelList.add(label);
