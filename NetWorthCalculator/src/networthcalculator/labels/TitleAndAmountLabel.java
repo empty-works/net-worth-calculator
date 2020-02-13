@@ -41,7 +41,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         titleLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         middlePlaceholder.setPrefHeight(PREF_HEIGHT);
-        middlePlaceholder.prefWidthProperty().bind(hbox.widthProperty());
+        middlePlaceholder.prefWidthProperty().bind(hbox.widthProperty().divide(5));
         
         rightPlaceholder.setPrefHeight(PREF_HEIGHT);
         rightPlaceholder.prefWidthProperty().bind(hbox.widthProperty());
