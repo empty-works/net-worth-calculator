@@ -125,54 +125,12 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         
         useAssetsSubCatCon.showLabels();
         labelList.add(useAssetsSubCatCon);
-        /*
-        // Invested Assets
-        labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
-        
-        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", darkGray);
-        taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", darkGray), 
-                                          new AmountLabel("Other", darkGray));
-        labelList.add(taxableAccount);
-        
-        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", darkGray);
-        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", darkGray), 
-                                          new AmountLabel("Roth IRA", darkGray), 
-                                          new AmountLabel("401(k) or 403(b)", darkGray), 
-                                          new AmountLabel("SEP-IRA", darkGray), 
-                                          new AmountLabel("Pension (vested benefit)", darkGray), 
-                                          new AmountLabel("Annuity (accumulated value)", darkGray), 
-                                          new AmountLabel("Annuity (accumulated value)", darkGray));
-        labelList.add(retirementAccounts);
-        
-        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", darkGray);
-        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", darkGray), 
-                                          new AmountLabel("Sole propietorship", darkGray), 
-                                          new AmountLabel("Partnership", darkGray), 
-                                          new AmountLabel("C Corporation", darkGray), 
-                                          new AmountLabel("S Corporation", darkGray), 
-                                          new AmountLabel("Limited liability company", darkGray), 
-                                          new AmountLabel("Other", darkGray));
-        labelList.add(businessOwnership);
-        labelList.add(new SubTotalAmountLabel("Total Invested Assets"));
-        
-        // Use Assets
-        labelList.add(new SubCategoryLabel("Use Assets", lightGray));
-        labelList.add(new AmountLabel("Principal home", lightGray));
-        labelList.add(new AmountLabel("Vacation home", lightGray));
-        labelList.add(new AmountLabel("Cars, trucks, boats", lightGray));
-        labelList.add(new AmountLabel("Home furnishings", lightGray));
-        labelList.add(new AmountLabel("Art, antiques, coins, collectibles", lightGray));
-        labelList.add(new AmountLabel("Jewelry, furs", lightGray));
-        labelList.add(new AmountLabel("Other", lightGray));
-        labelList.add(new SubTotalAmountLabel("Total Use Assets"));
-        */
         
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {
             
             assetsGridPane.add(labelList.get(i), xPos, i);
         }
-        
     }
     
     private void addMainComponentsToVBox() {

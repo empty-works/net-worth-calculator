@@ -7,14 +7,12 @@ import java.util.List;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
-import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
 
 /**
@@ -66,32 +64,39 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
     
     private void addLabels() {
 
-        List<Node> labelList = new ArrayList<>();
-        /*
-        labelList.add(new SubCategoryLabel("Current", lightGray));
-        labelList.add(new AmountLabel("Credit card balances", lightGray));
-        labelList.add(new AmountLabel("Estimated income tax owed", lightGray));
-        labelList.add(new AmountLabel("Other outstanding bills", lightGray));
+        List<SubCategoryContainer> labelList = new ArrayList<>();
         
-        labelList.add(new SubCategoryLabel("Long-Term", darkGray));
-        labelList.add(new AmountLabel("Home mortgage", darkGray));
-        labelList.add(new AmountLabel("Home equity loan", darkGray));
-        labelList.add(new AmountLabel("Mortgages on rental properties", darkGray));
-        labelList.add(new AmountLabel("Car loans", darkGray));
-        labelList.add(new AmountLabel("Student loans", darkGray));
-        labelList.add(new AmountLabel("Life insurance policy loans", darkGray));
-        labelList.add(new AmountLabel("Other long-term debt", darkGray));
+        // Current
+        SubCategoryContainer currentSubCatCon = new SubCategoryContainer("Current", lightGray);
+        currentSubCatCon.addAmountLabel(new AmountLabel("Credit card balances", lightGray));
+        currentSubCatCon.addAmountLabel(new AmountLabel("Estimated income tax owed", lightGray));
+        currentSubCatCon.addAmountLabel(new AmountLabel("Other outstanding bills", lightGray));
         
+        currentSubCatCon.showLabels();
+        labelList.add(currentSubCatCon);
+        
+        // Long-Term
+        SubCategoryContainer longTermSubCatCon = new SubCategoryContainer("Long-Term", lightGray);
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Home mortgage", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Home equity loan", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Mortgages on rental properties", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Car loans", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Student loans", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Life insurance policy loans", darkGray));
+        longTermSubCatCon.addAmountLabel(new AmountLabel("Other long-term debt", darkGray));
+        
+        longTermSubCatCon.showLabels();
+        labelList.add(longTermSubCatCon);
+
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {
             
             liabilitiesGridPane.add(labelList.get(i), xPos, i);
         }
-*/
     }
     
     private void addMainComponentsToVBox() {
         
-        //this.getChildren().addAll(categoryTitle, scrollPane);
+        this.getChildren().addAll(categoryTitle, scrollPane);
     }
 }
