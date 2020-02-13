@@ -7,10 +7,8 @@ import java.util.List;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -66,10 +64,9 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     }
     
     private void addLabels() {
-
-        // Category Title
-        this.getChildren().add(categoryTitle);
         
+        List<SubCategoryContainer> labelList = new ArrayList<>();
+
         // Cash and Cash Equivalents - default color
         SubCategoryContainer cashSubCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
         cashSubCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
@@ -80,10 +77,10 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         cashSubCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
         cashSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash"));
         cashSubCatCon.showLabels();
-        this.getChildren().add(cashSubCatCon);
+        labelList.add(cashSubCatCon);
                 
         // Invested Assets
-        SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer("Invested Assets", lightGray);
+        SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer("Invested Assets", darkGray);
         
         TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", darkGray);
         taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", darkGray), 
@@ -111,6 +108,9 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         investedAssetsSubCatCon.addTitleAmountLabel(businessOwnership);
         
         investedAssetsSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Invested Assets"));
+        
+        investedAssetsSubCatCon.showLabels();
+        labelList.add(investedAssetsSubCatCon);
         
         /*
         // Invested Assets
@@ -152,18 +152,18 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(new AmountLabel("Jewelry, furs", lightGray));
         labelList.add(new AmountLabel("Other", lightGray));
         labelList.add(new SubTotalAmountLabel("Total Use Assets"));
+        */
         
         int xPos = 0;
         for(int i = 0; i < labelList.size(); i++) {
             
             assetsGridPane.add(labelList.get(i), xPos, i);
         }
-        */
+        
     }
     
     private void addMainComponentsToVBox() {
         
-        
-        //this.getChildren().addAll(categoryTitle, scrollPane);
+        this.getChildren().addAll(categoryTitle, scrollPane);
     }
 }

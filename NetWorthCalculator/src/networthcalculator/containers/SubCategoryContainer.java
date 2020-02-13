@@ -5,7 +5,6 @@ package networthcalculator.containers;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.Node;
-import javafx.scene.layout.AnchorPane;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
