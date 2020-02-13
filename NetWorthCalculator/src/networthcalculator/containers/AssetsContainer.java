@@ -112,6 +112,19 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         investedAssetsSubCatCon.showLabels();
         labelList.add(investedAssetsSubCatCon);
         
+        //Use Assets
+        SubCategoryContainer useAssetsSubCatCon = new SubCategoryContainer("Use Assets", lightGray);
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Principal home", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Vacation home", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Cars, trucks, boats", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Home furnishings", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Art, antiques, coins, collectibles", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Jewelry, furs", lightGray));
+        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Other", lightGray));
+        useAssetsSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Use Assets"));
+        
+        useAssetsSubCatCon.showLabels();
+        labelList.add(useAssetsSubCatCon);
         /*
         // Invested Assets
         labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
