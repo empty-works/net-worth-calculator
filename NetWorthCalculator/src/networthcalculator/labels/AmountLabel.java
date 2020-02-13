@@ -7,10 +7,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import networthcalculator.MyUtility;
 
 /**
@@ -23,6 +25,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private Label dollarSignLabel = new Label();
     protected TextField amountField = new TextField();
     private HBox hbox = new HBox();
+    private VBox buttonVbox = new VBox();
     private String text;
     final private int PREF_HEIGHT = 25;
     
@@ -35,6 +38,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setTextField();
+        setYesNoButtons();
         setBackground(bgColor);
         this.getChildren().add(hbox);
     }
@@ -43,7 +47,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         hbox.setId("AmountLabelHBox");
         ObservableList list = hbox.getChildren();
-        list.addAll(amountLabel, dollarSignLabel, amountField);
+        list.addAll(amountLabel, dollarSignLabel, amountField, buttonVbox);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
@@ -93,6 +97,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
         */
+    }
+    
+    private void setYesNoButtons() {
+        
+        Button yesButton = new Button();
+        Button noButton = new Button();
+        buttonVbox.getChildren().addAll(yesButton, noButton);
     }
     
     public void setCustomPadding(double padding) {
