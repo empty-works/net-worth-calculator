@@ -27,6 +27,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private HBox hbox = new HBox();
     private VBox buttonVbox = new VBox();
     private String text;
+    private Button yesButton, noButton;
     final private int PREF_HEIGHT = 25;
     
     public AmountLabel(String text, String bgColor) {
@@ -101,9 +102,16 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private void setYesNoButtons() {
         
-        Button yesButton = new Button();
-        Button noButton = new Button();
+        int buttonHeight = 25;
+        
+        yesButton = new Button();
+        yesButton.setMinHeight(buttonHeight);
+        yesButton.setPrefHeight(buttonHeight);
+        noButton = new Button();
+        noButton.setMinHeight(buttonHeight);
+        noButton.setPrefHeight(buttonHeight);
         buttonVbox.getChildren().addAll(yesButton, noButton);
+        buttonVbox.prefWidthProperty().bind(hbox.widthProperty().divide(6));
     }
     
     public void setCustomPadding(double padding) {
