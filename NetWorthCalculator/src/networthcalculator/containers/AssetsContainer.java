@@ -10,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -70,6 +71,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         // Category Title
         this.getChildren().add(categoryTitle);
         
+        // TODO Make SubCategoryContainer fill width properly.
         // Cash and Cash Equivalents - default color
         SubCategoryContainer subCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
         subCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
@@ -80,9 +82,11 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         subCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
         subCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash"));
         subCatCon.showLabels();
-        subCatCon.prefWidthProperty().bind(scrollPane.widthProperty());
+        AnchorPane.setLeftAnchor(subCatCon, 0.0);
+        AnchorPane.setRightAnchor(subCatCon, 0.0);
         this.getChildren().add(subCatCon);
                 
+        
         /*
         // Invested Assets
         labelList.add(new SubCategoryLabel("Invested Assets", darkGray));
