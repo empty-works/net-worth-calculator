@@ -31,7 +31,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private VBox buttonVbox = new VBox();
     private String text;
     private Button acceptButton, cancelButton;
-    final private int PREF_HEIGHT = 25;
+    final private int PREF_HEIGHT = 60;
     
     public AmountLabel(String text, String bgColor) {
         
@@ -114,7 +114,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private void setYesNoButtons() {
         
-        int buttonSize = 25;
+        int buttonSize = 32;
         
         acceptButton = new Button();
         acceptButton.setMinHeight(buttonSize);
@@ -122,8 +122,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         acceptButton.setMinWidth(buttonSize);
         acceptButton.setPrefWidth(buttonSize);
         acceptButton.setVisible(false);
-        Image greenCheck = new Image(NetWorthCalculator.class.getResourceAsStream("images/green_check.png"));
-        System.out.println("Check accept button image: " + greenCheck);
+        Image greenCheck = new Image(NetWorthCalculator.class.getResourceAsStream(
+                "images/green_checkmark.png"));
         acceptButton.setGraphic(new ImageView(greenCheck));
         
         cancelButton = new Button();
@@ -132,6 +132,9 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         cancelButton.setMinWidth(buttonSize);
         cancelButton.setPrefWidth(buttonSize);
         cancelButton.setVisible(false);
+        Image redXMark = new Image(NetWorthCalculator.class.getResourceAsStream(
+                "images/red_xmark.png"));
+        cancelButton.setGraphic(new ImageView(redXMark));
         
         buttonVbox.getChildren().addAll(acceptButton, cancelButton);
         buttonVbox.prefWidthProperty().bind(hbox.widthProperty().divide(6));
