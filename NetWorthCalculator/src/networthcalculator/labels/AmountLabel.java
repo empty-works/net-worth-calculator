@@ -10,10 +10,13 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import networthcalculator.MyUtility;
+import networthcalculator.NetWorthCalculator;
 
 /**
  *
@@ -119,6 +122,9 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         acceptButton.setMinWidth(buttonSize);
         acceptButton.setPrefWidth(buttonSize);
         acceptButton.setVisible(false);
+        Image greenCheck = new Image(NetWorthCalculator.class.getResourceAsStream("images/green_check.png"));
+        System.out.println("Check accept button image: " + greenCheck);
+        acceptButton.setGraphic(new ImageView(greenCheck));
         
         cancelButton = new Button();
         cancelButton.setMinHeight(buttonSize);
