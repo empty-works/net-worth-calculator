@@ -5,6 +5,8 @@ package networthcalculator.labels;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -33,6 +35,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private Button acceptButton, cancelButton;
     final private int PREF_HEIGHT = 60;
     
+    private String currentAmountFieldText = "";
+    
     public AmountLabel(String text, String bgColor) {
         
         this.text = text;
@@ -42,7 +46,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setHBox();
         setLabelProperties();
         setTextField();
-        setYesNoButtons();
+        setAcceptAndCancelButtons();
         setBackground(bgColor);
         this.getChildren().add(hbox);
     }
@@ -67,9 +71,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         dollarSignLabel.setText(MyUtility.CURRENCY);
         dollarSignLabel.setPrefHeight(PREF_HEIGHT);
         dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty().divide(5)); // w * 1/5
-        
-        // Font style
-        
     }
     
     private void setTextField() {
@@ -114,7 +115,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         */
     }
     
-    private void setYesNoButtons() {
+    private void setAcceptAndCancelButtons() {
         
         int buttonSize = 32;
         
@@ -123,23 +124,47 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         acceptButton.setPrefHeight(buttonSize);
         acceptButton.setMinWidth(buttonSize);
         acceptButton.setPrefWidth(buttonSize);
-        acceptButton.setVisible(false);
         Image greenCheck = new Image(NetWorthCalculator.class.getResourceAsStream(
                 "images/green_checkmark.png"));
         acceptButton.setGraphic(new ImageView(greenCheck));
+        acceptButton.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent e) {
+                
+                currentAmountFieldText = amountField.getText();
+                setButtonsVisible(false);
+            }
+        });
         
         cancelButton = new Button();
         cancelButton.setMinHeight(buttonSize);
         cancelButton.setPrefHeight(buttonSize);
         cancelButton.setMinWidth(buttonSize);
         cancelButton.setPrefWidth(buttonSize);
-        cancelButton.setVisible(false);
         Image redXMark = new Image(NetWorthCalculator.class.getResourceAsStream(
                 "images/red_xmark.png"));
         cancelButton.setGraphic(new ImageView(redXMark));
+        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent e) {
+                
+                amountField.setText(currentAmountFieldText);
+                setButtonsVisible(false);
+            }
+        });
         
         buttonVbox.getChildren().addAll(acceptButton, cancelButton);
         buttonVbox.prefWidthProperty().bind(hbox.widthProperty().divide(6));
+        
+        setButtonsVisible(false);
+    }
+    
+    private void setButtonsVisible(boolean set) {
+        
+        acceptButton.setVisible(set);
+        cancelButton.setVisible(set);
     }
     
     public void setCustomPadding(double padding) {
