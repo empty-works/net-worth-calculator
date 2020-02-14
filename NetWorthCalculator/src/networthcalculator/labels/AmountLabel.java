@@ -80,7 +80,16 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
             public void changed(ObservableValue<? extends String> observable, 
                     String oldValue, String newValue) {
                 
-                
+                if(!oldValue.equals(newValue)) {
+                    
+                    acceptButton.setVisible(true);
+                    cancelButton.setVisible(true);
+                }
+                else {
+                    
+                    acceptButton.setVisible(false);
+                    cancelButton.setVisible(false);
+                }
             }
         });
         
@@ -109,11 +118,15 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         acceptButton.setPrefHeight(buttonSize);
         acceptButton.setMinWidth(buttonSize);
         acceptButton.setPrefWidth(buttonSize);
+        acceptButton.setVisible(false);
+        
         cancelButton = new Button();
         cancelButton.setMinHeight(buttonSize);
         cancelButton.setPrefHeight(buttonSize);
         cancelButton.setMinWidth(buttonSize);
         cancelButton.setPrefWidth(buttonSize);
+        cancelButton.setVisible(false);
+        
         buttonVbox.getChildren().addAll(acceptButton, cancelButton);
         buttonVbox.prefWidthProperty().bind(hbox.widthProperty().divide(6));
     }
