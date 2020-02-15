@@ -167,6 +167,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         cancelButton.setVisible(set);
     }
     
+    public String getText() {
+        
+        return amountField.getText();
+    }
+    
     public void setCustomPadding(double padding) {
         
         this.setPadding(new Insets(padding));
