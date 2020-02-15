@@ -31,6 +31,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     
     public void addAmountLabel(AmountLabel label) {
         
+        label.setController(this);
         label.prefWidthProperty().bind(this.widthProperty());
         amountLabelList.add(label);
     }
@@ -61,16 +62,16 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
             this.add(subTotalLabel, xPos, i);
         }
     }
-    
-    public void setSubTotal(double subTotal) {
-        
-        subTotalLabel.setSubTotal(subTotal);
-    }
 
     @Override
     public void amountChanged(double amount) {
         
         subTotal += amount;
+        setSubTotal(subTotal);
+    }
+    
+    public void setSubTotal(double subTotal) {
         
+        subTotalLabel.setSubTotal(subTotal);
     }
 }
