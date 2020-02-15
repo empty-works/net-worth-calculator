@@ -7,6 +7,7 @@ import java.util.List;
 import javafx.scene.Node;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubCategoryLabel;
+import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.interfaces.AmountViewController;
 
@@ -18,7 +19,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     
     private List<Node> amountLabelList = new ArrayList<>();
     private SubCategoryLabel subCategoryLabel;
-    private Node subTotalLabel = null;
+    private SubTotalAmountLabel subTotalLabel = null;
     private double subTotal = 0.0;
     
     public SubCategoryContainer(String subCategoryTitle, String titleColor) {
@@ -41,7 +42,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     }
     
     // There can only be one.
-    public void setSubTotalLabel(Node label) {
+    public void setSubTotalLabel(SubTotalAmountLabel label) {
         
         subTotalLabel = label;
     }
@@ -60,9 +61,16 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
             this.add(subTotalLabel, xPos, i);
         }
     }
+    
+    public void setSubTotal(double subTotal) {
+        
+        subTotalLabel.setSubTotal(subTotal);
+    }
 
     @Override
     public void amountChanged(double amount) {
+        
+        subTotal += amount;
         
     }
 }

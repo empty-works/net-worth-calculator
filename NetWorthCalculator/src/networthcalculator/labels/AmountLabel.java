@@ -19,6 +19,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import networthcalculator.MyUtility;
 import networthcalculator.NetWorthCalculator;
+import networthcalculator.labels.interfaces.AmountViewController;
 
 /**
  *
@@ -34,6 +35,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private String text;
     private Button acceptButton, cancelButton;
     final private int PREF_HEIGHT = 60;
+    private AmountViewController controller;
     
     private String currentAmountFieldText = "";
     
@@ -133,6 +135,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
             public void handle(ActionEvent e) {
                 
                 currentAmountFieldText = amountField.getText();
+                controller.amountChanged(Double.valueOf(currentAmountFieldText));
                 setButtonsVisible(false);
             }
         });
@@ -187,5 +190,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         System.out.println("Background color: " + bgColor);
         hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
                 "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS);
+    }
+    
+    public void setController(AmountViewController controller) {
+        
+        this.controller = controller;
     }
 }
