@@ -134,8 +134,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
             @Override
             public void handle(ActionEvent e) {
                 
-                double newAmount = controller.amountChanged(currentAmountFieldText, amountField.getText());
-                currentAmountFieldText = ;
+                double newAmount = controller.amountChanged(amountField.getText(), currentAmountFieldText);
+                currentAmountFieldText = String.valueOf(newAmount);
                 setButtonsVisible(false);
             }
         });
