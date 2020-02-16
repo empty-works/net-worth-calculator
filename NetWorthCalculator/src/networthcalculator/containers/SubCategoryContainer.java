@@ -64,24 +64,24 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     }
 
     @Override
-    public double amountChanged(String currentAmountString, String previousAmountString) {
+    public void amountChanged(String currentAmountString, String previousAmountString) {
         
-        //TODO fix calculating subtotal
         double currentAmount = validateAmount(currentAmountString);
         double previousAmount = validateAmount(previousAmountString);
         
         double amountDifference = currentAmount - previousAmount;
-        calculateSubTotal(amountDifference);
         
-        if(amountDifference < 0) {
-            amountDifference = 0.0;
-        }
-        return amountDifference;
+        System.out.println("Current Amount: " + currentAmount);
+        System.out.println("Previous Amount: " + previousAmount);
+        System.out.println("Amount Difference: " + amountDifference);
+        
+        calculateSubTotal(amountDifference);
     }
     
     private void calculateSubTotal(double amountDifference) {
         
         subTotal += amountDifference; 
+        System.out.println("Subtotal: " + subTotal);
         setSubTotal(subTotal);
     }
     
