@@ -82,12 +82,14 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         // Invested Assets
         SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer("Invested Assets", darkGray);
         
-        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel("Taxable account", darkGray);
+        TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel(
+                "Taxable account", darkGray, investedAssetsSubCatCon);
         taxableAccount.addAllAmountLabels(new AmountLabel("Brokerage", darkGray), 
                                           new AmountLabel("Other", darkGray));
         investedAssetsSubCatCon.addTitleAmountLabel(taxableAccount);
         
-        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel("Retirement accounts", darkGray);
+        TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel(
+                "Retirement accounts", darkGray, investedAssetsSubCatCon);
         retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", darkGray), 
                                           new AmountLabel("Roth IRA", darkGray), 
                                           new AmountLabel("401(k) or 403(b)", darkGray), 
@@ -97,7 +99,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
                                           new AmountLabel("Annuity (accumulated value)", darkGray));
         investedAssetsSubCatCon.addTitleAmountLabel(retirementAccounts);
         
-        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel("Business ownership interests", darkGray);
+        TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel(
+                "Business ownership interests", darkGray, investedAssetsSubCatCon);
         businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", darkGray), 
                                           new AmountLabel("Sole propietorship", darkGray), 
                                           new AmountLabel("Partnership", darkGray), 

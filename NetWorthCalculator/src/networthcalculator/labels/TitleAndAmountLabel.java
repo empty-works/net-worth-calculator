@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import networthcalculator.labels.interfaces.AmountViewController;
 
 /**
  *
@@ -23,9 +24,11 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
     private HBox hbox = new HBox();
     private VBox vboxLabelCon = new VBox();
     final private int PREF_HEIGHT = 45;
+    private AmountViewController controller;
     
-    public TitleAndAmountLabel(String title, String bgColor) {
+    public TitleAndAmountLabel(String title, String bgColor, AmountViewController controller) {
         
+        this.controller = controller;
         this.setId("TitleAndAmountLabel");
         this.title = title;
         this.bgColor = bgColor;
@@ -70,6 +73,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         
         for(AmountLabel label : labels) {
             
+            label.setController(controller);
             label.setCustomPadding(0);
             label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
             vboxLabelCon.getChildren().add(label);
