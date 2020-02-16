@@ -8,5 +8,5 @@ package networthcalculator.labels.interfaces;
  */
 public interface AmountViewController {
     
-    public void amountChanged(double amount);
+    public double amountChanged(String currentAmount, String previousAmount);
 }
