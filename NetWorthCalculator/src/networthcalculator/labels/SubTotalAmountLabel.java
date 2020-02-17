@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import networthcalculator.MyUtility;
+import networthcalculator.TotalAmount;
 
 /**
  *
@@ -21,9 +22,11 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
     private HBox hbox = new HBox();
     private String text;
     final private int PREF_HEIGHT = 25;
+    private TotalAmount totalAmount;
     
-    public SubTotalAmountLabel(String text) {
+    public SubTotalAmountLabel(String text, TotalAmount totalAmount) {
         
+        this.totalAmount = totalAmount;
         this.text = text;
         this.setId("SubTotalAmountLabel");
         setHBox();
@@ -50,8 +53,7 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         subTotal.setText(text + " " + MyUtility.CURRENCY);
         subTotal.setPrefHeight(PREF_HEIGHT);
         subTotal.prefWidthProperty().bind(hbox.widthProperty());
-        
-        
+
         subAmountNumLabel.setPrefHeight(PREF_HEIGHT);
         subAmountNumLabel.setAlignment(Pos.CENTER_RIGHT);
         subAmountNumLabel.prefWidthProperty().bind(hbox.widthProperty());

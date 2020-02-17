@@ -12,6 +12,7 @@ import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import networthcalculator.TotalAmount;
 import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.labelsubclasses.AccCategoryLiabilities;
 import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
@@ -28,9 +29,11 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
             new LiabilitiesCategoryLabel("LIABILITIES", "CURRENT AMOUNT DUE");
     private String darkGray = "darkgray";
     private String lightGray = "lightgray";
+    private TotalAmount totalAmount;
     
-    public LiabilitiesContainer() {
+    public LiabilitiesContainer(TotalAmount totalAmount) {
         
+        this.totalAmount = totalAmount;
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();
