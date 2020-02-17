@@ -13,5 +13,4 @@ public class AccCategoryAssets extends AccCategory {
         
         return ASSETS;
     }
-    
 }
