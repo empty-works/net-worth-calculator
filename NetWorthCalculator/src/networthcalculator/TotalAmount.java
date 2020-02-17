@@ -2,6 +2,7 @@
  */
 package networthcalculator;
 
+import networthcalculator.labels.interfaces.BottomContainerController;
 import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
@@ -10,32 +11,15 @@ import networthcalculator.labels.labelsubclasses.AccCategory;
  */
 public class TotalAmount {
     
-    private double assetsSubTotal = 0.0, liabilitiesSubTotal = 0.0;
+    private BottomContainerController bottomController;
     
-    public TotalAmount() {
+    public TotalAmount(BottomContainerController bottomController) {
         
-        
+        this.bottomController = bottomController;
     }
     
     public void setSubTotal(AccCategory category, double amount) {
         
-        if(category.getCategory().equals(AccCategory.ASSETS)) {
-            
-            assetsSubTotal = amount;
-        }
-        if(category.getCategory().equals(AccCategory.LIABILITIES)) {
-            
-            liabilitiesSubTotal = amount;
-        }
-    }
-    
-    public double getAssetsTotal() {
-        
-        return assetsSubTotal;
-    }
-    
-    public double getLiabilitiesTotal() {
-        
-        return liabilitiesSubTotal;
+        bottomController.setAmounts(category, amount);
     }
 }

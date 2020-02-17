@@ -4,11 +4,13 @@ package networthcalculator.containers;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import networthcalculator.labels.interfaces.BottomContainerController;
+import networthcalculator.labels.labelsubclasses.AccCategory;
 /**
  *
  * @author MP
  */
-public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
+public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implements BottomContainerController {
     
     private Label totalAssets = new Label();
     private Label totalLiabilities = new Label();
@@ -45,5 +47,11 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
         netWorth.setText("Net Worth:");
         netWorth.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(netWorth, 2, 0);
+    }
+
+    @Override
+    public void setAmounts(AccCategory category, double amount) {
+        
+        
     }
 }
