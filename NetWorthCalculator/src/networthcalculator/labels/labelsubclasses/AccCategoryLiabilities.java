@@ -12,6 +12,5 @@ public class AccCategoryLiabilities extends AccCategory {
     public String getCategory() {
         
         return LIABILITIES;
-    }
-    
+    } 
 }
