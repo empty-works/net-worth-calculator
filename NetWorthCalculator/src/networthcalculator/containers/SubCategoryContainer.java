@@ -10,6 +10,7 @@ import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.labels.labelsubclasses.Category;
 
 /**
  *
@@ -21,12 +22,13 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     private SubCategoryLabel subCategoryLabel;
     private SubTotalAmountLabel subTotalLabel = null;
     private double subTotal = 0.0;
+    private Category category;
     
-    public SubCategoryContainer(String subCategoryTitle, String titleColor) {
+    public SubCategoryContainer(String subCategoryTitle, String titleColor, Category category) {
         
+        this.category = category;
         subCategoryLabel = new SubCategoryLabel(subCategoryTitle, titleColor);
         amountLabelList.add(subCategoryLabel);
-        
     }
     
     public void addAmountLabel(AmountLabel label) {
@@ -68,13 +70,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
         
         double currentAmount = validateAmount(currentAmountString);
         double previousAmount = validateAmount(previousAmountString);
-        
-        double amountDifference = currentAmount - previousAmount;
-        
-        System.out.println("Current Amount: " + currentAmount);
-        System.out.println("Previous Amount: " + previousAmount);
-        System.out.println("Amount Difference: " + amountDifference);
-        
+        double amountDifference = currentAmount - previousAmount;        
         calculateSubTotal(amountDifference);
     }
     
