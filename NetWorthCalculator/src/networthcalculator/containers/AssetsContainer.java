@@ -16,6 +16,7 @@ import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
+import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
  *
@@ -68,7 +69,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         List<SubCategoryContainer> labelList = new ArrayList<>();
 
         // Cash and Cash Equivalents - default color
-        SubCategoryContainer cashSubCatCon = new SubCategoryContainer("Cash and Cash Equivalents", lightGray);
+        SubCategoryContainer cashSubCatCon = new SubCategoryContainer(
+                "Cash and Cash Equivalents", lightGray, AccCategory.ASSETS);
         cashSubCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
         cashSubCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
         cashSubCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
@@ -80,7 +82,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(cashSubCatCon);
                 
         // Invested Assets
-        SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer("Invested Assets", darkGray);
+        SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer(
+                "Invested Assets", darkGray, AccCategory.ASSETS);
         
         TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel(
                 "Taxable account", darkGray, investedAssetsSubCatCon);

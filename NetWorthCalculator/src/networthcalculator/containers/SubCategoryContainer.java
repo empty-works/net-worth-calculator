@@ -10,7 +10,7 @@ import networthcalculator.labels.SubCategoryLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.interfaces.AmountViewController;
-import networthcalculator.labels.labelsubclasses.Category;
+import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
  *
@@ -22,9 +22,9 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     private SubCategoryLabel subCategoryLabel;
     private SubTotalAmountLabel subTotalLabel = null;
     private double subTotal = 0.0;
-    private Category category;
+    private AccCategory category;
     
-    public SubCategoryContainer(String subCategoryTitle, String titleColor, Category category) {
+    public SubCategoryContainer(String subCategoryTitle, String titleColor, AccCategory category) {
         
         this.category = category;
         subCategoryLabel = new SubCategoryLabel(subCategoryTitle, titleColor);
