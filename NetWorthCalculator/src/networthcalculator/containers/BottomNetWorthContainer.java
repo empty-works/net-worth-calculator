@@ -18,6 +18,7 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane {
     final private String LEFT_COLOR = "lightgray";
     final private String MID_COLOR = "lightgray";
     final private String RIGHT_COLOR = "palegreen";
+    final public String DEFAULT_AMOUNT = "0.00";
     
     public BottomNetWorthContainer() {
         
