@@ -13,6 +13,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.labels.AmountLabel;
+import networthcalculator.labels.labelsubclasses.AccCategoryLiabilities;
 import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
 
 /**
@@ -67,7 +68,8 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         List<SubCategoryContainer> labelList = new ArrayList<>();
         
         // Current
-        SubCategoryContainer currentSubCatCon = new SubCategoryContainer("Current", lightGray);
+        SubCategoryContainer currentSubCatCon = new SubCategoryContainer(
+                "Current", lightGray, new AccCategoryLiabilities());
         currentSubCatCon.addAmountLabel(new AmountLabel("Credit card balances", lightGray));
         currentSubCatCon.addAmountLabel(new AmountLabel("Estimated income tax owed", lightGray));
         currentSubCatCon.addAmountLabel(new AmountLabel("Other outstanding bills", lightGray));
@@ -76,7 +78,8 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         labelList.add(currentSubCatCon);
         
         // Long-Term
-        SubCategoryContainer longTermSubCatCon = new SubCategoryContainer("Long-Term", lightGray);
+        SubCategoryContainer longTermSubCatCon = new SubCategoryContainer(
+                "Long-Term", lightGray, new AccCategoryLiabilities());
         longTermSubCatCon.addAmountLabel(new AmountLabel("Home mortgage", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Home equity loan", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Mortgages on rental properties", darkGray));

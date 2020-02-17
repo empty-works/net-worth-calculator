@@ -16,7 +16,7 @@ import networthcalculator.labels.AmountLabel;
 import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
-import networthcalculator.labels.labelsubclasses.AccCategory;
+import networthcalculator.labels.labelsubclasses.AccCategoryAssets;
 
 /**
  *
@@ -70,7 +70,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
 
         // Cash and Cash Equivalents - default color
         SubCategoryContainer cashSubCatCon = new SubCategoryContainer(
-                "Cash and Cash Equivalents", lightGray, AccCategory.ASSETS);
+                "Cash and Cash Equivalents", lightGray, new AccCategoryAssets());
         cashSubCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
         cashSubCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
         cashSubCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
@@ -83,7 +83,7 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
                 
         // Invested Assets
         SubCategoryContainer investedAssetsSubCatCon = new SubCategoryContainer(
-                "Invested Assets", darkGray, AccCategory.ASSETS);
+                "Invested Assets", darkGray, new AccCategoryAssets());
         
         TitleAndAmountLabel taxableAccount = new TitleAndAmountLabel(
                 "Taxable account", darkGray, investedAssetsSubCatCon);
@@ -119,7 +119,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         labelList.add(investedAssetsSubCatCon);
         
         //Use Assets
-        SubCategoryContainer useAssetsSubCatCon = new SubCategoryContainer("Use Assets", lightGray);
+        SubCategoryContainer useAssetsSubCatCon = new SubCategoryContainer(
+                "Use Assets", lightGray, new AccCategoryAssets());
         useAssetsSubCatCon.addAmountLabel(new AmountLabel("Principal home", lightGray));
         useAssetsSubCatCon.addAmountLabel(new AmountLabel("Vacation home", lightGray));
         useAssetsSubCatCon.addAmountLabel(new AmountLabel("Cars, trucks, boats", lightGray));
