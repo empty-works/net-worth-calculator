@@ -21,7 +21,9 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
     final private String MID_COLOR = "lightgray";
     final private String RIGHT_COLOR = "palegreen";
     final public String DEFAULT_AMOUNT = "0.00";
-    private double currentAssetsTotal = 0.0, currentLiabilitiesTotal = 0.0;
+    private double currentAssetsTotal = 0.0, 
+            currentLiabilitiesTotal = 0.0, 
+            totalNetWorth = 0.0;
     
     public BottomNetWorthContainer() {
         
@@ -45,7 +47,7 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
         
         netWorth.setStyle("-fx-background-color:" + RIGHT_COLOR);
         netWorth.prefWidthProperty().bind(this.widthProperty().divide(3));
-        netWorth.setText("Net Worth:");
+        netWorth.setText("Net Worth: " + totalNetWorth);
         netWorth.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(netWorth, 2, 0);
     }
@@ -63,5 +65,9 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
             currentLiabilitiesTotal += subTotalDifference;
             totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
         }
+        
+        // Calculate total net worth
+        totalNetWorth = currentAssetsTotal - currentLiabilitiesTotal;
+        netWorth.setText("Net Worth: " + totalNetWorth);
     }
 }
