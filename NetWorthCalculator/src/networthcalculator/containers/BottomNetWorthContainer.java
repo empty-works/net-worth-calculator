@@ -53,12 +53,12 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
     @Override
     public void setAmounts(AccCategory category, double subTotalDifference) {
         
-        if(category.equals(AccCategory.ASSETS)) {
+        if(category.getCategory().equals(AccCategory.ASSETS)) {
             
             currentAssetsTotal += subTotalDifference;
             totalAssets.setText("Total Assets: " + currentAssetsTotal);
         }
-        if(category.equals(AccCategory.LIABILITIES)) {
+        if(category.getCategory().equals(AccCategory.LIABILITIES)) {
             
             currentLiabilitiesTotal += subTotalDifference;
             totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
