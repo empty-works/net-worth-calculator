@@ -93,7 +93,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     
     public void setSubTotal(double subTotal) {
         
-        subTotalLabel.setSubTotal(subTotal);
+        subTotalLabel.setSubTotal(category, subTotal);
     }
     
     public AccCategory getCategory() {

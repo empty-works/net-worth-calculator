@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import networthcalculator.MyUtility;
 import networthcalculator.TotalAmount;
+import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
  *
@@ -59,8 +60,9 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         subAmountNumLabel.prefWidthProperty().bind(hbox.widthProperty());
     }
     
-    public void setSubTotal(double subTotal) {
+    public void setSubTotal(AccCategory category, double subTotal) {
         
         subAmountNumLabel.setText(String.valueOf(subTotal));
+        totalAmount.setSubTotal(category, subTotal);
     }
 }
