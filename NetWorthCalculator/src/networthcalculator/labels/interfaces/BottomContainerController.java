@@ -10,5 +10,5 @@ import networthcalculator.labels.labelsubclasses.AccCategory;
  */
 public interface BottomContainerController {
     
-    public void setAmounts(AccCategory category, double amount);
+    public void setAmounts(AccCategory category, double subTotalDifference);
 }

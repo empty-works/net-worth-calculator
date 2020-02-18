@@ -18,8 +18,8 @@ public class TotalAmount {
         this.bottomController = bottomController;
     }
     
-    public void setSubTotal(AccCategory category, double amount) {
+    public void setSubTotalDifference(AccCategory category, double subTotalDifference) {
         
-        bottomController.setAmounts(category, amount);
+        bottomController.setAmounts(category, subTotalDifference);
     }
 }

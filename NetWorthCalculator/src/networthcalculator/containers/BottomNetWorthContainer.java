@@ -21,6 +21,7 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
     final private String MID_COLOR = "lightgray";
     final private String RIGHT_COLOR = "palegreen";
     final public String DEFAULT_AMOUNT = "0.00";
+    private double currentAssetsTotal = 0.0, currentLiabilitiesTotal = 0.0;
     
     public BottomNetWorthContainer() {
         
@@ -32,13 +33,13 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
         
         totalAssets.setStyle("-fx-background-color:" + LEFT_COLOR);
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalAssets.setText("Total Assets:");
+        totalAssets.setText("Total Assets: " + currentAssetsTotal);
         totalAssets.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(totalAssets, 0, 0);
         
         totalLiabilities.setStyle("-fx-background-color:" + MID_COLOR);
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalLiabilities.setText("Total Liabilities:");
+        totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
         totalLiabilities.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(totalLiabilities, 1, 0);
         
@@ -50,8 +51,17 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
     }
 
     @Override
-    public void setAmounts(AccCategory category, double amount) {
+    public void setAmounts(AccCategory category, double subTotalDifference) {
         
-        
+        if(category.equals(AccCategory.ASSETS)) {
+            
+            currentAssetsTotal += subTotalDifference;
+            totalAssets.setText("Total Assets: " + currentAssetsTotal);
+        }
+        if(category.equals(AccCategory.LIABILITIES)) {
+            
+            currentLiabilitiesTotal += subTotalDifference;
+            totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
+        }
     }
 }
