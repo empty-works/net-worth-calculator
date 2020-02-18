@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import networthcalculator.TotalAmount;
 import networthcalculator.labels.AmountLabel;
+import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.labelsubclasses.AccCategoryLiabilities;
 import networthcalculator.labels.labelsubclasses.LiabilitiesCategoryLabel;
 
@@ -76,6 +77,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         currentSubCatCon.addAmountLabel(new AmountLabel("Credit card balances", lightGray));
         currentSubCatCon.addAmountLabel(new AmountLabel("Estimated income tax owed", lightGray));
         currentSubCatCon.addAmountLabel(new AmountLabel("Other outstanding bills", lightGray));
+        currentSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Current Total", totalAmount));
         
         currentSubCatCon.showLabels();
         labelList.add(currentSubCatCon);
@@ -90,6 +92,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         longTermSubCatCon.addAmountLabel(new AmountLabel("Student loans", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Life insurance policy loans", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Other long-term debt", darkGray));
+        longTermSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Long-Term Total", totalAmount));
         
         longTermSubCatCon.showLabels();
         labelList.add(longTermSubCatCon);
