@@ -66,12 +66,14 @@ public class SubCatConCalcTest {
     @Test
     public void testGetAmountDifference() {
         System.out.println("getAmountDifference");
-        String currentAmountString = "";
-        String previousAmountString = "";
-        double expResult = 0.0;
-        double result = SubCatConCalc.getAmountDifference(currentAmountString, previousAmountString);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
         
+        double result = SubCatConCalc.getAmountDifference("15.0", "5.5");
+        assertEquals(9.5, result, 5.5);
+        
+        result = SubCatConCalc.getAmountDifference("25.5", "5.5");
+        assertEquals(20.0, result, 5.5);
+        
+        result = SubCatConCalc.getAmountDifference("15.5", "6.5");
+        assertEquals(9.0, result, 6.5);
     }
 }
