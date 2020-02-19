@@ -8,7 +8,15 @@ package networthcalculator.containers;
  */
 public class SubCatConCalc {
     
-    public static double getAmountDifference(String currentAmountString, String previousAmountString) {
+    public static double getSubTotal(double oldSubTotal, String currentAmountString, String previousAmountString) {
+        
+        double amountDifference = getAmountDifference(currentAmountString, previousAmountString);
+        
+        return oldSubTotal += amountDifference;
+    }
+    
+    public static double getAmountDifference(
+            String currentAmountString, String previousAmountString) {
         
         double currentAmount = validateAmount(currentAmountString);
         double previousAmount = validateAmount(previousAmountString);
@@ -25,6 +33,4 @@ public class SubCatConCalc {
         }
         return newAmount;
     }
-    
-    
 }

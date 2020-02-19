@@ -72,7 +72,6 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
                 currentAmountString, previousAmountString);
         // Set subtotal.
         subTotal += amountDifference;
-        System.out.println("Subtotal: " + subTotal);
         subTotalLabel.setSubTotal(subTotal);
         // Set amount difference.
         setSubTotalDifference(amountDifference);
