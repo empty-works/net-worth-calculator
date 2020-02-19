@@ -35,6 +35,16 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
         
         label.setController(this);
         label.prefWidthProperty().bind(this.widthProperty());
+        
+        // TODO call setAmountSign in AmountLabel depending on asset or liability.
+        if(category.getCategory().equals(AccCategory.ASSETS)) {
+            
+            
+        }
+        if(category.getCategory().equals(AccCategory.LIABILITIES)) {
+            
+            
+        }
         amountLabelList.add(label);
     }
     

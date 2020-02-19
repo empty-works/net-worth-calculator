@@ -8,6 +8,7 @@ package networthcalculator.containers;
  */
 public class SubCatConCalc {
     
+    // For testing purposes.
     public static double getSubTotal(double oldSubTotal, String currentAmountString, String previousAmountString) {
         
         double amountDifference = getAmountDifference(currentAmountString, previousAmountString);

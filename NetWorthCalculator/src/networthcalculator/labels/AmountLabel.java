@@ -196,4 +196,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.controller = controller;
     }
+    
+    //TODO Set a sign on the amount in the textfield depending on category (asset or liability).
+    public void setAmountSign() {
+        
+        
+    }
 }
