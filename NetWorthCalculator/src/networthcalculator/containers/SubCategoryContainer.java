@@ -74,14 +74,6 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
         calculateSubTotal(amountDifference);
     }
     
-    private void calculateSubTotal(double amountDifference) {
-        
-        subTotal += amountDifference;
-        System.out.println("Subtotal: " + subTotal);
-        subTotalLabel.setSubTotal(subTotal);
-        setSubTotalDifference(amountDifference);
-    }
-    
     private double validateAmount(String amount) {
         
         double newAmount = 0.0;
@@ -90,6 +82,14 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
             newAmount = Double.parseDouble(amount);
         }
         return newAmount;
+    }
+    
+    private void calculateSubTotal(double amountDifference) {
+        
+        subTotal += amountDifference;
+        System.out.println("Subtotal: " + subTotal);
+        subTotalLabel.setSubTotal(subTotal);
+        setSubTotalDifference(amountDifference);
     }
     
     public void setSubTotalDifference(double amountDifference) {
