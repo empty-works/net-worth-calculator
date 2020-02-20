@@ -20,7 +20,6 @@ import javafx.scene.layout.VBox;
 import networthcalculator.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
-import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
  *
@@ -101,21 +100,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 }
             }
         });
-        
-        /*
-        //TODO: make better filter
-        UnaryOperator<Change> integerFilter = change -> {
-          
-            String input = change.getText();
-            if(input.matches("[0-9]*")) {
-                
-                return change;
-            }
-            return null;
-        };
-        
-        amountField.setTextFormatter(new TextFormatter<String>(integerFilter));
-        */
     }
     
     private void setAcceptAndCancelButtons() {
