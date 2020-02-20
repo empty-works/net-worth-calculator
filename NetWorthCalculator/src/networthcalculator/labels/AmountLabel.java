@@ -36,11 +36,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private Button acceptButton, cancelButton;
     final private int PREF_HEIGHT = 60;
     private AmountViewController controller;
+    private String bgColor;
     
     private String currentAmountFieldText = "";
     
     public AmountLabel(String text, String bgColor) {
         
+        this.bgColor = bgColor;
         this.text = text;
         amountLabel.setText(text);
         this.setId("AmountLabel");
@@ -49,7 +51,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         setLabelProperties();
         setTextField();
         setAcceptAndCancelButtons();
-        setBackground(bgColor);
+        setBackground();
         this.getChildren().add(hbox);
     }
     
@@ -170,13 +172,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         this.setPadding(new Insets(top, right, bottom, left));
     }
     
-    private void setBackground(String bgColor) {
+    private void setBackground() {
         
         System.out.println("Background color: " + bgColor);
         hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
                 "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS);
     }
-    
+
     public void setController(AmountViewController controller) {
         
         this.controller = controller;
