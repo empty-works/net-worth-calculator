@@ -20,6 +20,7 @@ import javafx.scene.layout.VBox;
 import networthcalculator.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.labels.labelsubclasses.AccCategory;
 
 /**
  *
@@ -195,11 +196,5 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     public void setController(AmountViewController controller) {
         
         this.controller = controller;
-    }
-    
-    //TODO Set a sign on the amount in the textfield depending on category (asset or liability).
-    public void setAmountSign() {
-        
-        
     }
 }

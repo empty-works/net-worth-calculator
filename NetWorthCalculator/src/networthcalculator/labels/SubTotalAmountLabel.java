@@ -60,9 +60,14 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         subAmountNumLabel.prefWidthProperty().bind(hbox.widthProperty());
     }
     
-    public void setSubTotal(double subTotal) {
+    public void setSubTotal(double subTotal, AccCategory category) {
         
-        subAmountNumLabel.setText(String.valueOf(subTotal));
+        String sign = "";
+        if(category.getCategory().equals(AccCategory.LIABILITIES)) {
+            
+            sign = "-";
+        }
+        subAmountNumLabel.setText(sign + String.valueOf(subTotal));
     }
     
     public void setSubTotalDifference(AccCategory category, double subTotalDifference) {

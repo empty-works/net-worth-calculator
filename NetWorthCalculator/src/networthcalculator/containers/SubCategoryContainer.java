@@ -35,16 +35,6 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
         
         label.setController(this);
         label.prefWidthProperty().bind(this.widthProperty());
-        
-        // TODO call setAmountSign in AmountLabel depending on asset or liability.
-        if(category.getCategory().equals(AccCategory.ASSETS)) {
-            
-            
-        }
-        if(category.getCategory().equals(AccCategory.LIABILITIES)) {
-            
-            
-        }
         amountLabelList.add(label);
     }
     
@@ -82,7 +72,7 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
                 currentAmountString, previousAmountString);
         // Set subtotal.
         subTotal += amountDifference;
-        subTotalLabel.setSubTotal(subTotal);
+        subTotalLabel.setSubTotal(subTotal, category);
         // Set amount difference.
         setSubTotalDifference(amountDifference);
     }
