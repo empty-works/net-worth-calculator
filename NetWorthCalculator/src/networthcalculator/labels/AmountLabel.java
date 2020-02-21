@@ -92,11 +92,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 
                 if(!oldValue.equals(newValue)) {
                     
+                    clearInvalidWarning();
                     acceptButton.setVisible(true);
                     cancelButton.setVisible(true);
                 }
                 else {
                     
+                    // This case might happen with copy/pasting
                     acceptButton.setVisible(false);
                     cancelButton.setVisible(false);
                 }
@@ -182,5 +184,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     public void setController(AmountViewController controller) {
         
         this.controller = controller;
+    }
+    
+    private void clearInvalidWarning() {
+        
+        setBackground();
     }
 }
