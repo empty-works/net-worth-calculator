@@ -11,23 +11,29 @@ import networthcalculator.MyUtility;
  */
 public class InputChecker {
     
-    public static void check(HBox hbox, String bgColor, String value) {
+    public static boolean checkIsValid(HBox hbox, String bgColor, String value) {
+        
+        boolean isValid = true;
         
         // Allow empty string.
         if(!value.isEmpty()) {
             
             // Check if the value only contains digits.
             if(!value.matches("[0-9]+")) {
-
+                
+                System.out.println("Value is invalid...");
                 setInvalidBackground(hbox, bgColor);
+                isValid = false;
             }
         }
+        
+        return isValid;
     }
     
     private static void setInvalidBackground(HBox hbox, String bgColor) {
         
         hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
                 "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS + "; " + 
-                "-fx-stroke: red;");
+                "-fx-border-color: red; -fx-border-width: 1");
     }
 }
