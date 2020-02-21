@@ -3,7 +3,6 @@
 package networthcalculator.labels;
 
 import javafx.scene.control.TextField;
-import networthcalculator.MyUtility;
 
 /**
  *
