@@ -2,7 +2,7 @@
  */
 package networthcalculator.labels;
 
-import javafx.scene.layout.HBox;
+import javafx.scene.control.TextField;
 import networthcalculator.MyUtility;
 
 /**
@@ -11,7 +11,7 @@ import networthcalculator.MyUtility;
  */
 public class InputChecker {
     
-    public static boolean checkIsValid(HBox hbox, String bgColor, String value) {
+    public static boolean checkIsValid(TextField amountField, String value) {
         
         boolean isValid = true;
         
@@ -22,7 +22,7 @@ public class InputChecker {
             if(!value.matches("[0-9]+")) {
                 
                 System.out.println("Value is invalid...");
-                setInvalidBackground(hbox, bgColor);
+                setInvalidBackground(amountField);
                 isValid = false;
             }
         }
@@ -30,10 +30,8 @@ public class InputChecker {
         return isValid;
     }
     
-    private static void setInvalidBackground(HBox hbox, String bgColor) {
+    private static void setInvalidBackground(TextField amountField) {
         
-        hbox.setStyle("-fx-background-color:" + bgColor + "; " + 
-                "-fx-background-radius:" + MyUtility.DEFAULT_CORNER_RADIUS + "; " + 
-                "-fx-border-color: red; -fx-border-width: 1");
+        amountField.setStyle("-fx-border-color: red; -fx-border-width: 1");
     }
 }

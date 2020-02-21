@@ -125,7 +125,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 
                 String amountText = amountField.getText();
                 
-                if(InputChecker.checkIsValid(hbox, bgColor, text)) {
+                if(InputChecker.checkIsValid(amountField, text)) {
                     
                     controller.amountChanged(amountText, currentAmountFieldText);
                     currentAmountFieldText = amountText;
