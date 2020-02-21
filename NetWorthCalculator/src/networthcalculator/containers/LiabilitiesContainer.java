@@ -84,7 +84,7 @@ public class LiabilitiesContainer extends javafx.scene.layout.VBox {
         
         // Long-Term
         SubCategoryContainer longTermSubCatCon = new SubCategoryContainer(
-                "Long-Term", lightGray, new AccCategoryLiabilities());
+                "Long-Term", darkGray, new AccCategoryLiabilities());
         longTermSubCatCon.addAmountLabel(new AmountLabel("Home mortgage", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Home equity loan", darkGray));
         longTermSubCatCon.addAmountLabel(new AmountLabel("Mortgages on rental properties", darkGray));

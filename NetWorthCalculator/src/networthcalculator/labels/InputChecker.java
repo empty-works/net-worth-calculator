@@ -18,11 +18,29 @@ public class InputChecker {
         if(!value.isEmpty()) {
             
             // Check if the value only contains digits.
-            if(!value.matches("[0-9]+")) {
+            if(!isAllDigits(value)) {
                 
                 System.out.println("Value is invalid...");
                 setInvalidBackground(amountField);
                 isValid = false;
+            }
+        }
+        
+        return isValid;
+    }
+    
+    private static boolean isAllDigits(String value) {
+        
+        boolean isValid = true;
+        char[] valueArray = value.toCharArray();
+        
+        for(int i = 0; i < valueArray.length; i++) {
+            
+            if(!Character.isDigit(valueArray[i]) 
+                    || valueArray[i] != '.') { 
+                
+                isValid = false;
+                break;
             }
         }
         
