@@ -37,7 +37,7 @@ public class InputChecker {
         for(int i = 0; i < valueArray.length; i++) {
             
             if(!Character.isDigit(valueArray[i]) 
-                    || valueArray[i] != '.') { 
+                    && valueArray[i] != '.') { // Decimals are allowed.
                 
                 isValid = false;
                 break;
