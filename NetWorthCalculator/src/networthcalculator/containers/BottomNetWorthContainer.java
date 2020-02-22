@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import networthcalculator.labels.interfaces.BottomContainerController;
 import networthcalculator.labels.labelsubclasses.AccCategory;
+import networthcalculator.utilities.NumberReformatter;
 /**
  *
  * @author MP
@@ -58,16 +59,16 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
         if(category.getCategory().equals(AccCategory.ASSETS)) {
             
             currentAssetsTotal += subTotalDifference;
-            totalAssets.setText("Total Assets: " + currentAssetsTotal);
+            totalAssets.setText("Total Assets: " + NumberReformatter.reformat(currentAssetsTotal));
         }
         if(category.getCategory().equals(AccCategory.LIABILITIES)) {
             
             currentLiabilitiesTotal += subTotalDifference;
-            totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
+            totalLiabilities.setText("Total Liabilities: " + NumberReformatter.reformat(currentLiabilitiesTotal));
         }
         
         // Calculate total net worth
         totalNetWorth = currentAssetsTotal - currentLiabilitiesTotal;
-        netWorth.setText("Net Worth: " + totalNetWorth);
+        netWorth.setText("Net Worth: " + NumberReformatter.reformat(totalNetWorth));
     }
 }
