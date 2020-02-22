@@ -32,16 +32,15 @@ public class InputChecker {
     private static boolean isAllDigits(String value) {
         
         boolean isValid = true;
-        char[] valueArray = value.toCharArray();
         
-        for(int i = 0; i < valueArray.length; i++) {
+        try {
             
-            if(!Character.isDigit(valueArray[i]) 
-                    && valueArray[i] != '.') { // Decimals are allowed.
-                
-                isValid = false;
-                break;
-            }
+            Double.parseDouble(value);
+        }
+        catch(NumberFormatException e) {
+            
+            System.out.println("isAllDigits Error: " + e);
+            isValid = false;
         }
         
         return isValid;
