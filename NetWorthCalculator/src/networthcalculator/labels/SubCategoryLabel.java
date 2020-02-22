@@ -5,7 +5,7 @@ package networthcalculator.labels;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import networthcalculator.MyUtility;
+import networthcalculator.utilities.MyUtility;
 
 /**
  *

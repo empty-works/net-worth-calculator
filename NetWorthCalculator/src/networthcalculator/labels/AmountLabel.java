@@ -2,6 +2,7 @@
  */
 package networthcalculator.labels;
 
+import networthcalculator.utilities.InputChecker;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
@@ -17,7 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import networthcalculator.MyUtility;
+import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
 
@@ -124,12 +125,12 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
             @Override
             public void handle(ActionEvent e) {
                 
-                String amountText = amountField.getText();
+                String inputAmount = amountField.getText();
                 
-                if(InputChecker.checkIsValid(amountField, amountText.trim())) {
+                if(InputChecker.checkIsValid(amountField, inputAmount.trim())) {
                     
-                    controller.amountChanged(amountText, currentAmountFieldText);
-                    currentAmountFieldText = amountText;
+                    controller.amountChanged(inputAmount, currentAmountFieldText);
+                    currentAmountFieldText = inputAmount;
                     setButtonsVisible(false);
                 }
             }

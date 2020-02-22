@@ -2,6 +2,7 @@
  */
 package networthcalculator.containers;
 
+import networthcalculator.utilities.SubCatConCalc;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

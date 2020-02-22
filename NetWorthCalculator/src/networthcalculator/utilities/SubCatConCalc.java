@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator.containers;
+package networthcalculator.utilities;
 
 /**
  *
@@ -26,6 +26,8 @@ public class SubCatConCalc {
     }
     
     private static double validateAmount(String amount) {
+        
+        // Reformate value to only allow 2 decimal places.
         
         double newAmount = 0.0;
         if(!amount.isEmpty()) {

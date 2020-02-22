@@ -7,7 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import networthcalculator.MyUtility;
+import networthcalculator.utilities.MyUtility;
 import networthcalculator.TotalAmount;
 import networthcalculator.labels.labelsubclasses.AccCategory;
 

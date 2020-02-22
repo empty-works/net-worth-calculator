@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator.labels;
+package networthcalculator.utilities;
 
 import javafx.scene.control.TextField;
 

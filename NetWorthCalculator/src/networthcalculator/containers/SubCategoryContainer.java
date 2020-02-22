@@ -2,6 +2,7 @@
  */
 package networthcalculator.containers;
 
+import networthcalculator.utilities.SubCatConCalc;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.Node;
