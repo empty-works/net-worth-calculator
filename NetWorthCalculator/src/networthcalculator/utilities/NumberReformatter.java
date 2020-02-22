@@ -14,4 +14,10 @@ public class NumberReformatter {
         String formattedAmount = String.format("%.2f", dblAmount);
         return formattedAmount;
     }
+    
+    public static String reformat(double amount) {
+        
+        String formattedAmount = String.format("%.2f", amount);
+        return formattedAmount;
+    }
 }
