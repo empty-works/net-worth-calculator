@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.utilities.NumberReformatter;
 
 /**
  *
@@ -130,7 +131,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                 if(InputChecker.checkIsValid(amountField, inputAmount.trim())) {
                     
                     controller.amountChanged(inputAmount, currentAmountFieldText);
-                    currentAmountFieldText = inputAmount;
+                    currentAmountFieldText = NumberReformatter.reformat(inputAmount);
+                    amountField.setText(currentAmountFieldText);
                     setButtonsVisible(false);
                 }
             }
