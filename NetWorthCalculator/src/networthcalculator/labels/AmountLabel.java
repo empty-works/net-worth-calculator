@@ -90,7 +90,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setPrefHeight(PREF_HEIGHT);
         amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.22));
         
-        amountField.addEventFilter(KeyEvent.KEY_TYPED, EventHandlerMaker.maxLength(9));
+        amountField.addEventFilter(KeyEvent.KEY_TYPED, EventHandlerMaker.maxLength());
         
         amountField.textProperty().addListener(new ChangeListener<String>() {
             @Override
