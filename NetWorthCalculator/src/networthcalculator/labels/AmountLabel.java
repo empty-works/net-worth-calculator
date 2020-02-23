@@ -2,6 +2,7 @@
  */
 package networthcalculator.labels;
 
+import com.sun.glass.events.KeyEvent;
 import networthcalculator.utilities.InputChecker;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -87,6 +88,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setMinHeight(PREF_HEIGHT);
         amountField.setPrefHeight(PREF_HEIGHT);
         amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.22));
+        
+        amountField.addEventFilter(KeyEvent.TYPED, eventFilter);
         
         amountField.textProperty().addListener(new ChangeListener<String>() {
             @Override
