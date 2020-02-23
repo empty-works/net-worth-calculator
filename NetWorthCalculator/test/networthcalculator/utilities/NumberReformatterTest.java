@@ -52,6 +52,5 @@ public class NumberReformatterTest {
         inputAmount = "242"; expResult = "242.00";
         result = NumberReformatter.reformat(inputAmount);
         assertEquals(expResult, result);
-    }
-    
+    } 
 }

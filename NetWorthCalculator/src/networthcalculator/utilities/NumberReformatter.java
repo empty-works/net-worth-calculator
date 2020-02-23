@@ -8,6 +8,7 @@ package networthcalculator.utilities;
  */
 public class NumberReformatter {
     
+    //TODO: Reformat amount to include comma separators
     public static String reformat(String inputAmount) {
         
         double dblAmount = Double.parseDouble(inputAmount);

@@ -36,19 +36,19 @@ public class BottomNetWorthContainer extends javafx.scene.layout.GridPane implem
         
         totalAssets.setStyle("-fx-background-color:" + LEFT_COLOR);
         totalAssets.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalAssets.setText("Total Assets: " + currentAssetsTotal);
+        totalAssets.setText("Total Assets: " + NumberReformatter.reformat(currentAssetsTotal));
         totalAssets.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(totalAssets, 0, 0);
         
         totalLiabilities.setStyle("-fx-background-color:" + MID_COLOR);
         totalLiabilities.prefWidthProperty().bind(this.widthProperty().divide(3));
-        totalLiabilities.setText("Total Liabilities: " + currentLiabilitiesTotal);
+        totalLiabilities.setText("Total Liabilities: " + NumberReformatter.reformat(currentLiabilitiesTotal));
         totalLiabilities.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(totalLiabilities, 1, 0);
         
         netWorth.setStyle("-fx-background-color:" + RIGHT_COLOR);
         netWorth.prefWidthProperty().bind(this.widthProperty().divide(3));
-        netWorth.setText("Net Worth: " + totalNetWorth);
+        netWorth.setText("Net Worth: " + NumberReformatter.reformat(totalNetWorth));
         netWorth.setPadding(new Insets(DEFAULT_HEIGHT, 0, DEFAULT_HEIGHT, DEFAULT_LEFT_INDENT)); // Allows for height change. Setting height directly does not work.
         this.add(netWorth, 2, 0);
     }
