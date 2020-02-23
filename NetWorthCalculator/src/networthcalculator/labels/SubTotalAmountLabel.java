@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.TotalAmount;
 import networthcalculator.labels.labelsubclasses.AccCategory;
+import networthcalculator.utilities.NumberReformatter;
 
 /**
  *
@@ -67,7 +68,7 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
             
             sign = "-";
         }
-        subAmountNumLabel.setText(sign + String.valueOf(subTotal));
+        subAmountNumLabel.setText(sign + NumberReformatter.reformat(subTotal));
     }
     
     public void setSubTotalDifference(AccCategory category, double subTotalDifference) {
