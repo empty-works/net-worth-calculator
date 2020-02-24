@@ -3,6 +3,7 @@
 package networthcalculator.labels;
 
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -12,7 +13,7 @@ import javafx.scene.layout.HBox;
  *
  * @author MP
  */
-public class CategoryLabel extends javafx.scene.layout.AnchorPane {
+public abstract class CategoryLabel extends javafx.scene.layout.AnchorPane {
     
     private Label categoryLabelLeft = new Label();
     private Label categoryLabelRight = new Label();
@@ -36,12 +37,15 @@ public class CategoryLabel extends javafx.scene.layout.AnchorPane {
         hbox.setId("CategoryLabelHbox");
         ObservableList list = hbox.getChildren();
         list.addAll(categoryLabelLeft, categoryLabelRight);
+        hbox.setPadding(new Insets(10, 55, 5, 15));
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
     
     // Check stylesheet for stylings.
     private void setLabelProperties() {
+        
+        // Check style sheet for child properties.
         
         categoryLabelLeft.setText(text1);
         categoryLabelLeft.setPrefHeight(PREF_HEIGHT);
