@@ -33,6 +33,9 @@ public class SubCategoryLabel extends javafx.scene.layout.AnchorPane {
 
         subcategoryLabel.setPrefHeight(PREF_HEIGHT);
         subcategoryLabel.setPadding(new Insets(15));
+        
+        
+        
         AnchorPane.setRightAnchor(subcategoryLabel, 0.0);
         AnchorPane.setLeftAnchor(subcategoryLabel, 0.0);
     }

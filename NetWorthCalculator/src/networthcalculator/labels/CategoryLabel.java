@@ -37,7 +37,7 @@ public abstract class CategoryLabel extends javafx.scene.layout.AnchorPane {
         hbox.setId("CategoryLabelHbox");
         ObservableList list = hbox.getChildren();
         list.addAll(categoryLabelLeft, categoryLabelRight);
-        hbox.setPadding(new Insets(10, 55, 5, 15));
+        hbox.setPadding(new Insets(10, 20, 5, 15));
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
