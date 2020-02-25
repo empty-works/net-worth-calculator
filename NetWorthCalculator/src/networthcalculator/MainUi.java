@@ -4,6 +4,7 @@ package networthcalculator;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
@@ -23,10 +24,18 @@ public class MainUi extends javafx.scene.layout.BorderPane {
     private void addLabels() {
         
         // Menu bar TOP
-        Menu menu1 = new Menu("File");
-        Menu menu2 = new Menu("Settings");
+        Menu fileMenu = new Menu("File");
+        MenuItem fileItem1 = new MenuItem("New file...");
+        MenuItem fileItem2 = new MenuItem("Save");
+        MenuItem fileItem3 = new MenuItem("Open file...");
+        fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
+        
+        Menu settingsMenu = new Menu("Settings");
+        MenuItem settingsItem1 = new MenuItem("Change Currency");
+        settingsMenu.getItems().addAll(settingsItem1);
+        
         MenuBar menubar = new MenuBar();
-        menubar.getMenus().addAll(menu1, menu2);
+        menubar.getMenus().addAll(fileMenu, settingsMenu);
         VBox menuVbox = new VBox(menubar);
         menuVbox.setPrefHeight(20);
         this.setTop(menuVbox);
