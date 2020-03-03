@@ -26,7 +26,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         // Menu bar TOP
         Menu fileMenu = new Menu("File");
         MenuItem fileItem1 = new MenuItem("New file...");
-        MenuItem fileItem2 = new MenuItem("Save");
+        MenuItem fileItem2 = new MenuItem("Save"); 
         MenuItem fileItem3 = new MenuItem("Open file...");
         fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
         
