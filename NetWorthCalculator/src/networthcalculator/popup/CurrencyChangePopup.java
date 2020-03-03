@@ -23,5 +23,7 @@ public class CurrencyChangePopup extends javafx.stage.Popup {
         Label label1 = new Label("Label1");
         Label label2 = new Label("Label2");
         Label label3 = new Label("Label3");
+        
+        vbox.getChildren().addAll(label1, label2, label3);
     }
 }
