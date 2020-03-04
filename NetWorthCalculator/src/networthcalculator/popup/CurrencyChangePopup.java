@@ -20,9 +20,9 @@ public class CurrencyChangePopup extends javafx.stage.Popup {
     
     private void setVBoxItems() {
         
-        Label label1 = new Label("Label1");
-        Label label2 = new Label("Label2");
-        Label label3 = new Label("Label3");
+        CurrencyPopupLabel label1 = new CurrencyPopupLabel("USD");
+        CurrencyPopupLabel label2 = new CurrencyPopupLabel("PHP");
+        CurrencyPopupLabel label3 = new CurrencyPopupLabel("EUR");
         
         vbox.getChildren().addAll(label1, label2, label3);
     }

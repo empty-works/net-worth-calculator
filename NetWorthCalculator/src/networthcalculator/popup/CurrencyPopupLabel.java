@@ -8,8 +8,14 @@ package networthcalculator.popup;
  */
 public class CurrencyPopupLabel extends javafx.scene.control.Label {
     
-    public CurrencyPopupLabel() {
+    private String currency;
+    
+    public CurrencyPopupLabel(String currency) {
         
-        
+        this.setId("CurrencyPopupLabel");
+        this.currency = currency;
+        this.setText(currency);
     }
+    
+    
 }

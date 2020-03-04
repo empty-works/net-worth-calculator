@@ -66,6 +66,14 @@
 }
 
 
+#CurrencyPopupLabel {
+    
+    -fx-background-color: transparent;
+    -fx-font-size: 14;
+    -fx-text-fill: black;
+    -fx-font-family: -fx-main-font-family;
+}
+
 
 /*Subclass of CategoryLabel*/
 #LiabilitiesCategoryLabel {
