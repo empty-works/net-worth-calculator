@@ -3,13 +3,14 @@
 package networthcalculator.menu;
 
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
 /**
  *
  * @author MP
  */
-public class MainMenuBar extends javafx.scene.control.MenuBar {
+public class MainMenuBar extends javafx.scene.layout.VBox {
     
     public MainMenuBar() {
         
@@ -24,5 +25,11 @@ public class MainMenuBar extends javafx.scene.control.MenuBar {
         Menu settingsMenu = new Menu("Settings");
         MenuItem settingsItem1 = new MenuItem("Change Currency");
         settingsMenu.getItems().addAll(settingsItem1);
+        
+        // Set menu bar.
+        MenuBar menubar = new MenuBar();
+        menubar.getMenus().addAll(fileMenu, settingsMenu);
+        this.getChildren().add(menubar);
+        this.setPrefHeight(20);
     }
 }
