@@ -19,5 +19,10 @@ public class MainMenuBar extends javafx.scene.control.MenuBar {
         MenuItem fileItem2 = new MenuItem("Save"); 
         MenuItem fileItem3 = new MenuItem("Open file...");
         fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
+        
+        // Settings menu
+        Menu settingsMenu = new Menu("Settings");
+        MenuItem settingsItem1 = new MenuItem("Change Currency");
+        settingsMenu.getItems().addAll(settingsItem1);
     }
 }
