@@ -2,6 +2,8 @@
  */
 package networthcalculator.menu;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -25,11 +27,27 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         Menu settingsMenu = new Menu("Settings");
         MenuItem settingsItem1 = new MenuItem("Change Currency");
         settingsMenu.getItems().addAll(settingsItem1);
-        
+
         // Set menu bar.
         MenuBar menubar = new MenuBar();
         menubar.getMenus().addAll(fileMenu, settingsMenu);
         this.getChildren().add(menubar);
         this.setPrefHeight(20);
+    }
+    
+    private EventHandler<ActionEvent> setSettings() {
+        return new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                
+                MenuItem menuItem = (MenuItem) event.getSource();
+                String setting = menuItem.getText();
+                if("Settings".equalsIgnoreCase(setting)) {
+                    
+                    System.out.println("Testing settings menu");
+                }
+            }
+        };
     }
 }
