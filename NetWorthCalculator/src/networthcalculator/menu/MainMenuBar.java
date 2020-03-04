@@ -14,6 +14,8 @@ import javafx.scene.control.MenuItem;
  */
 public class MainMenuBar extends javafx.scene.layout.VBox {
     
+    final private String SETTINGS = "Settings";
+    
     public MainMenuBar() {
         
         // File menu
@@ -24,9 +26,11 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
         
         // Settings menu
-        Menu settingsMenu = new Menu("Settings");
+        Menu settingsMenu = new Menu(SETTINGS);
         MenuItem settingsItem1 = new MenuItem("Change Currency");
         settingsMenu.getItems().addAll(settingsItem1);
+        EventHandler<ActionEvent> settingsAction = setSettings();
+        settingsItem1.setOnAction(settingsAction);
 
         // Set menu bar.
         MenuBar menubar = new MenuBar();
@@ -43,7 +47,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                 
                 MenuItem menuItem = (MenuItem) event.getSource();
                 String setting = menuItem.getText();
-                if("Settings".equalsIgnoreCase(setting)) {
+                if(SETTINGS.equalsIgnoreCase(setting)) {
                     
                     System.out.println("Testing settings menu");
                 }
