@@ -17,7 +17,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         // File menu
         Menu fileMenu = new Menu("File");
         MenuItem fileItem1 = new MenuItem("New file...");
-        MenuItem fileItem2 = new MenuItem("Save"); 
+        MenuItem fileItem2 = new MenuItem("Save");
         MenuItem fileItem3 = new MenuItem("Open file...");
         fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
         
