@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import networthcalculator.popup.CurrencyChangePopup;
 
 /**
  *
@@ -28,10 +29,12 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         
         // Settings menu
         Menu settingsMenu = new Menu(SETTINGS);
-        MenuItem settingsItem1 = new MenuItem(CHANGE_CURRENCY);
-        settingsMenu.getItems().addAll(settingsItem1);
-        EventHandler<ActionEvent> settingsAction = setSettings();
-        settingsItem1.setOnAction(settingsAction);
+        
+        Menu subSettingsMenu = new Menu(CHANGE_CURRENCY);
+        settingsMenu.getItems().addAll(subSettingsMenu);
+        // Submenu item
+        MenuItem currencyItem = new MenuItem("Test1");
+        subSettingsMenu.getItems().add(currencyItem);
 
         // Set menu bar.
         MenuBar menubar = new MenuBar();
@@ -48,10 +51,12 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                 
                 MenuItem menuItem = (MenuItem) event.getSource();
                 String setting = menuItem.getText();
-                System.out.println("Setting: " + setting);
                 if(CHANGE_CURRENCY.equalsIgnoreCase(setting)) {
                     
                     System.out.println("Testing settings menu");
+                    
+                    CurrencyChangePopup popup = new CurrencyChangePopup();
+                    popup.show(MainMenuBar.this, 0.0, 0.0);
                 }
             }
         };
