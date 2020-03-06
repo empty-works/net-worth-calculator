@@ -50,7 +50,6 @@ public class CurrencyAPIController implements Initializable {
             
             ioe.printStackTrace();
         }
-        connection();
         return thisString;
     }
 }

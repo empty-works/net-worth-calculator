@@ -22,7 +22,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
     private void addLabels() {
         
         // Connect to API
-        //JsonRetriever retriever = new JsonRetriever();
+        JsonRetriever retriever = new JsonRetriever();
         
         
         // Menu bar TOP
