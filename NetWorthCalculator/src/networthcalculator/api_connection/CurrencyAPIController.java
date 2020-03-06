@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator.controllers;
+package networthcalculator.api_connection;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -48,7 +48,7 @@ public class CurrencyAPIController implements Initializable {
         }
         catch(IOException ioe) {
             
-            
+            ioe.printStackTrace();
         }
         connection();
         return thisString;

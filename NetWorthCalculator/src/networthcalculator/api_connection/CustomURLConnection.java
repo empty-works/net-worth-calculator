@@ -1,6 +1,6 @@
 /*
  */
-package networthcalculator.controllers;
+package networthcalculator.api_connection;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -22,7 +22,7 @@ public class CustomURLConnection {
         }
         catch(IOException ioe) {
             
-            
+            ioe.printStackTrace();
         }
         return null;
     }

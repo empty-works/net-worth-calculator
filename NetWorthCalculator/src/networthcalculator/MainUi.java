@@ -2,7 +2,6 @@
  */
 package networthcalculator;
 
-import javafx.stage.Stage;
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
 import networthcalculator.containers.BottomNetWorthContainer;
