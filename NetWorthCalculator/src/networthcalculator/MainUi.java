@@ -2,6 +2,7 @@
  */
 package networthcalculator;
 
+import networthcalculator.api_connection.JsonRetriever;
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
 import networthcalculator.containers.BottomNetWorthContainer;
@@ -19,6 +20,10 @@ public class MainUi extends javafx.scene.layout.BorderPane {
     }
     
     private void addLabels() {
+        
+        // Connect to API
+        //JsonRetriever retriever = new JsonRetriever();
+        
         
         // Menu bar TOP
         MainMenuBar menuBar = new MainMenuBar();
