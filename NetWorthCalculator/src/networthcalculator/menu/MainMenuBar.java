@@ -2,14 +2,11 @@
  */
 package networthcalculator.menu;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
-import networthcalculator.popup.CurrencyChangePopup;
 
 /**
  *
@@ -54,24 +51,5 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         menubar.getMenus().addAll(fileMenu, settingsMenu);
         this.getChildren().add(menubar);
         this.setPrefHeight(20);
-    }
-    
-    private EventHandler<ActionEvent> setSettings() {
-        return new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                
-                MenuItem menuItem = (MenuItem) event.getSource();
-                String setting = menuItem.getText();
-                if(SELECT_CURRENCY.equalsIgnoreCase(setting)) {
-                    
-                    System.out.println("Testing settings menu");
-                    
-                    CurrencyChangePopup popup = new CurrencyChangePopup();
-                    popup.show(MainMenuBar.this, 0.0, 0.0);
-                }
-            }
-        };
     }
 }
