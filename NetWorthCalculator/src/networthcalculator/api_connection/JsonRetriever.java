@@ -2,9 +2,8 @@
  */
 package networthcalculator.api_connection;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.logging.Logger;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -15,13 +14,14 @@ import org.json.simple.parser.ParseException;
 public class JsonRetriever {
     
     private String jsonString;
+    private Logger logger;
     
-    public JsonRetriever() throws IOException, FileNotFoundException, ParseException {
+    public JsonRetriever() {
         
         setConnection();
     }
     
-    private void setConnection() throws FileNotFoundException, IOException, ParseException {
+    private void setConnection() {
         
         CurrencyAPIController controller = new CurrencyAPIController();
         controller.initialize(null, null);
@@ -29,10 +29,25 @@ public class JsonRetriever {
         // Test connection
         jsonString = controller.connection();
         System.out.println("Test connection: " + jsonString);
-        
-        
-        // Parse string
-        Object obj = new JSONParser().parse(jsonString);
-        
     }
+    
+    public JSONObject getJsonObject() {
+        
+        JSONObject jObject = null;
+        
+        try {
+            
+            // Parse string
+            Object obj = new JSONParser().parse(jsonString);
+            
+            // Typecast to JSONObject
+            jObject = (JSONObject) obj;
+        }
+        catch(ParseException pe) {
+            
+            
+        }
+                
+        return jObject;
+    } 
 }
