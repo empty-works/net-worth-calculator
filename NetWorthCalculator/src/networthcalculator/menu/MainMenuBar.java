@@ -2,11 +2,14 @@
  */
 package networthcalculator.menu;
 
+import java.util.Iterator;
+import java.util.Map;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -16,6 +19,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
     
     final private String SETTINGS = "Settings";
     final private String SELECT_CURRENCY = "Select Currency";
+    private Menu settingsMenu;
     
     public MainMenuBar() {
         
@@ -27,29 +31,34 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         fileMenu.getItems().addAll(fileItem1, fileItem2, fileItem3);
         
         // Settings menu
-        Menu settingsMenu = new Menu(SETTINGS);
-        
-        Menu subSettingsMenu = new Menu(SELECT_CURRENCY);
-        settingsMenu.getItems().addAll(subSettingsMenu);
-        // Submenu item
-        RadioMenuItem currencyItem1 = new RadioMenuItem("Currency1");
-        RadioMenuItem currencyItem2 = new RadioMenuItem("Currency2");
-        RadioMenuItem currencyItem3 = new RadioMenuItem("Currency3");
-        RadioMenuItem currencyItem4 = new RadioMenuItem("Currency4");
-        
-        ToggleGroup toggleGroup = new ToggleGroup();
-        toggleGroup.getToggles().add(currencyItem1);
-        toggleGroup.getToggles().add(currencyItem2);
-        toggleGroup.getToggles().add(currencyItem3);
-        toggleGroup.getToggles().add(currencyItem4);
-
-        subSettingsMenu.getItems().addAll(
-                currencyItem1, currencyItem2, currencyItem3, currencyItem4);
+        settingsMenu = new Menu(SETTINGS);
 
         // Set menu bar.
         MenuBar menubar = new MenuBar();
         menubar.getMenus().addAll(fileMenu, settingsMenu);
         this.getChildren().add(menubar);
         this.setPrefHeight(20);
+    }
+    
+    public void setCurrencies(JSONObject obj) {
+        
+        Menu subSettingsMenu = new Menu(SELECT_CURRENCY);
+        settingsMenu.getItems().addAll(subSettingsMenu);
+        
+        // Get currencies and their rates
+        Map currency = ((Map) obj.get("rates"));
+        
+        // Iterate through each currency and add to toggle group.
+        ToggleGroup toggleGroup = new ToggleGroup();
+        Iterator<Map.Entry> iter1 = currency.entrySet().iterator();
+        while(iter1.hasNext()) {
+            
+            Map.Entry pair = iter1.next();
+            String keyAndValue = pair.getKey() + " : " + pair.getValue();
+            System.out.println("Key and value: " + keyAndValue);
+            RadioMenuItem currencyItem = new RadioMenuItem(keyAndValue);
+            toggleGroup.getToggles().add(currencyItem);
+            subSettingsMenu.getItems().add(currencyItem);
+        }
     }
 }

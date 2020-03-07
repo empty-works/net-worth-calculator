@@ -28,7 +28,7 @@ public class JsonRetriever {
         
         // Test connection
         jsonString = controller.connection();
-        System.out.println("Test connection: " + jsonString);
+        //System.out.println("Test connection: " + jsonString);
     }
     
     public JSONObject getJsonObject() {
@@ -42,6 +42,7 @@ public class JsonRetriever {
             
             // Typecast to JSONObject
             jObject = (JSONObject) obj;
+            System.out.println("JSON Object: " + jObject);
         }
         catch(ParseException pe) {
             
