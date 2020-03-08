@@ -32,7 +32,7 @@ import networthcalculator.utilities.NumberReformatter;
 public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
-    private Label dollarSignLabel = new Label();
+    private Label currencySymbol = new Label();
     protected TextField amountField = new TextField();
     private HBox hbox = new HBox();
     private VBox buttonVbox = new VBox();
@@ -64,7 +64,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         hbox.setId("AmountLabelHBox");
         ObservableList list = hbox.getChildren();
-        list.addAll(amountLabel, dollarSignLabel, amountField, buttonVbox);
+        list.addAll(amountLabel, currencySymbol, amountField, buttonVbox);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
@@ -76,10 +76,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
-        dollarSignLabel.setId("AmountDollarSignLabel");
-        dollarSignLabel.setText(MyUtility.CURRENCY);
-        dollarSignLabel.setPrefHeight(PREF_HEIGHT);
-        dollarSignLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
+        currencySymbol.setId("AmountDollarSignLabel");
+        currencySymbol.setText(MyUtility.CURRENCY);
+        currencySymbol.setPrefHeight(PREF_HEIGHT);
+        currencySymbol.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
     }
     
     private void setTextField() {
@@ -207,5 +207,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private void clearInvalidWarning() {
         
         setTextFieldProperties();
+    }
+    
+    public void setCurrencySymbol(String symbol) {
+        
+        currencySymbol.setText(symbol);
     }
 }
