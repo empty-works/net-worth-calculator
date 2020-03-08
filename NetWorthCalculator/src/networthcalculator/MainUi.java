@@ -21,16 +21,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
     }
     
     private void addLabels() {
-        
-        // Connect to API
-        JsonRetriever retriever = new JsonRetriever();
-        JSONObject jObject = retriever.getJsonObject();
-        
-        // Menu bar TOP
-        MainMenuBar menuBar = new MainMenuBar();
-        this.setTop(menuBar);
-        menuBar.setCurrencies(jObject);
-        
+
         // Bottom container amounts
         BottomNetWorthContainer netCon = new BottomNetWorthContainer();
         netCon.prefWidthProperty().bind(this.widthProperty());
@@ -47,5 +38,14 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         LiabilitiesContainer lc = new LiabilitiesContainer(totalAmount);
         lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setRight(lc);
+        
+        // Connect to API
+        JsonRetriever retriever = new JsonRetriever();
+        JSONObject jObject = retriever.getJsonObject();
+        
+        // Menu bar TOP
+        MainMenuBar menuBar = new MainMenuBar();
+        this.setTop(menuBar);
+        menuBar.setCurrencies(jObject);
     }
 }
