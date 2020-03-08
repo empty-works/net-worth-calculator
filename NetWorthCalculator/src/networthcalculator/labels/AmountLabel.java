@@ -22,6 +22,7 @@ import javafx.scene.layout.VBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.utilities.CurrencyChanger;
 import networthcalculator.utilities.EventHandlerMaker;
 import networthcalculator.utilities.NumberReformatter;
 
@@ -41,13 +42,15 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     final private int PREF_HEIGHT = 60;
     private AmountViewController controller;
     private String bgColor;
+    private CurrencyChanger currencyChanger;
     
     private String currentAmountFieldText = "";
     
-    public AmountLabel(String text, String bgColor) {
+    public AmountLabel(String text, String bgColor, CurrencyChanger currencyChanger) {
         
         this.bgColor = bgColor;
         this.text = text;
+        this.currencyChanger = currencyChanger;
         amountLabel.setText(text);
         this.setId("AmountLabel");
         setCustomPadding(0, 10, 5, 10); // Default padding.
