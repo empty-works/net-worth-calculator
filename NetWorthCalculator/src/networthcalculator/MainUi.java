@@ -32,6 +32,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         
         // Create currency symbol label
         Label currencySymbolLabel = new Label("USD");
+        currencySymbolLabel.setId("AmountDollarSignLabel");
         
         // ASSETS LEFT
         AssetsContainer ac = new AssetsContainer(totalAmount, currencySymbolLabel);

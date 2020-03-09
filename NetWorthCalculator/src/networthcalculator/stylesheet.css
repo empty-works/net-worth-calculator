@@ -10,6 +10,10 @@
     -fx-main-font-family: 'arial';
 }
 
+#AmountDollarSignLabel {
+    
+    -fx-alignment: center-right;
+}
 
 #AmountLabel .label {
     
@@ -19,10 +23,7 @@
     -fx-padding: 15 15 15 50;
 }
 
-#AmountLabel #AmountDollarSignLabel {
-    
-    -fx-alignment: center-right;
-}
+
 
 #AmountLabel #AmountLabelTextField {
     
@@ -36,7 +37,6 @@
     
     -fx-background-color: #bfbfbf;
 }
-
 
 
 /*Subclass of CategoryLabel*/

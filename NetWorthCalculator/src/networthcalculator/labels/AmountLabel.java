@@ -22,7 +22,6 @@ import javafx.scene.layout.VBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
-import networthcalculator.utilities.CurrencyChanger;
 import networthcalculator.utilities.EventHandlerMaker;
 import networthcalculator.utilities.NumberReformatter;
 
@@ -33,7 +32,6 @@ import networthcalculator.utilities.NumberReformatter;
 public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
-    private Label currencySymbol = new Label();
     protected TextField amountField = new TextField();
     private HBox hbox = new HBox();
     private VBox buttonVbox = new VBox();
@@ -43,6 +41,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private AmountViewController controller;
     private String bgColor;
     private Label currencySymbolLabel;
+    private Label curLabel = new Label();
     
     private String currentAmountFieldText = "";
     
@@ -67,7 +66,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         hbox.setId("AmountLabelHBox");
         ObservableList list = hbox.getChildren();
-        list.addAll(amountLabel, currencySymbol, amountField, buttonVbox);
+        list.addAll(amountLabel, currencySymbolLabel, amountField, buttonVbox);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
@@ -79,10 +78,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
-        currencySymbol.setId("AmountDollarSignLabel");
-        currencySymbol.setText(MyUtility.CURRENCY);
-        currencySymbol.setPrefHeight(PREF_HEIGHT);
-        currencySymbol.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
+        // TODO FIX THIS. CURRENCY NOT SHOWING. ONLY LOCAL LABEL SHOWS.
+        currencySymbolLabel.setId("AmountDollarSignLabel");
+        currencySymbolLabel.setText("USD");
+        currencySymbolLabel.setPrefHeight(PREF_HEIGHT);
+        currencySymbolLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
     }
     
     private void setTextField() {
@@ -210,10 +210,5 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private void clearInvalidWarning() {
         
         setTextFieldProperties();
-    }
-    
-    public void setCurrencySymbol(String symbol) {
-        
-        currencySymbol.setText(symbol);
     }
 }
