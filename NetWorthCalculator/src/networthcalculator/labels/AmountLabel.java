@@ -50,7 +50,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.bgColor = bgColor;
         this.text = text;
-        this.currencyChanger = currencyChanger;
+        this.currencySymbolLabel = currencySymbolLabel;
         amountLabel.setText(text);
         this.setId("AmountLabel");
         setCustomPadding(0, 10, 5, 10); // Default padding.
