@@ -40,7 +40,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         this.setPrefHeight(20);
     }
     
-    public void setCurrencies(JSONObject obj) {
+    public void setJsonCurrencyObj(JSONObject obj) {
         
         Menu subSettingsMenu = new Menu(SELECT_CURRENCY);
         settingsMenu.getItems().addAll(subSettingsMenu);

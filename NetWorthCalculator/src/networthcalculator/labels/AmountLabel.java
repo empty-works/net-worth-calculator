@@ -42,11 +42,11 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     final private int PREF_HEIGHT = 60;
     private AmountViewController controller;
     private String bgColor;
-    private CurrencyChanger currencyChanger;
+    private Label currencySymbolLabel;
     
     private String currentAmountFieldText = "";
     
-    public AmountLabel(String text, String bgColor, CurrencyChanger currencyChanger) {
+    public AmountLabel(String text, String bgColor, Label currencySymbolLabel) {
         
         this.bgColor = bgColor;
         this.text = text;

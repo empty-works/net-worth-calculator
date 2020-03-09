@@ -2,6 +2,7 @@
  */
 package networthcalculator;
 
+import javafx.scene.control.Label;
 import networthcalculator.api_connection.JsonRetriever;
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
@@ -29,6 +30,10 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         
         TotalAmount totalAmount = new TotalAmount(netCon);
         
+        // Create currency symbol label
+        Label currencySymbolLabel = new Label("USD");
+        
+        
         // ASSETS LEFT
         AssetsContainer ac = new AssetsContainer(totalAmount);
         ac.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
@@ -46,6 +51,6 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         // Menu bar TOP
         MainMenuBar menuBar = new MainMenuBar();
         this.setTop(menuBar);
-        menuBar.setCurrencies(jObject);
+        menuBar.setJsonCurrencyObj(jObject);
     }
 }
