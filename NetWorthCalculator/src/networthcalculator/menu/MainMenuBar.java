@@ -4,11 +4,14 @@ package networthcalculator.menu;
 
 import java.util.Iterator;
 import java.util.Map;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.RadioMenuItemBuilder;
 import javafx.scene.control.ToggleGroup;
 import org.json.simple.JSONObject;
 
@@ -62,8 +65,21 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
             Map.Entry pair = iter1.next();
             String keyAndValue = pair.getKey() + " : " + pair.getValue();
             System.out.println("Key and value: " + keyAndValue);
-            RadioMenuItem currencyItem = new RadioMenuItem(keyAndValue);
-            toggleGroup.getToggles().add(currencyItem);
+            
+            RadioMenuItem currencyItem = RadioMenuItemBuilder.create()
+                    .toggleGroup(toggleGroup)
+                    .text(keyAndValue)
+                    .build();
+            
+            currencyItem.setOnAction(new EventHandler<ActionEvent>() {
+                
+                @Override
+                public void handle(ActionEvent e) {
+                    
+                    currencySymbolLabel.setText(pair.getKey().toString());
+                }
+            });
+            
             subSettingsMenu.getItems().add(currencyItem);
         }
     }
