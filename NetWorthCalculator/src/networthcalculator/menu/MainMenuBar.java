@@ -4,6 +4,7 @@ package networthcalculator.menu;
 
 import java.util.Iterator;
 import java.util.Map;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -20,8 +21,13 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
     final private String SETTINGS = "Settings";
     final private String SELECT_CURRENCY = "Select Currency";
     private Menu settingsMenu;
+    private JSONObject obj;
+    private Label currencySymbolLabel;
     
-    public MainMenuBar() {
+    public MainMenuBar(JSONObject obj, Label currencySymbolLabel) {
+        
+        this.obj = obj;
+        this.currencySymbolLabel = currencySymbolLabel;
         
         // File menu
         Menu fileMenu = new Menu("File");
@@ -40,7 +46,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
         this.setPrefHeight(20);
     }
     
-    public void setJsonCurrencyObj(JSONObject obj) {
+    public void setJsonCurrencyObj() {
         
         Menu subSettingsMenu = new Menu(SELECT_CURRENCY);
         settingsMenu.getItems().addAll(subSettingsMenu);
