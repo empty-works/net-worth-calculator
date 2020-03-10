@@ -20,5 +20,5 @@ public class MyUtility {
     
     final public static double DEFAULT_CORNER_RADIUS = 5.5;
     
-    final public static String CURRENCY = "USD"; // Temporary until user can select currency.
+    final public static String CURRENCY = "NOO"; // Temporary until user can select currency.
 }

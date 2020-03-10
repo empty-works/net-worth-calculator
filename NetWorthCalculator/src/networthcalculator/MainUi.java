@@ -30,17 +30,13 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         
         TotalAmount totalAmount = new TotalAmount(netCon);
         
-        // Create currency symbol label
-        Label currencySymbolLabel = new Label("USD");
-        currencySymbolLabel.setId("AmountDollarSignLabel");
-        
         // ASSETS LEFT
-        AssetsContainer ac = new AssetsContainer(totalAmount, currencySymbolLabel);
+        AssetsContainer ac = new AssetsContainer(totalAmount);
         ac.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setLeft(ac);
         
         // LIABILITIES RIGHT
-        LiabilitiesContainer lc = new LiabilitiesContainer(totalAmount, currencySymbolLabel);
+        LiabilitiesContainer lc = new LiabilitiesContainer(totalAmount);
         lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setRight(lc);
         
@@ -49,7 +45,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         JSONObject jObject = retriever.getJsonObject();
         
         // Menu bar TOP
-        MainMenuBar menuBar = new MainMenuBar(jObject, currencySymbolLabel);
+        MainMenuBar menuBar = new MainMenuBar(jObject);
         this.setTop(menuBar);
         menuBar.setJsonCurrencyObj();
     }

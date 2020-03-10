@@ -40,16 +40,14 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     final private int PREF_HEIGHT = 60;
     private AmountViewController controller;
     private String bgColor;
-    private Label currencySymbolLabel;
     private Label curLabel = new Label();
     
     private String currentAmountFieldText = "";
     
-    public AmountLabel(String text, String bgColor, Label currencySymbolLabel) {
+    public AmountLabel(String text, String bgColor) {
         
         this.bgColor = bgColor;
         this.text = text;
-        this.currencySymbolLabel = currencySymbolLabel;
         amountLabel.setText(text);
         this.setId("AmountLabel");
         setCustomPadding(0, 10, 5, 10); // Default padding.
@@ -66,7 +64,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         hbox.setId("AmountLabelHBox");
         ObservableList list = hbox.getChildren();
-        list.addAll(amountLabel, currencySymbolLabel, amountField, buttonVbox);
+        list.addAll(amountLabel, curLabel, amountField, buttonVbox);
         AnchorPane.setLeftAnchor(hbox, 0.0);
         AnchorPane.setRightAnchor(hbox, 0.0);
     }
@@ -79,10 +77,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
         // TODO FIX THIS. CURRENCY NOT SHOWING. ONLY LOCAL LABEL SHOWS.
-        currencySymbolLabel.setId("AmountDollarSignLabel");
-        currencySymbolLabel.setText("USD");
-        currencySymbolLabel.setPrefHeight(PREF_HEIGHT);
-        currencySymbolLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
+        curLabel.setId("AmountDollarSignLabel");
+        curLabel.setText("WHH");
+        curLabel.setPrefHeight(PREF_HEIGHT);
+        curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
     }
     
     private void setTextField() {
@@ -91,7 +89,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountField.setAlignment(Pos.CENTER_RIGHT);
         amountField.setMinHeight(PREF_HEIGHT);
         amountField.setPrefHeight(PREF_HEIGHT);
-        amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.3));
+        amountField.prefWidthProperty().bind(hbox.widthProperty().divide(1.5));
         
         amountField.addEventFilter(KeyEvent.KEY_TYPED, EventHandlerMaker.maxLength());
         

@@ -52,7 +52,7 @@ public class SubTotalAmountLabel extends javafx.scene.layout.AnchorPane {
         leftPlaceholder.prefWidthProperty().bind(hbox.widthProperty());
 
         subTotal.setId("SubTotalLabel");
-        subTotal.setText(text + " " + MyUtility.CURRENCY);
+        subTotal.setText(text);
         subTotal.setPrefHeight(PREF_HEIGHT);
         subTotal.prefWidthProperty().bind(hbox.widthProperty());
 
