@@ -22,6 +22,7 @@ import javafx.scene.layout.VBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.utilities.CurrencySymbolSingleton;
 import networthcalculator.utilities.EventHandlerMaker;
 import networthcalculator.utilities.NumberReformatter;
 
@@ -48,6 +49,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.bgColor = bgColor;
         this.text = text;
+        this.curLabel = CurrencySymbolSingleton.getInstance().getCurrencyLabel();
+        
         amountLabel.setText(text);
         this.setId("AmountLabel");
         setCustomPadding(0, 10, 5, 10); // Default padding.
@@ -76,9 +79,6 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
-        // TODO FIX THIS. CURRENCY NOT SHOWING. ONLY LOCAL LABEL SHOWS.
-        curLabel.setId("AmountDollarSignLabel");
-        curLabel.setText("WHH");
         curLabel.setPrefHeight(PREF_HEIGHT);
         curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
     }
