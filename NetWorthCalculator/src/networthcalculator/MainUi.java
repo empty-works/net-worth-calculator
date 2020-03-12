@@ -38,7 +38,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         this.setLeft(ac);
         
         // LIABILITIES RIGHT
-        LiabilitiesContainer lc = new LiabilitiesContainer(totalAmount);
+        LiabilitiesContainer lc = new LiabilitiesContainer(totalAmount, changer);
         lc.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setRight(lc);
         
