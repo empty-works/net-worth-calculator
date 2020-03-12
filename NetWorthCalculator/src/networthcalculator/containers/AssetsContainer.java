@@ -19,6 +19,7 @@ import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.labelsubclasses.AssetsCategoryLabel;
 import networthcalculator.labels.labelsubclasses.AccCategoryAssets;
+import networthcalculator.utilities.CurrencyChanger;
 
 /**
  *
@@ -32,10 +33,12 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
     private String darkGray = "darkgray";
     private String lightGray = "lightgray";
     private TotalAmount totalAmount;
+    private CurrencyChanger changer;
     
-    public AssetsContainer(TotalAmount totalAmount) {
+    public AssetsContainer(TotalAmount totalAmount, CurrencyChanger changer) {
         
         this.totalAmount = totalAmount;
+        this.changer = changer;
         setColumnConstraints();
         setGridProperties();
         setScrollPaneProperties();

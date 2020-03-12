@@ -8,6 +8,7 @@ import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
 import networthcalculator.containers.BottomNetWorthContainer;
 import networthcalculator.menu.MainMenuBar;
+import networthcalculator.utilities.CurrencyChanger;
 import org.json.simple.JSONObject;
 
 /**
@@ -29,9 +30,10 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         this.setBottom(netCon);
         
         TotalAmount totalAmount = new TotalAmount(netCon);
+        CurrencyChanger changer = new CurrencyChanger();
         
         // ASSETS LEFT
-        AssetsContainer ac = new AssetsContainer(totalAmount);
+        AssetsContainer ac = new AssetsContainer(totalAmount, changer);
         ac.prefWidthProperty().bind(this.widthProperty().divide(2)); // w * 1/2
         this.setLeft(ac);
         
