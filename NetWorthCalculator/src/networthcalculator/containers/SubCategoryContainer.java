@@ -12,6 +12,7 @@ import networthcalculator.labels.SubTotalAmountLabel;
 import networthcalculator.labels.TitleAndAmountLabel;
 import networthcalculator.labels.interfaces.AmountViewController;
 import networthcalculator.labels.labelsubclasses.AccCategory;
+import networthcalculator.utilities.CurrencyChanger;
 
 /**
  *
@@ -37,6 +38,12 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
         label.setController(this);
         label.prefWidthProperty().bind(this.widthProperty());
         amountLabelList.add(label);
+    }
+    
+    public void addAmountLabel(String title, CurrencyChanger changer) {
+        
+        AmountLabel newLabel = new AmountLabel(title, "lightgray");
+        changer.addToList(newLabel.getCurLabel());
     }
     
     public void addTitleAmountLabel(TitleAndAmountLabel label) {
