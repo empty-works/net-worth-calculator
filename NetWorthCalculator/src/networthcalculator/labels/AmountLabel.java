@@ -43,15 +43,13 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private AmountViewController controller;
     private String bgColor;
     private Label curLabel = new Label();
-    private CurrencyChanger changer;
     
     private String currentAmountFieldText = "";
     
-    public AmountLabel(String text, String bgColor, CurrencyChanger changer) {
+    public AmountLabel(String text, String bgColor) {
         
         this.bgColor = bgColor;
         this.text = text;
-        this.changer = changer;
         this.curLabel = CurrencySymbolSingleton.getInstance().getCurrencyLabel();
         
         amountLabel.setText(text);
