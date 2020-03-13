@@ -212,4 +212,9 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         setTextFieldProperties();
     }
+    
+    public Label getCurLabel(){
+        
+        return curLabel;
+    }
 }
