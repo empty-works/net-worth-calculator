@@ -99,28 +99,30 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         
         TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel(
                 "Retirement accounts", darkGray, investedAssetsSubCatCon);
-        retirementAccounts.addAllAmountLabels(
-                                          new AmountLabel("IRA", darkGray), 
-                                          new AmountLabel("Roth IRA", darkGray), 
-                                          new AmountLabel("401(k) or 403(b)", darkGray), 
-                                          new AmountLabel("SEP-IRA", darkGray), 
-                                          new AmountLabel("Pension (vested benefit)", darkGray), 
-                                          new AmountLabel("Annuity (accumulated value)", darkGray), 
-                                          new AmountLabel("Annuity (accumulated value)", darkGray));
+        retirementAccounts.addAllAmountLabels(changer,
+                                          "IRA",  
+                                          "Roth IRA", 
+                                          "401(k) or 403(b)", 
+                                          "SEP-IRA", 
+                                          "Pension (vested benefit)", 
+                                          "Annuity (accumulated value)", 
+                                          "Annuity (accumulated value)");
         investedAssetsSubCatCon.addTitleAmountLabel(retirementAccounts);
         
         TitleAndAmountLabel businessOwnership = new TitleAndAmountLabel(
                 "Business ownership interests", darkGray, investedAssetsSubCatCon);
-        businessOwnership.addAllAmountLabels(new AmountLabel("Real estate", darkGray), 
-                                          new AmountLabel("Sole propietorship", darkGray), 
-                                          new AmountLabel("Partnership", darkGray), 
-                                          new AmountLabel("C Corporation", darkGray), 
-                                          new AmountLabel("S Corporation", darkGray), 
-                                          new AmountLabel("Limited liability company", darkGray), 
-                                          new AmountLabel("Other", darkGray));
+        businessOwnership.addAllAmountLabels(changer, 
+                                          "Real estate", 
+                                          "Sole propietorship", 
+                                          "Partnership", 
+                                          "C Corporation", 
+                                          "S Corporation", 
+                                          "Limited liability company", 
+                                          "Other");
         investedAssetsSubCatCon.addTitleAmountLabel(businessOwnership);
         
-        investedAssetsSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Invested Assets", totalAmount));
+        investedAssetsSubCatCon.setSubTotalLabel(
+                new SubTotalAmountLabel("Total Invested Assets", totalAmount));
         
         investedAssetsSubCatCon.showLabels();
         labelList.add(investedAssetsSubCatCon);
@@ -128,13 +130,13 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         //Use Assets
         SubCategoryContainer useAssetsSubCatCon = new SubCategoryContainer(
                 "Use Assets", lightGray, new AccCategoryAssets());
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Principal home", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Vacation home", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Cars, trucks, boats", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Home furnishings", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Art, antiques, coins, collectibles", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Jewelry, furs", lightGray));
-        useAssetsSubCatCon.addAmountLabel(new AmountLabel("Other", lightGray));
+        useAssetsSubCatCon.addAmountLabel("Principal home", changer);
+        useAssetsSubCatCon.addAmountLabel("Vacation home", changer);
+        useAssetsSubCatCon.addAmountLabel("Cars, trucks, boats", changer);
+        useAssetsSubCatCon.addAmountLabel("Home furnishings", changer);
+        useAssetsSubCatCon.addAmountLabel("Art, antiques, coins, collectibles", changer);
+        useAssetsSubCatCon.addAmountLabel("Jewelry, furs", changer);
+        useAssetsSubCatCon.addAmountLabel("Other", changer);
         useAssetsSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Use Assets", totalAmount));
         
         useAssetsSubCatCon.showLabels();
