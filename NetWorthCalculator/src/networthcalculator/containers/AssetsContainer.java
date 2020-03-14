@@ -77,12 +77,12 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         // Cash and Cash Equivalents - default color
         SubCategoryContainer cashSubCatCon = new SubCategoryContainer(
                 "Cash and Cash Equivalents", lightGray, new AccCategoryAssets());
-        cashSubCatCon.addAmountLabel(new AmountLabel("Checking accounts", lightGray));
-        cashSubCatCon.addAmountLabel(new AmountLabel("Savings accounts", lightGray));
-        cashSubCatCon.addAmountLabel(new AmountLabel("Money market accounts", lightGray));
-        cashSubCatCon.addAmountLabel(new AmountLabel("Savings bonds", lightGray));
-        cashSubCatCon.addAmountLabel(new AmountLabel("CD's", lightGray));
-        cashSubCatCon.addAmountLabel(new AmountLabel("Cash value of life insurance", lightGray));
+        cashSubCatCon.addAmountLabel("Checking accounts", changer);
+        cashSubCatCon.addAmountLabel("Savings accounts", changer);
+        cashSubCatCon.addAmountLabel("Money market accounts", changer);
+        cashSubCatCon.addAmountLabel("Savings bonds", changer);
+        cashSubCatCon.addAmountLabel("CD's", changer);
+        cashSubCatCon.addAmountLabel("Cash value of life insurance", changer);
         cashSubCatCon.setSubTotalLabel(new SubTotalAmountLabel("Total Cash", totalAmount));
         cashSubCatCon.showLabels();
         labelList.add(cashSubCatCon);
@@ -99,7 +99,8 @@ public class AssetsContainer extends javafx.scene.layout.VBox {
         
         TitleAndAmountLabel retirementAccounts = new TitleAndAmountLabel(
                 "Retirement accounts", darkGray, investedAssetsSubCatCon);
-        retirementAccounts.addAllAmountLabels(new AmountLabel("IRA", darkGray), 
+        retirementAccounts.addAllAmountLabels(
+                                          new AmountLabel("IRA", darkGray), 
                                           new AmountLabel("Roth IRA", darkGray), 
                                           new AmountLabel("401(k) or 403(b)", darkGray), 
                                           new AmountLabel("SEP-IRA", darkGray), 
