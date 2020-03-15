@@ -85,7 +85,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         
         for(String labelTitle : labelTitles) {
             
-            AmountLabel label = new AmountLabel(labelTitle, "lightgray");
+            AmountLabel label = new AmountLabel(labelTitle, "darkgray");
             label.setController(controller);
             label.setCustomPadding(0);
             label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
