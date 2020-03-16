@@ -2,13 +2,12 @@
  */
 package networthcalculator;
 
-import javafx.scene.control.Label;
 import networthcalculator.api_connection.JsonRetriever;
 import networthcalculator.containers.LiabilitiesContainer;
 import networthcalculator.containers.AssetsContainer;
 import networthcalculator.containers.BottomNetWorthContainer;
 import networthcalculator.menu.MainMenuBar;
-import networthcalculator.utilities.CurrencyChanger;
+import networthcalculator.utilities.CurrencyHandler;
 import org.json.simple.JSONObject;
 
 /**
@@ -30,7 +29,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         this.setBottom(netCon);
         
         TotalAmount totalAmount = new TotalAmount(netCon);
-        CurrencyChanger changer = new CurrencyChanger();
+        CurrencyHandler changer = new CurrencyHandler();
         
         // ASSETS LEFT
         AssetsContainer ac = new AssetsContainer(totalAmount, changer);

@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import networthcalculator.labels.interfaces.AmountViewController;
-import networthcalculator.utilities.CurrencyChanger;
+import networthcalculator.utilities.CurrencyHandler;
 
 /**
  *
@@ -81,7 +81,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
         }
     }
     
-    public void addAllAmountLabels(CurrencyChanger changer, String...labelTitles) {
+    public void addAllAmountLabels(CurrencyHandler changer, String...labelTitles) {
         
         for(String labelTitle : labelTitles) {
             

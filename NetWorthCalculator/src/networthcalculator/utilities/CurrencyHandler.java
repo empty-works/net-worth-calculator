@@ -5,14 +5,16 @@ package networthcalculator.utilities;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  *
  * @author MP
  */
-public class CurrencyChanger {
+public class CurrencyHandler {
     
     private List<Label> currencyList = new ArrayList<>();
+    private List<TextField> amountFieldList = new ArrayList<>();
     
     public void addToList(Label currencyLabel) {
         
@@ -25,5 +27,10 @@ public class CurrencyChanger {
             
             label.setText(text);
         }
+    }
+    
+    public void setAmountFields(TextField amountField) {
+        
+        amountFieldList.add(amountField);
     }
 }
