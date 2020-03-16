@@ -47,7 +47,7 @@ public class MainUi extends javafx.scene.layout.BorderPane {
         JSONObject jObject = retriever.getJsonObject();
         
         // Menu bar TOP
-        MainMenuBar menuBar = new MainMenuBar(jObject);
+        MainMenuBar menuBar = new MainMenuBar(jObject, changer);
         this.setTop(menuBar);
         menuBar.setJsonCurrencyObj();
     }

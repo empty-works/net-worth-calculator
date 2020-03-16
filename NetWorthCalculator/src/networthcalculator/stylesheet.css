@@ -13,7 +13,6 @@
 #AmountLabel #AmountDollarSignLabel {
     
     -fx-alignment: center-right;
-    -fx-background-color: black;
 }
 
 #AmountLabel .label {

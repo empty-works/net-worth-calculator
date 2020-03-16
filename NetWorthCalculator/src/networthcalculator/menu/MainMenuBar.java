@@ -13,6 +13,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.RadioMenuItemBuilder;
 import javafx.scene.control.ToggleGroup;
+import networthcalculator.utilities.CurrencyChanger;
 import org.json.simple.JSONObject;
 
 /**
@@ -25,10 +26,12 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
     final private String SELECT_CURRENCY = "Select Currency";
     private Menu settingsMenu;
     private JSONObject obj;
+    private CurrencyChanger changer;
     
-    public MainMenuBar(JSONObject obj) {
+    public MainMenuBar(JSONObject obj, CurrencyChanger changer) {
         
         this.obj = obj;
+        this.changer = changer;
         
         // File menu
         Menu fileMenu = new Menu("File");
@@ -74,6 +77,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                 @Override
                 public void handle(ActionEvent e) {
                     
+                    changer.setLabelTexts(pair.getKey().toString());
                     //currencySymbolLabel.setText(pair.getKey().toString());
                 }
             });
