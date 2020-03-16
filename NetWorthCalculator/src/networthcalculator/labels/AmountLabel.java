@@ -50,7 +50,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         
         this.bgColor = bgColor;
         this.text = text;
-        this.curLabel = CurrencySymbolSingleton.getInstance().getCurrencyLabel();
+        //this.curLabel = CurrencySymbolSingleton.getInstance().getCurrencyLabel();
         
         amountLabel.setText(text);
         this.setId("AmountLabel");
@@ -80,10 +80,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         amountLabel.setPrefHeight(PREF_HEIGHT);
         amountLabel.prefWidthProperty().bind(hbox.widthProperty());
         
-        curLabel.setId("AmountDollarSignLabel");
+        //curLabel.setId("AmountDollarSignLabel");
         curLabel.setText("USD");
         curLabel.setPrefHeight(PREF_HEIGHT);
-        curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.5)); // w * 1/5
+        curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.7)); // w * 1/5
     }
     
     private void setTextField() {

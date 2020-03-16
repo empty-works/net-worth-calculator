@@ -10,7 +10,7 @@
     -fx-main-font-family: 'arial';
 }
 
-#AmountDollarSignLabel {
+#AmountLabel #AmountDollarSignLabel {
     
     -fx-alignment: center-right;
     -fx-background-color: black;
