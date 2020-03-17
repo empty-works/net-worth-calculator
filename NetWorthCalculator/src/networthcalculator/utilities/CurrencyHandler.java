@@ -16,7 +16,7 @@ public class CurrencyHandler {
     private List<Label> currencyList = new ArrayList<>();
     private List<TextField> amountFieldList = new ArrayList<>();
     
-    public void addToList(Label currencyLabel) {
+    public void addToCurrencySymbolList(Label currencyLabel) {
         
         currencyList.add(currencyLabel);
     }
@@ -29,7 +29,7 @@ public class CurrencyHandler {
         }
     }
     
-    public void setAmountFields(TextField amountField) {
+    public void addToAmountFieldsList(TextField amountField) {
         
         amountFieldList.add(amountField);
     }

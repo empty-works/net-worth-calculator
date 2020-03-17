@@ -43,7 +43,8 @@ public class SubCategoryContainer extends javafx.scene.layout.GridPane implement
     public void addAmountLabel(String title, CurrencyHandler changer) {
         
         AmountLabel newLabel = new AmountLabel(title, "lightgray");
-        changer.addToList(newLabel.getCurLabel());
+        changer.addToCurrencySymbolList(newLabel.getCurLabel());
+        changer.addToAmountFieldsList(newLabel.getAmountField());
         newLabel.setController(this);
         newLabel.prefWidthProperty().bind(this.widthProperty());
         amountLabelList.add(newLabel);

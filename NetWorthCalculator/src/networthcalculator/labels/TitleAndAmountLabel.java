@@ -90,7 +90,7 @@ public class TitleAndAmountLabel extends javafx.scene.layout.AnchorPane {
             label.setCustomPadding(0);
             label.prefWidthProperty().bind(vboxLabelCon.widthProperty());
             vboxLabelCon.getChildren().add(label);
-            changer.addToList(label.getCurLabel());
+            changer.addToCurrencySymbolList(label.getCurLabel());
         }
     }
 }

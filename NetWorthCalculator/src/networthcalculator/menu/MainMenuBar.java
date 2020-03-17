@@ -26,12 +26,12 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
     final private String SELECT_CURRENCY = "Select Currency";
     private Menu settingsMenu;
     private JSONObject obj;
-    private CurrencyHandler changer;
+    private CurrencyHandler currencyHandler;
     
     public MainMenuBar(JSONObject obj, CurrencyHandler changer) {
         
         this.obj = obj;
-        this.changer = changer;
+        this.currencyHandler = changer;
         
         // File menu
         Menu fileMenu = new Menu("File");
@@ -77,8 +77,8 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                 @Override
                 public void handle(ActionEvent e) {
                     
-                    changer.setLabelTexts(pair.getKey().toString());
-                    //currencySymbolLabel.setText(pair.getKey().toString());
+                    currencyHandler.setLabelTexts(pair.getKey().toString());
+                    
                 }
             });
             
