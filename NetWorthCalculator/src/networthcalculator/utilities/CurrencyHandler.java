@@ -37,6 +37,12 @@ public class CurrencyHandler {
     
     public void setCurrencyRate(String currencyRate) {
         
-        this.currencyRate = Double.valueOf(currencyRate);;
+        this.currencyRate = Double.valueOf(currencyRate);
+        convertAmounts();
+    }
+    
+    private void convertAmounts() {
+        
+        //TODO convert current amount to selected currency.
     }
 }
