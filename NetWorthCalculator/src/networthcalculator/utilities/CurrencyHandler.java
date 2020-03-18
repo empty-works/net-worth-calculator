@@ -16,6 +16,7 @@ public class CurrencyHandler {
     private List<Label> currencyList = new ArrayList<>();
     private List<TextField> amountFieldList = new ArrayList<>();
     private double currencyRate = 0.0;
+    private String currency = "";
     
     public void addToCurrencySymbolList(Label currencyLabel) {
         
@@ -35,6 +36,11 @@ public class CurrencyHandler {
         amountFieldList.add(amountField);
     }
     
+    public void setCurrency(String currency) {
+        
+        this.currency = currency;
+    }
+    
     public void setCurrencyRate(String currencyRate) {
         
         this.currencyRate = Double.valueOf(currencyRate);
@@ -43,6 +49,6 @@ public class CurrencyHandler {
     
     private void convertAmounts() {
         
-        //TODO convert current amount to selected currency.
+        
     }
 }
