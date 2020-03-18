@@ -15,7 +15,7 @@ public class CurrencyHandler {
     
     private List<Label> currencyList = new ArrayList<>();
     private List<TextField> amountFieldList = new ArrayList<>();
-    private double currencyRate = 0.0;
+    private double currencyRate = 1.0;
     private String currency = "";
     
     public void addToCurrencySymbolList(Label currencyLabel) {
@@ -49,6 +49,16 @@ public class CurrencyHandler {
     
     private void convertAmounts() {
         
-        
+        if(!amountFieldList.isEmpty()) {
+            
+            for(int i = 0; i < amountFieldList.size(); i++) {
+            
+                if(currency.equals("USD")) {
+                    
+                    double fieldAmount = Double.valueOf(amountFieldList.get(i).getText());
+                    amountFieldList.get(i).setText("" + fieldAmount * currencyRate);
+                }
+            }
+        }
     }
 }
