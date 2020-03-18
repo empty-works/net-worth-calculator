@@ -16,6 +16,7 @@ public class CurrencyHandler {
     private List<Label> currencyList = new ArrayList<>();
     private List<TextField> amountFieldList = new ArrayList<>();
     private double currencyRate = 1.0;
+    private double previousCurrencyRate = 1.0;
     private String currency = "";
     
     public void addToCurrencySymbolList(Label currencyLabel) {
@@ -55,10 +56,28 @@ public class CurrencyHandler {
             
                 if(currency.equals("USD")) {
                     
-                    double fieldAmount = Double.valueOf(amountFieldList.get(i).getText());
-                    amountFieldList.get(i).setText("" + fieldAmount * currencyRate);
+                    amountFieldList.get(i).setText("" + convertToNonUSD(
+                            Double.valueOf(amountFieldList.get(i).getText())));
+                }
+                else /*Revert currency back to USD then multiply by selected currency*/ {
+                    
+                    double newAmount = convertToNonUSD(convertFromNonUSD(
+                            Double.valueOf(amountFieldList.get(i).getText())));
+                    amountFieldList.get(i).setText("" + newAmount);
                 }
             }
+            
+            previousCurrencyRate = currencyRate;
         }
+    }
+    
+    private double convertToNonUSD(double amount) {
+        
+        return amount * currencyRate;
+    }
+    
+    private double convertFromNonUSD(double amount) {
+        
+        return amount / previousCurrencyRate;
     }
 }
