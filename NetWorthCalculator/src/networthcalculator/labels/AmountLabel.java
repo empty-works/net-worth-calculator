@@ -32,7 +32,7 @@ import networthcalculator.utilities.NumberReformatter;
 public class AmountLabel extends javafx.scene.layout.AnchorPane {
     
     private Label amountLabel = new Label();
-    protected TextField amountField = new TextField();
+    protected TextField amountField = new TextField("0.00");
     private HBox hbox = new HBox();
     private VBox buttonVbox = new VBox();
     private String text;
