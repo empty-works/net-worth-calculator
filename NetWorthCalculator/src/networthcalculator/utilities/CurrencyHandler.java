@@ -63,7 +63,17 @@ public class CurrencyHandler {
                     
                     double newAmount = convertToNonUSD(convertFromNonUSD(
                             Double.valueOf(amountFieldList.get(i).getText())));
-                    amountFieldList.get(i).setText("" + newAmount);
+                    
+                    String amtStr = "";
+                    if(newAmount == 0.0) {
+                        
+                        amtStr = "0.00";
+                    }
+                    else {
+                        
+                        amtStr = "" + newAmount;
+                    }
+                    amountFieldList.get(i).setText(amtStr);
                 }
             }
             
