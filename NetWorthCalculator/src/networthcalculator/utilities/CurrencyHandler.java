@@ -17,7 +17,7 @@ public class CurrencyHandler {
     private List<TextField> amountFieldList = new ArrayList<>();
     private double currencyRate = 1.0;
     private double previousCurrencyRate = 1.0;
-    private String currency = "";
+    private String currency = "", previousCurrency = "USD";
     
     public void addToCurrencySymbolList(Label currencyLabel) {
         
@@ -48,13 +48,14 @@ public class CurrencyHandler {
         convertAmounts();
     }
     
+    // TODO write junit test
     private void convertAmounts() {
         
         if(!amountFieldList.isEmpty()) {
             
             for(int i = 0; i < amountFieldList.size(); i++) {
             
-                if(currency.equals("USD")) {
+                if(previousCurrency.equals("USD")) {
                     
                     amountFieldList.get(i).setText("" + convertToNonUSD(
                             Double.valueOf(amountFieldList.get(i).getText())));
@@ -77,6 +78,7 @@ public class CurrencyHandler {
                 }
             }
             
+            previousCurrency = currency;
             previousCurrencyRate = currencyRate;
         }
     }
