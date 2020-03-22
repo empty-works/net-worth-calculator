@@ -56,13 +56,14 @@ public class CurrencyHandler {
             
                 if(previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
-                    amountFieldList.get(i).setText("" + convertToNonUSD(
+                    amountFieldList.get(i).setText(convertToNonUSD(
                             amountFieldList.get(i).getText()));
                 }
                 else if(!previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
-                    double usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
-                    String amtStr = usdAmount == 0.0 ? "0.00" : "" + usdAmount;
+                    String usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
+                    
+                    String amtStr = usdAmount == "0.0" ? "0.00" : "" + usdAmount;
                     amountFieldList.get(i).setText(amtStr);
                 }
                 else /*Revert currency back to USD then multiply by selected currency*/ {
@@ -90,15 +91,15 @@ public class CurrencyHandler {
         }
     }
     
-    public double convertToNonUSD(String amount) {
+    public String convertToNonUSD(String amount) {
         
         double newAmount = Double.valueOf(amount);
-        return newAmount * currencyRate;
+        return String.valueOf(newAmount * currencyRate);
     }
     
-    public double convertBackToUSD(String amount) {
+    public String convertBackToUSD(String amount) {
         
         double newAmount = Double.valueOf(amount);
-        return newAmount / previousCurrencyRate;
+        return String.valueOf(newAmount / previousCurrencyRate);
     }
 }
