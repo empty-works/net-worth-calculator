@@ -61,6 +61,8 @@ public class CurrencyHandler {
                 }
                 else /*Revert currency back to USD then multiply by selected currency*/ {
                     
+                    double usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
+                    
                     double newAmount = convertToNonUSD(convertFromNonUSD(
                             Double.valueOf(amountFieldList.get(i).getText())));
                     
@@ -82,15 +84,15 @@ public class CurrencyHandler {
         }
     }
     
-    private double convertToNonUSD(String amount) {
+    public double convertToNonUSD(String amount) {
         
         double newAmount = Double.valueOf(amount);
         return newAmount * currencyRate;
     }
     
-    private double convertFromNonUSD(double amount) {
+    public double convertBackToUSD(String amount) {
         
-        
-        return amount / previousCurrencyRate;
+        double newAmount = Double.valueOf(amount);
+        return newAmount / previousCurrencyRate;
     }
 }
