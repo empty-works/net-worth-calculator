@@ -48,8 +48,7 @@ public class CurrencyHandler {
         convertAmounts();
     }
     
-    // TODO write junit test
-    private void convertAmounts() {
+    public void convertAmounts() {
         
         if(!amountFieldList.isEmpty()) {
             
