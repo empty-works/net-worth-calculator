@@ -54,6 +54,7 @@ public class CurrencyHandlerTest {
     
     @Test
     public void testConvertAmounts() {
+        System.out.println("convertAmounts");
         
     }
 }
