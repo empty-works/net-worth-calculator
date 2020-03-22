@@ -54,10 +54,13 @@ public class CurrencyHandler {
             
             for(int i = 0; i < amountFieldList.size(); i++) {
             
-                if(previousCurrency.equals("USD")) {
+                if(previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
                     amountFieldList.get(i).setText("" + convertToNonUSD(
                             amountFieldList.get(i).getText()));
+                }
+                else if() {
+                    
                 }
                 else /*Revert currency back to USD then multiply by selected currency*/ {
                     
