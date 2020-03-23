@@ -48,10 +48,16 @@ public class CurrencyHandlerTest {
         instance.setCurrency("CAD"); // Canada
         instance.setCurrencyRate("1.43525");
         result = instance.convertToNonUSD(amount);
-        expectedResult = "0.0";
+        expectedResult = "0.00";
         assertEquals(expectedResult, result);
         
-        
+        amount = "100.00";
+        instance.setCurrency("CAD"); // Canada
+        instance.setCurrencyRate("1.43525");
+        result = instance.convertToNonUSD(amount);
+        System.out.println("Result: " + result);
+        expectedResult = "143.52";
+        assertEquals(expectedResult, result);
     }
     
     @Test

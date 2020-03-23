@@ -2,6 +2,7 @@
  */
 package networthcalculator.utilities;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Label;
@@ -75,7 +76,8 @@ public class CurrencyHandler {
     public String convertToNonUSD(String amount) {
         
         double newAmount = Double.valueOf(amount);
-        return String.valueOf(newAmount * currencyRate);
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        return myFormatter.format(newAmount * currencyRate);
     }
     
     public String convertBackToUSD(String amount) {
