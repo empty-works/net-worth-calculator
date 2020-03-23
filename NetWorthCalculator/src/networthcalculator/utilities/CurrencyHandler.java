@@ -48,7 +48,7 @@ public class CurrencyHandler {
         convertAmounts();
     }
     
-    public void convertAmounts() {
+    private void convertAmounts() {
         
         if(!amountFieldList.isEmpty()) {
             
@@ -62,26 +62,7 @@ public class CurrencyHandler {
                 else if(!previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
                     String usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
-                    
                     String amtStr = usdAmount == "0.0" ? "0.00" : "" + usdAmount;
-                    amountFieldList.get(i).setText(amtStr);
-                }
-                else /*Revert currency back to USD then multiply by selected currency*/ {
-                    
-                    
-                    
-                    double newAmount = convertToNonUSD(convertFromNonUSD(
-                            Double.valueOf(amountFieldList.get(i).getText())));
-                    
-                    String amtStr = "";
-                    if(newAmount == 0.0) {
-                        
-                        amtStr = "0.00";
-                    }
-                    else {
-                        
-                        amtStr = "" + newAmount;
-                    }
                     amountFieldList.get(i).setText(amtStr);
                 }
             }

@@ -48,13 +48,20 @@ public class CurrencyHandlerTest {
         String currencyRate = "";
         CurrencyHandler instance = new CurrencyHandler();
         instance.setCurrencyRate(currencyRate);
-        // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
     
     @Test
-    public void testConvertAmounts() {
-        System.out.println("convertAmounts");
+    public void testConvertToNonUSD() {
+        System.out.println("convertToNonUSD");
+        CurrencyHandler instance = new CurrencyHandler();
         
     }
+    
+    @Test
+    public void testConvertBackToUSD() {
+        System.out.println("convertBackToUSD");
+        CurrencyHandler instance = new CurrencyHandler();
+        
+    } 
 }
