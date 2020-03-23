@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package networthcalculator.utilities;
 
@@ -39,22 +36,21 @@ public class CurrencyHandlerTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of setCurrencyRate method, of class CurrencyHandler.
-     */
-    @Test
-    public void testSetCurrencyRate() {
-        System.out.println("setCurrencyRate");
-        String currencyRate = "";
-        CurrencyHandler instance = new CurrencyHandler();
-        instance.setCurrencyRate(currencyRate);
-        fail("The test case is a prototype.");
-    }
-    
     @Test
     public void testConvertToNonUSD() {
         System.out.println("convertToNonUSD");
+        String amount = "";
+        String result = "";
+        String expectedResult = "";
         CurrencyHandler instance = new CurrencyHandler();
+        
+        amount = "0.00";
+        instance.setCurrency("CAD"); // Canada
+        instance.setCurrencyRate("1.43525");
+        result = instance.convertToNonUSD(amount);
+        expectedResult = "0.0";
+        assertEquals(expectedResult, result);
+        
         
     }
     
