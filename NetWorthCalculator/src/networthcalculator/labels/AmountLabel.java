@@ -80,7 +80,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
         curLabel.setId("AmountDollarSignLabel");
         curLabel.setText("USD");
         curLabel.setPrefHeight(PREF_HEIGHT);
-        curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.7)); // w * 1/5
+        curLabel.prefWidthProperty().bind(hbox.widthProperty().divide(1.3)); // w * 1/5
     }
     
     private void setTextField() {
