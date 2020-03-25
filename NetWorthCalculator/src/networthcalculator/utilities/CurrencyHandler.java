@@ -57,13 +57,14 @@ public class CurrencyHandler {
             
                 if(previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
+                    
                     amountFieldList.get(i).setText(convertToNonUSD(
                             amountFieldList.get(i).getText()));
                 }
                 else if(!previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
                     String usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
-                    String amtStr = usdAmount == "0.0" ? "0.00" : "" + usdAmount;
+                    String amtStr = usdAmount == "0.00" ? "0.00" : "" + usdAmount;
                     amountFieldList.get(i).setText(amtStr);
                 }
             }
@@ -74,6 +75,11 @@ public class CurrencyHandler {
     }
     
     public String convertToNonUSD(String amount) {
+        
+        if(amount.equals("0.00")) {
+        
+            return amount;
+        }
         
         double newAmount = Double.valueOf(amount);
         DecimalFormat myFormatter = new DecimalFormat("###.##");
