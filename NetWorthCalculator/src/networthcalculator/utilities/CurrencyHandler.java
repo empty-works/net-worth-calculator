@@ -43,13 +43,7 @@ public class CurrencyHandler {
         this.currency = currency;
     }
     
-    public void setCurrencyRate(String currencyRate) {
-        
-        this.currencyRate = Double.valueOf(currencyRate);
-        convertAmounts();
-    }
-    
-    private void convertAmounts() {
+    public void convertAmounts(double currencyRate) {
         
         if(!amountFieldList.isEmpty()) {
             

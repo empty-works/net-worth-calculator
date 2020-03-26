@@ -79,7 +79,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                     
                     currencyHandler.setLabelTexts(pair.getKey().toString());
                     currencyHandler.setCurrency(pair.getKey().toString());
-                    currencyHandler.setCurrencyRate(pair.getValue().toString());
+                    currencyHandler.convertAmounts(Double.valueOf(pair.getValue().toString()));
                 }
             });
             
