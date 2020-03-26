@@ -57,7 +57,7 @@ public class CurrencyHandlerTest {
         instance.setCurrencyRate("1.43525");
         result = instance.convertToNonUSD(amount);
         System.out.println("Result: " + result);
-        expectedResult = "143.5200";
+        expectedResult = "143.52";
         assertEquals(expectedResult, result);
     }
     
@@ -65,6 +65,7 @@ public class CurrencyHandlerTest {
     public void testConvertBackToUSD() {
         System.out.println("convertBackToUSD");
         CurrencyHandler instance = new CurrencyHandler();
+        
         
     } 
 }
