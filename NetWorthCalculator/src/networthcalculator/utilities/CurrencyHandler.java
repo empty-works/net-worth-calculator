@@ -59,7 +59,7 @@ public class CurrencyHandler {
                     
                     
                     amountFieldList.get(i).setText(convertToNonUSD(
-                            amountFieldList.get(i).getText()));
+                            amountFieldList.get(i).getText(), currencyRate));
                 }
                 else if(!previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
@@ -74,7 +74,7 @@ public class CurrencyHandler {
         }
     }
     
-    public String convertToNonUSD(String amount) {
+    public String convertToNonUSD(String amount, double inCurrencyRate) {
         
         if(amount.equals("0.00")) {
         
@@ -83,10 +83,15 @@ public class CurrencyHandler {
         
         double newAmount = Double.valueOf(amount);
         DecimalFormat myFormatter = new DecimalFormat("###.##");
-        return myFormatter.format(newAmount * currencyRate);
+        return myFormatter.format(newAmount * inCurrencyRate);
     }
     
     public String convertBackToUSD(String amount) {
+        
+        if(amount.equals("0.00")) {
+        
+            return amount;
+        }
         
         double newAmount = Double.valueOf(amount);
         return String.valueOf(newAmount / previousCurrencyRate);
