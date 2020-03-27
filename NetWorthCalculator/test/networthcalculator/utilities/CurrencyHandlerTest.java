@@ -68,14 +68,14 @@ public class CurrencyHandlerTest {
         CurrencyHandler instance = new CurrencyHandler();
         
         amount = "0.00";
-        result = instance.convertBackToUSD(amount);
+        result = instance.convertBackToUSD(amount, 1.43525);
         expectedResult = "0.00";
         assertEquals(expectedResult, result);
         
         amount = "143.52";
-        result = instance.convertBackToUSD(amount);
+        result = instance.convertBackToUSD(amount, 1.43525);
         System.out.println("Result: " + result);
-        expectedResult = "100.00";
+        expectedResult = "99.99651628636127";
         assertEquals(expectedResult, result);
     } 
 }

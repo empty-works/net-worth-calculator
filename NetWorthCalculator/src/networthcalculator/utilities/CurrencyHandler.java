@@ -56,7 +56,8 @@ public class CurrencyHandler {
                 }
                 else if(!previousCurrency.equals("USD") && !currency.equals("USD")) {
                     
-                    String usdAmount = convertBackToUSD(amountFieldList.get(i).getText());
+                    String usdAmount = convertBackToUSD(
+                            amountFieldList.get(i).getText(), previousCurrencyRate);
                     String amtStr = usdAmount == "0.00" ? "0.00" : "" + usdAmount;
                     amountFieldList.get(i).setText(amtStr);
                 }
@@ -79,7 +80,7 @@ public class CurrencyHandler {
         return myFormatter.format(newAmount * inCurrencyRate);
     }
     
-    public String convertBackToUSD(String amount) {
+    public String convertBackToUSD(String amount, double prevCurrencyRate) {
         
         if(amount.equals("0.00")) {
         
@@ -87,6 +88,6 @@ public class CurrencyHandler {
         }
         
         double newAmount = Double.valueOf(amount);
-        return String.valueOf(newAmount / previousCurrencyRate);
+        return String.valueOf(newAmount / prevCurrencyRate);
     }
 }
