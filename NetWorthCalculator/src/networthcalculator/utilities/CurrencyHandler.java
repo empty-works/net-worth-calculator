@@ -16,7 +16,6 @@ public class CurrencyHandler {
     
     private List<Label> currencyList = new ArrayList<>();
     private List<TextField> amountFieldList = new ArrayList<>();
-    private double currencyRate = 1.0;
     private double previousCurrencyRate = 1.0;
     private String currency = "", previousCurrency = "USD";
     
