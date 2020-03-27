@@ -57,6 +57,13 @@ public class CurrencyHandlerTest {
         System.out.println("Result: " + result);
         expectedResult = "143.52";
         assertEquals(expectedResult, result);
+        
+        amount = "2408.99";
+        instance.setCurrency("CAD"); // Canada
+        result = instance.convertToNonUSD(amount, 1.43525);
+        System.out.println("Result: " + result);
+        expectedResult = "3457.5";
+        assertEquals(expectedResult, result);
     }
     
     @Test
@@ -76,6 +83,13 @@ public class CurrencyHandlerTest {
         result = instance.convertBackToUSD(amount, 1.43525);
         System.out.println("Result: " + result);
         expectedResult = "99.99651628636127";
+        assertEquals(expectedResult, result);
+        
+        amount = "3457.50";
+        instance.setCurrency("CAD"); // Canada
+        result = instance.convertBackToUSD(amount, 1.43525);
+        System.out.println("Result: " + result);
+        expectedResult = "2408.9879811879464";
         assertEquals(expectedResult, result);
     } 
 }
