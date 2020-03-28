@@ -76,7 +76,7 @@ public class CurrencyHandler {
         }
         
         double newAmount = Double.valueOf(amount);
-        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        DecimalFormat myFormatter = new DecimalFormat("###.00");
         return myFormatter.format(newAmount * inCurrencyRate);
     }
     
@@ -88,7 +88,7 @@ public class CurrencyHandler {
         }
         
         double newAmount = Double.valueOf(amount);
-        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        DecimalFormat myFormatter = new DecimalFormat("###.00");
         return myFormatter.format(newAmount / prevCurrencyRate);
     }
 }
