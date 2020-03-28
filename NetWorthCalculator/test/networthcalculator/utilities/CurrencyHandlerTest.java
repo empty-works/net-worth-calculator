@@ -2,8 +2,6 @@
  */
 package networthcalculator.utilities;
 
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -82,14 +80,14 @@ public class CurrencyHandlerTest {
         amount = "143.52";
         result = instance.convertBackToUSD(amount, 1.43525);
         System.out.println("Result: " + result);
-        expectedResult = "99.99651628636127";
+        expectedResult = "100";
         assertEquals(expectedResult, result);
         
         amount = "3457.50";
         instance.setCurrency("CAD"); // Canada
         result = instance.convertBackToUSD(amount, 1.43525);
         System.out.println("Result: " + result);
-        expectedResult = "2408.9879811879464";
+        expectedResult = "2408.99";
         assertEquals(expectedResult, result);
     } 
 }
