@@ -13,8 +13,8 @@ public class NumberReformatter {
     public static String reformat(String inputAmount) {
         
         double dblAmount = Double.parseDouble(inputAmount);
-        String formattedAmount = formatDecimal(dblAmount);
-        return formattedAmount;
+        //String formattedAmount = formatDecimal(dblAmount);
+        return String.valueOf(dblAmount);
     }
     
     public static String reformat(double amount) {
