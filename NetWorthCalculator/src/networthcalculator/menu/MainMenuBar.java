@@ -77,6 +77,7 @@ public class MainMenuBar extends javafx.scene.layout.VBox {
                 @Override
                 public void handle(ActionEvent e) {
                     
+                    currencyHandler.setIsCurrencyChange(true);
                     currencyHandler.setLabelTexts(pair.getKey().toString());
                     currencyHandler.setCurrency(pair.getKey().toString());
                     currencyHandler.convertAmounts(Double.valueOf(pair.getValue().toString()));

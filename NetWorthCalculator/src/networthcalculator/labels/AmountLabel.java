@@ -100,7 +100,8 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
             public void changed(ObservableValue<? extends String> observable, 
                     String oldValue, String newValue) {
                 
-                if(!oldValue.equals(newValue)) {
+                if(!oldValue.equals(newValue) && 
+                        currencyHandler.isCurrencyChange() == false) {
                     
                     clearInvalidWarning();
                     acceptButton.setVisible(true);
@@ -111,6 +112,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
                     // This case might happen with copy/pasting
                     acceptButton.setVisible(false);
                     cancelButton.setVisible(false);
+                    currencyHandler.setIsCurrencyChange(false); // Reset "is currency" flag
                 }
             }
         });
