@@ -22,6 +22,7 @@ import javafx.scene.layout.VBox;
 import networthcalculator.utilities.MyUtility;
 import networthcalculator.NetWorthCalculator;
 import networthcalculator.labels.interfaces.AmountViewController;
+import networthcalculator.utilities.CurrencyHandler;
 import networthcalculator.utilities.EventHandlerMaker;
 import networthcalculator.utilities.NumberReformatter;
 
@@ -41,6 +42,7 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     private AmountViewController controller;
     private String bgColor;
     private Label curLabel = new Label();
+    private CurrencyHandler currencyHandler;
     
     private String currentAmountFieldText = "";
     
@@ -218,5 +220,10 @@ public class AmountLabel extends javafx.scene.layout.AnchorPane {
     public TextField getAmountField() {
         
         return amountField;
+    }
+    
+    public void setCurrencyHandler(CurrencyHandler curHand) {
+    
+        this.currencyHandler = curHand;
     }
 }
