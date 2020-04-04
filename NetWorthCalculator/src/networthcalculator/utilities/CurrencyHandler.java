@@ -18,6 +18,7 @@ public class CurrencyHandler {
     private List<TextField> amountFieldList = new ArrayList<>();
     private double previousCurrencyRate = 1.0;
     private String currency = "", previousCurrency = "USD";
+    private boolean isCurrencyChange = false;
     
     public void addToCurrencySymbolList(Label currencyLabel) {
         
@@ -89,5 +90,15 @@ public class CurrencyHandler {
         double newAmount = Double.valueOf(amount);
         DecimalFormat myFormatter = new DecimalFormat("###.00");
         return myFormatter.format(newAmount / prevCurrencyRate);
+    }
+    
+    public void setIsCurrencyChange(boolean isChanged) {
+    
+        isCurrencyChange = isChanged;
+    }
+    
+    public boolean isCurrencyChange() {
+        
+        return isCurrencyChange;
     }
 }
