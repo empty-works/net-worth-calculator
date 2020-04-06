@@ -61,6 +61,12 @@ public class CurrencyHandler {
                     
                     amountFieldList.get(i).setText(convertToNonUSD(usdAmount, currencyRate));
                 }
+                else if(!previousCurrency.equals("USD") && currency.equals("USD")) {
+                
+                    String usdAmount = convertBackToUSD(
+                            amountFieldList.get(i).getText(), previousCurrencyRate);
+                    amountFieldList.get(i).setText(usdAmount);
+                }
             }
             
             previousCurrency = currency;
